@@ -1,0 +1,39 @@
+name: ELF
+version: $SERVICE_TAG
+description: >-
+  This service extracts attributes (imports, exports, section names, ...)
+  from linux ELF files using the python library LIEF.
+
+accepts: executable/linux
+rejects: empty|metadata/.*
+
+stage: CORE
+category: Static Analysis
+
+file_required: true
+timeout: 60
+disable_cache: false
+
+enabled: true
+is_external: false
+licence_count: 0
+
+heuristics:
+  - description: This file looks like an ELF file but fails to load
+    filetype: "executable/linux"
+    heur_id: 1
+    name: Invalid ELF look-alike
+    score: 100
+
+  - description: >-
+      This ELF contains at least one section with entropy > 7.5, which
+      may indicate packed or encrypted code.
+    filetype: "executable/linux"
+    heur_id: 2
+    name: High section entropy
+    score: 100
+
+docker_config:
+  image: ${REGISTRY}cccs/assemblyline-service-elf:$SERVICE_TAG
+  cpu_cores: 1
+  ram_mb: 512
