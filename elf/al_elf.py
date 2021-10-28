@@ -98,19 +98,22 @@ class AL_ELF:
             self.interpreter = binary.interpreter
 
         if binary.has_notes:
-            # TODO: find an ELF with notes, since details is very probably going to break.
-            self.notes = [
-                {
+            self.notes = []
+            for note in binary.notes:
+                note_struct = {
                     "description": note.description,
-                    "details": note.details,
                     "is_android": note.is_android,
                     "is_core": note.is_core,
                     "name": note.name,
                     "type": note.type.name,
                     "type_core": note.type_core.name,
                 }
-                for note in binary.notes
-            ]
+                if isinstance(note.details, lief.ELF.NoteAbi):
+                    note_struct["details"] = {
+                        "abi": note.details.abi.name,
+                        "version": note.details.version,
+                    }
+                self.notes.append(note_struct)
 
         self.nx = binary.has_nx
 

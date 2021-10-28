@@ -106,7 +106,8 @@ class ELF(ServiceBase):
                 sub_res.add_line(f"Core: {note['is_core']}, {note['type_core']}")
             if note["is_android"]:
                 sub_res.add_line(f"Android: {note['is_android']}")
-            sub_res.add_line(f"Details: {note['details']}")
+            if "details" in note:
+                sub_res.add_line(f"Details: {note['details']['abi']} {'.'.join(map(str, note['details']['version']))}")
             res.add_subsection(sub_res)
         self.file_res.add_section(res)
 
