@@ -35,6 +35,7 @@ class ELF(ServiceBase):
             res.add_line(f"PPC64 Flags: {', '.join(self.elf.header['ppc64_flags_list'])}")
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
+            res.add_tag("file.elf.interpreter", self.elf.interpreter)
 
         overlay = bytes.fromhex(self.elf.overlay)
         res.add_line(f"Overlay size: {len(overlay)}")
@@ -54,8 +55,7 @@ class ELF(ServiceBase):
         res = ResultSection("Sections")
         for section in self.elf.sections:
             sub_res = ResultSection(f"Section - {section['name']}")
-            # TODO: have sections.name for elf
-            # sub_res.add_tag("file.elf.sections.name", section["name"])
+            sub_res.add_tag("file.elf.sections.name", section["name"])
             sub_res.add_line(f"Type: {section['type']}")
             sub_res.add_line(f"Entropy: {section['entropy']}")
             if section["entropy"] > 7.5:
@@ -75,6 +75,7 @@ class ELF(ServiceBase):
         for segment in self.elf.segments:
             sub_res = ResultSection(f"Segment - {segment['type']}")
             sub_res.add_line(f"Type: {segment['type']}")
+            sub_res.add_tag("file.elf.segment.type", segment["type"])
             sub_res.add_line(f"Flags: {segment['flags']}")
             sub_res.add_line(f"Physical Size: {segment['physical_size']}")
             sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
@@ -88,7 +89,9 @@ class ELF(ServiceBase):
             return
 
         res = ResultSection("Libraries")
-        res.add_lines(self.elf.libraries)
+        for library in self.elf.libraries:
+            res.add_line(library)
+            res.add_tag("file.elf.libraries", library)
         self.file_res.add_section(res)
 
     def add_notes(self):
@@ -100,10 +103,13 @@ class ELF(ServiceBase):
         res = ResultSection("Notes")
         for note in self.elf.notes:
             sub_res = ResultSection(f"Note - {note['name']}")
+            sub_res.add_tag("file.elf.notes.name", note["name"])
             sub_res.add_line(f"Description: {note['description']}")
             sub_res.add_line(f"Type: {note['type']}")
+            sub_res.add_tag("file.elf.notes.type", note["type"])
             if note["is_core"]:
                 sub_res.add_line(f"Core: {note['is_core']}, {note['type_core']}")
+                sub_res.add_tag("file.elf.notes.type_core", note["type_core"])
             if note["is_android"]:
                 sub_res.add_line(f"Android: {note['is_android']}")
             if "details" in note:
