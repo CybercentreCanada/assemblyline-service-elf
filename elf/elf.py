@@ -55,7 +55,8 @@ class ELF(ServiceBase):
         res = ResultSection("Sections")
         for section in self.elf.sections:
             sub_res = ResultSection(f"Section - {section['name']}")
-            sub_res.add_tag("file.elf.sections.name", section["name"])
+            if section["name"] != "":
+                sub_res.add_tag("file.elf.sections.name", section["name"])
             sub_res.add_line(f"Type: {section['type']}")
             sub_res.add_line(f"Entropy: {section['entropy']}")
             if section["entropy"] > 7.5:
@@ -75,7 +76,7 @@ class ELF(ServiceBase):
         for segment in self.elf.segments:
             sub_res = ResultSection(f"Segment - {segment['type']}")
             sub_res.add_line(f"Type: {segment['type']}")
-            sub_res.add_tag("file.elf.segment.type", segment["type"])
+            sub_res.add_tag("file.elf.segments.type", segment["type"])
             sub_res.add_line(f"Flags: {segment['flags']}")
             sub_res.add_line(f"Physical Size: {segment['physical_size']}")
             sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
