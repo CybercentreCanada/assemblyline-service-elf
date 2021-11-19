@@ -217,7 +217,7 @@ class AL_ELF:
                 "name": svd.name,
                 "version": svd.version,
             }
-            for svd in binary.symbols_version_definition
+            for svd in binary.symbols_version_requirement
         ]
 
         if binary.use_sysv_hash:
