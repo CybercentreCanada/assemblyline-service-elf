@@ -187,7 +187,6 @@ class AL_ELF:
                 "alignment": segment.alignment,
                 # "content": segment.content,
                 "file_offset": segment.file_offset,
-                "flags": "".join([segment_flags_entries[x].name for x in get_powers(segment.flags.__int__())][::-1]),
                 "physical_address": segment.physical_address,
                 "physical_size": segment.physical_size,
                 "sections": [section.name for section in segment.sections],
