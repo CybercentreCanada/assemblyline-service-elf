@@ -152,14 +152,15 @@ class AL_ELF:
         self.name = binary.name
         self.next_virtual_address = binary.next_virtual_address
         self.overlay = bytearray(binary.overlay).hex()
-        self.sections = [
-            {
+        self.sections = []
+
+        for section in binary.sections:
+            section_struct = {
                 "alignment": section.alignment,
                 # "content": section.content,
                 "entropy": section.entropy,
                 "entry_size": section.entry_size,
                 "file_offset": section.file_offset,
-                "flags": " | ".join([section_flags_entries[x].name for x in get_powers(section.flags.__int__())]),
                 "flags_list": [flag.name for flag in section.flags_list],
                 "information": section.information,
                 "link": section.link,
@@ -172,10 +173,17 @@ class AL_ELF:
                 "type": section.type.name,
                 "virtual_address": section.virtual_address,
             }
-            for section in binary.sections
-        ]
-        self.segments = [
-            {
+            try:
+                section_struct["flags"] = (
+                    " | ".join([section_flags_entries[x].name for x in get_powers(section.flags.__int__())]),
+                )
+            except KeyError:
+                pass
+            self.sections.append(section_struct)
+
+        self.segments = []
+        for segment in binary.segments:
+            segment_dict = {
                 "alignment": segment.alignment,
                 # "content": segment.content,
                 "file_offset": segment.file_offset,
@@ -187,8 +195,13 @@ class AL_ELF:
                 "virtual_address": segment.virtual_address,
                 "virtual_size": segment.virtual_size,
             }
-            for segment in binary.segments
-        ]
+            try:
+                segment_dict["flags"] = (
+                    "".join([segment_flags_entries[x].name for x in get_powers(segment.flags.__int__())][::-1]),
+                )
+            except KeyError:
+                pass
+            self.segments.append(segment_dict)
 
         self.strings = binary.strings
 
