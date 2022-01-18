@@ -77,7 +77,8 @@ class ELF(ServiceBase):
             sub_res = ResultSection(f"Segment - {segment['type']}")
             sub_res.add_line(f"Type: {segment['type']}")
             sub_res.add_tag("file.elf.segments.type", segment["type"])
-            sub_res.add_line(f"Flags: {segment['flags']}")
+            if 'flags' in segment:
+                sub_res.add_line(f"Flags: {segment['flags']}")
             sub_res.add_line(f"Physical Size: {segment['physical_size']}")
             sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
             if len(segment["sections"]):
@@ -170,7 +171,7 @@ class ELF(ServiceBase):
         self.add_hash()
         self.add_symbols_version()
 
-        temp_path = os.path.join(self.working_directory, "al_elf.json")
+        temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
             myfile.write(json.dumps(self.elf.__dict__))
-        request.add_supplementary(temp_path, "al_elf.json", "Features extracted from the ELF file, as a JSON file")
+        request.add_supplementary(temp_path, "features.json", "Features extracted from the ELF file, as a JSON file")
