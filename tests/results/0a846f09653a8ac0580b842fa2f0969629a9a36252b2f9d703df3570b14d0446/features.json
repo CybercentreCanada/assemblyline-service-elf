@@ -1,0 +1,842 @@
+{
+    "ctor_functions": [],
+    "dtor_functions": [],
+    "dynamic_entries": [],
+    "entrypoint": 33172,
+    "format": "ELF",
+    "nx": false,
+    "header": {
+        "arm_flags_list": [
+            "EABI_VER4"
+        ],
+        "entrypoint": 33172,
+        "file_type": "EXECUTABLE",
+        "header_size": 52,
+        "hexagon_flags_list": [],
+        "identity": [
+            127,
+            69,
+            76,
+            70,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "identity_abi_version": 0,
+        "identity_class": "CLASS32",
+        "identity_data": "LSB",
+        "identity_os_abi": "SYSTEMV",
+        "identity_version": "CURRENT",
+        "machine_type": "ARM",
+        "mips_flags_list": [],
+        "numberof_sections": 29,
+        "numberof_segments": 5,
+        "object_file_version": "CURRENT",
+        "ppc64_flags_list": [],
+        "processor_flag": 67108866,
+        "program_header_offset": 52,
+        "program_header_size": 32,
+        "section_header_offset": 103824,
+        "section_header_size": 40,
+        "section_name_table_idx": 26
+    },
+    "imagebase": 32768,
+    "position_independent": false,
+    "last_offset_section": 131317,
+    "last_offset_segment": 79964,
+    "libraries": [],
+    "name": "/tmp/0a846f09653a8ac0580b842fa2f0969629a9a36252b2f9d703df3570b14d0446",
+    "next_virtual_address": 262144,
+    "overlay": "",
+    "sections": [
+        {
+            "alignment": 0,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "NULL",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.75,
+            "entry_size": 0,
+            "file_offset": 212,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".init",
+            "information": 0,
+            "link": 0,
+            "name": ".init",
+            "offset": 212,
+            "original_size": 16,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 16,
+            "type": "PROGBITS",
+            "virtual_address": 32980,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 6.057239223995317,
+            "entry_size": 0,
+            "file_offset": 240,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".text",
+            "information": 0,
+            "link": 0,
+            "name": ".text",
+            "offset": 240,
+            "original_size": 74588,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 74588,
+            "type": "PROGBITS",
+            "virtual_address": 33008,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.75,
+            "entry_size": 0,
+            "file_offset": 74828,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".fini",
+            "information": 0,
+            "link": 0,
+            "name": ".fini",
+            "offset": 74828,
+            "original_size": 16,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 16,
+            "type": "PROGBITS",
+            "virtual_address": 107596,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 5.064959709471605,
+            "entry_size": 0,
+            "file_offset": 74844,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rodata",
+            "information": 0,
+            "link": 0,
+            "name": ".rodata",
+            "offset": 74844,
+            "original_size": 4104,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 4104,
+            "type": "PROGBITS",
+            "virtual_address": 107612,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.0016291673878226,
+            "entry_size": 0,
+            "file_offset": 78948,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".ARM.extab",
+            "information": 0,
+            "link": 0,
+            "name": ".ARM.extab",
+            "offset": 78948,
+            "original_size": 24,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 24,
+            "type": "PROGBITS",
+            "virtual_address": 111716,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.438768258633953,
+            "entry_size": 0,
+            "file_offset": 78972,
+            "flags_list": [
+                "LINK_ORDER",
+                "ALLOC"
+            ],
+            "fullname": ".ARM.exidx",
+            "information": 0,
+            "link": 2,
+            "name": ".ARM.exidx",
+            "offset": 78972,
+            "original_size": 280,
+            "segments": [
+                "ARM_UNWIND",
+                "LOAD"
+            ],
+            "size": 280,
+            "type": "ARM_EXIDX",
+            "virtual_address": 111740,
+            "flags": [
+                "ALLOC | LINK_ORDER"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": -0.0,
+            "entry_size": 0,
+            "file_offset": 79252,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".eh_frame",
+            "information": 0,
+            "link": 0,
+            "name": ".eh_frame",
+            "offset": 79252,
+            "original_size": 4,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 4,
+            "type": "PROGBITS",
+            "virtual_address": 144788,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.0,
+            "entry_size": 0,
+            "file_offset": 79256,
+            "flags_list": [
+                "TLS",
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".tbss",
+            "information": 0,
+            "link": 0,
+            "name": ".tbss",
+            "offset": 79256,
+            "original_size": 8,
+            "segments": [
+                "LOAD",
+                "TLS"
+            ],
+            "size": 8,
+            "type": "NOBITS",
+            "virtual_address": 144792,
+            "flags": [
+                "WRITE | ALLOC | TLS"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.5,
+            "entry_size": 0,
+            "file_offset": 79256,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".init_array",
+            "information": 0,
+            "link": 0,
+            "name": ".init_array",
+            "offset": 79256,
+            "original_size": 4,
+            "segments": [
+                "LOAD",
+                "TLS"
+            ],
+            "size": 4,
+            "type": "INIT_ARRAY",
+            "virtual_address": 144792,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.5,
+            "entry_size": 0,
+            "file_offset": 79260,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".fini_array",
+            "information": 0,
+            "link": 0,
+            "name": ".fini_array",
+            "offset": 79260,
+            "original_size": 4,
+            "segments": [
+                "LOAD",
+                "TLS"
+            ],
+            "size": 4,
+            "type": "FINI_ARRAY",
+            "virtual_address": 144796,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": -0.0,
+            "entry_size": 0,
+            "file_offset": 79264,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".jcr",
+            "information": 0,
+            "link": 0,
+            "name": ".jcr",
+            "offset": 79264,
+            "original_size": 4,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 4,
+            "type": "PROGBITS",
+            "virtual_address": 144800,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.3182667728659694,
+            "entry_size": 4,
+            "file_offset": 79268,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".got",
+            "information": 0,
+            "link": 0,
+            "name": ".got",
+            "offset": 79268,
+            "original_size": 168,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 168,
+            "type": "PROGBITS",
+            "virtual_address": 144804,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.942379743808216,
+            "entry_size": 0,
+            "file_offset": 79436,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".data",
+            "information": 0,
+            "link": 0,
+            "name": ".data",
+            "offset": 79436,
+            "original_size": 528,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 528,
+            "type": "PROGBITS",
+            "virtual_address": 144972,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 5.067489348112086,
+            "entry_size": 0,
+            "file_offset": 79964,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".bss",
+            "information": 0,
+            "link": 0,
+            "name": ".bss",
+            "offset": 79964,
+            "original_size": 28760,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 28760,
+            "type": "NOBITS",
+            "virtual_address": 145500,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.7522386776560994,
+            "entry_size": 0,
+            "file_offset": 79964,
+            "flags_list": [],
+            "fullname": ".comment",
+            "information": 0,
+            "link": 0,
+            "name": ".comment",
+            "offset": 79964,
+            "original_size": 2380,
+            "segments": [],
+            "size": 2380,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 2.0007086751408156,
+            "entry_size": 0,
+            "file_offset": 82344,
+            "flags_list": [],
+            "fullname": ".debug_aranges",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_aranges",
+            "offset": 82344,
+            "original_size": 192,
+            "segments": [],
+            "size": 192,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.7663720680363095,
+            "entry_size": 0,
+            "file_offset": 82536,
+            "flags_list": [],
+            "fullname": ".debug_pubnames",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_pubnames",
+            "offset": 82536,
+            "original_size": 531,
+            "segments": [],
+            "size": 531,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 5.145375699063014,
+            "entry_size": 0,
+            "file_offset": 83067,
+            "flags_list": [],
+            "fullname": ".debug_info",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_info",
+            "offset": 83067,
+            "original_size": 7459,
+            "segments": [],
+            "size": 7459,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.581741703113144,
+            "entry_size": 0,
+            "file_offset": 90526,
+            "flags_list": [],
+            "fullname": ".debug_abbrev",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_abbrev",
+            "offset": 90526,
+            "original_size": 1682,
+            "segments": [],
+            "size": 1682,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 5.836425776492156,
+            "entry_size": 0,
+            "file_offset": 92208,
+            "flags_list": [],
+            "fullname": ".debug_line",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_line",
+            "offset": 92208,
+            "original_size": 2503,
+            "segments": [],
+            "size": 2503,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.165142624863977,
+            "entry_size": 0,
+            "file_offset": 94712,
+            "flags_list": [],
+            "fullname": ".debug_frame",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_frame",
+            "offset": 94712,
+            "original_size": 696,
+            "segments": [],
+            "size": 696,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 5.044492868897249,
+            "entry_size": 1,
+            "file_offset": 95408,
+            "flags_list": [
+                "MERGE",
+                "STRINGS"
+            ],
+            "fullname": ".debug_str",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_str",
+            "offset": 95408,
+            "original_size": 2250,
+            "segments": [],
+            "size": 2250,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "MERGE | STRINGS"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.2169624594073363,
+            "entry_size": 0,
+            "file_offset": 97658,
+            "flags_list": [],
+            "fullname": ".debug_loc",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_loc",
+            "offset": 97658,
+            "original_size": 4495,
+            "segments": [],
+            "size": 4495,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 2.840044198252748,
+            "entry_size": 0,
+            "file_offset": 102153,
+            "flags_list": [],
+            "fullname": ".debug_ranges",
+            "information": 0,
+            "link": 0,
+            "name": ".debug_ranges",
+            "offset": 102153,
+            "original_size": 1368,
+            "segments": [],
+            "size": 1368,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.259141984247901,
+            "entry_size": 0,
+            "file_offset": 103521,
+            "flags_list": [],
+            "fullname": ".ARM.attributes",
+            "information": 0,
+            "link": 0,
+            "name": ".ARM.attributes",
+            "offset": 103521,
+            "original_size": 22,
+            "segments": [],
+            "size": 22,
+            "type": "ARM_ATTRIBUTES",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.306943408525259,
+            "entry_size": 0,
+            "file_offset": 103543,
+            "flags_list": [],
+            "fullname": ".shstrtab",
+            "information": 0,
+            "link": 0,
+            "name": ".shstrtab",
+            "offset": 103543,
+            "original_size": 279,
+            "segments": [],
+            "size": 279,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.3927828341137234,
+            "entry_size": 16,
+            "file_offset": 104984,
+            "flags_list": [],
+            "fullname": ".symtab",
+            "information": 640,
+            "link": 28,
+            "name": ".symtab",
+            "offset": 104984,
+            "original_size": 17568,
+            "segments": [],
+            "size": 17568,
+            "type": "SYMTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.560418133487299,
+            "entry_size": 0,
+            "file_offset": 122552,
+            "flags_list": [],
+            "fullname": ".strtab",
+            "information": 0,
+            "link": 0,
+            "name": ".strtab",
+            "offset": 122552,
+            "original_size": 8765,
+            "segments": [],
+            "size": 8765,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        }
+    ],
+    "segments": [
+        {
+            "alignment": 4,
+            "file_offset": 78972,
+            "physical_address": 111740,
+            "physical_size": 280,
+            "sections": [
+                ".ARM.exidx"
+            ],
+            "type": "ARM_UNWIND",
+            "virtual_address": 111740,
+            "virtual_size": 280,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 32768,
+            "file_offset": 0,
+            "physical_address": 32768,
+            "physical_size": 79252,
+            "sections": [
+                ".init",
+                ".text",
+                ".fini",
+                ".rodata",
+                ".ARM.extab",
+                ".ARM.exidx"
+            ],
+            "type": "LOAD",
+            "virtual_address": 32768,
+            "virtual_size": 79252,
+            "flags": [
+                "RX"
+            ]
+        },
+        {
+            "alignment": 32768,
+            "file_offset": 79252,
+            "physical_address": 144788,
+            "physical_size": 712,
+            "sections": [
+                ".eh_frame",
+                ".tbss",
+                ".init_array",
+                ".fini_array",
+                ".jcr",
+                ".got",
+                ".data",
+                ".bss"
+            ],
+            "type": "LOAD",
+            "virtual_address": 144788,
+            "virtual_size": 29472,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 79256,
+            "physical_address": 144792,
+            "physical_size": 0,
+            "sections": [
+                ".tbss",
+                ".init_array",
+                ".fini_array"
+            ],
+            "type": "TLS",
+            "virtual_address": 144792,
+            "virtual_size": 8,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 0,
+            "sections": [],
+            "type": "GNU_STACK",
+            "virtual_address": 0,
+            "virtual_size": 0,
+            "flags": [
+                "RWX"
+            ]
+        }
+    ],
+    "strings": [
+        "/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A/x38/xFJ/x93/xID/x9A",
+        "SNQUERY: 127.0.0.1:AAAAAA:xsvr",
+        "service:service-agent",
+        " default",
+        "\"3DUfw",
+        "local",
+        "TeamSpeak",
+        "Windows XP",
+        "nickname",
+        "107.172.201.217",
+        "q}||wqfw``}`",
+        "oPtbqO_yUbLp",
+        "VSZ^Y",
+        "DVZDBYP7",
+        "DVZDBYP",
+        "VYCD[F",
+        "SRQVB[C",
+        "QpFyqD",
+        "SVRZXY",
+        "PBRDC",
+        "DBGGXEC",
+        "Bt[^YBO",
+        "A^MOA",
+        "/proc/stat",
+        "/proc/cpuinfo",
+        "processor",
+        "/sys/devices/system/cpu",
+        "/dev/null"
+    ],
+    "symbols_version": [],
+    "symbols_version_definition": [],
+    "symbols_version_requirement": [],
+    "type": "CLASS32",
+    "virtual_size": 143360
+}

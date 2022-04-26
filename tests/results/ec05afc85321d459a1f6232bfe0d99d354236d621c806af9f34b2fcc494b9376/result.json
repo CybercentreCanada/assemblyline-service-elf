@@ -1,0 +1,127 @@
+{
+    "classification": "TLP:W",
+    "response": {
+        "milestones": {
+            "service_started": null,
+            "service_completed": null
+        },
+        "service_version": null,
+        "service_name": null,
+        "service_tool_version": null,
+        "supplementary": [
+            {
+                "name": "features.json",
+                "sha256": "f3419344fbf2093cf231a44d8879c1fadc1e3fe8f86ced39e42834736fcfbad3",
+                "description": "Features extracted from the ELF file, as a JSON file",
+                "classification": "TLP:W",
+                "path": "/tmp/working_directory/features.json",
+                "is_section_image": false
+            }
+        ],
+        "extracted": [
+            {
+                "name": "overlay",
+                "sha256": "d93691b2afba05d51d9631dd605ee3593d48ba54cce193c177faae9276bedd2d",
+                "description": "overlay extracted from binary's resources",
+                "classification": "TLP:W",
+                "path": "/tmp/working_directory/overlay",
+                "is_section_image": false
+            }
+        ],
+        "service_context": null,
+        "service_debug_info": null
+    },
+    "result": {
+        "score": 0,
+        "sections": [
+            {
+                "body": "Entrypoint: 0x125bc\nMachine: ARM\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 167936\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nARM Flags: EABI_VER4\nOverlay size: 17761",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Headers",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": null,
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Segments",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 46891\nVirtual Size: 46891",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "LOAD"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - LOAD",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 100432",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "LOAD"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - LOAD",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "GNU_STACK"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - GNU_STACK",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            }
+        ]
+    },
+    "sha256": "ec05afc85321d459a1f6232bfe0d99d354236d621c806af9f34b2fcc494b9376",
+    "drop_file": false,
+    "temp_submission_data": {}
+}

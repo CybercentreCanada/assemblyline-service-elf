@@ -1,0 +1,621 @@
+{
+    "ctor_functions": [],
+    "dtor_functions": [],
+    "dynamic_entries": [],
+    "entrypoint": 4194912,
+    "format": "ELF",
+    "nx": false,
+    "header": {
+        "arm_flags_list": [],
+        "entrypoint": 4194912,
+        "file_type": "EXECUTABLE",
+        "header_size": 52,
+        "hexagon_flags_list": [],
+        "identity": [
+            127,
+            69,
+            76,
+            70,
+            1,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "identity_abi_version": 0,
+        "identity_class": "CLASS32",
+        "identity_data": "MSB",
+        "identity_os_abi": "SYSTEMV",
+        "identity_version": "CURRENT",
+        "machine_type": "MIPS",
+        "mips_flags_list": [],
+        "numberof_sections": 14,
+        "numberof_segments": 3,
+        "object_file_version": "CURRENT",
+        "ppc64_flags_list": [],
+        "processor_flag": 4103,
+        "program_header_offset": 52,
+        "program_header_size": 32,
+        "section_header_offset": 81000,
+        "section_header_size": 40,
+        "section_name_table_idx": 13
+    },
+    "imagebase": 4194304,
+    "position_independent": false,
+    "last_offset_section": 89868,
+    "last_offset_segment": 80900,
+    "libraries": [],
+    "name": "/tmp/0fb3505db411da107f8f8ac888c6b753abf2ae015c346ec985371449e93835bf",
+    "next_virtual_address": 8388608,
+    "overlay": "",
+    "sections": [
+        {
+            "alignment": 0,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "NULL",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.058234483065513,
+            "entry_size": 0,
+            "file_offset": 148,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".init",
+            "information": 0,
+            "link": 0,
+            "name": ".init",
+            "offset": 148,
+            "original_size": 140,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 140,
+            "type": "PROGBITS",
+            "virtual_address": 4194452,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 5.398314009807573,
+            "entry_size": 0,
+            "file_offset": 288,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".text",
+            "information": 0,
+            "link": 0,
+            "name": ".text",
+            "offset": 288,
+            "original_size": 68640,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 68640,
+            "type": "PROGBITS",
+            "virtual_address": 4194592,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.077029120739808,
+            "entry_size": 0,
+            "file_offset": 68928,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".fini",
+            "information": 0,
+            "link": 0,
+            "name": ".fini",
+            "offset": 68928,
+            "original_size": 92,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 92,
+            "type": "PROGBITS",
+            "virtual_address": 4263232,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 5.181799328060553,
+            "entry_size": 0,
+            "file_offset": 69024,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rodata",
+            "information": 0,
+            "link": 0,
+            "name": ".rodata",
+            "offset": 69024,
+            "original_size": 6528,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 6528,
+            "type": "PROGBITS",
+            "virtual_address": 4263328,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.0,
+            "entry_size": 0,
+            "file_offset": 77824,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".ctors",
+            "information": 0,
+            "link": 0,
+            "name": ".ctors",
+            "offset": 77824,
+            "original_size": 8,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 4534272,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.0,
+            "entry_size": 0,
+            "file_offset": 77832,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".dtors",
+            "information": 0,
+            "link": 0,
+            "name": ".dtors",
+            "offset": 77832,
+            "original_size": 8,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 4534280,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.002018413380519,
+            "entry_size": 0,
+            "file_offset": 77844,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".data.rel.ro",
+            "information": 0,
+            "link": 0,
+            "name": ".data.rel.ro",
+            "offset": 77844,
+            "original_size": 1024,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1024,
+            "type": "PROGBITS",
+            "virtual_address": 4534292,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 2.524766933255638,
+            "entry_size": 0,
+            "file_offset": 78880,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".data",
+            "information": 0,
+            "link": 0,
+            "name": ".data",
+            "offset": 78880,
+            "original_size": 928,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 928,
+            "type": "PROGBITS",
+            "virtual_address": 4535328,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 3.9304137796121297,
+            "entry_size": 4,
+            "file_offset": 79808,
+            "flags_list": [
+                "HEX_GPREL",
+                "WRITE",
+                "ALLOC",
+                "MASKPROC"
+            ],
+            "fullname": ".got",
+            "information": 0,
+            "link": 0,
+            "name": ".got",
+            "offset": 79808,
+            "original_size": 1092,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1092,
+            "type": "PROGBITS",
+            "virtual_address": 4536256,
+            "flags": [
+                "WRITE | ALLOC | HEX_GPREL"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.267894147619623,
+            "entry_size": 0,
+            "file_offset": 80900,
+            "flags_list": [
+                "HEX_GPREL",
+                "WRITE",
+                "ALLOC",
+                "MASKPROC"
+            ],
+            "fullname": ".sbss",
+            "information": 0,
+            "link": 0,
+            "name": ".sbss",
+            "offset": 80900,
+            "original_size": 24,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 24,
+            "type": "NOBITS",
+            "virtual_address": 4537348,
+            "flags": [
+                "WRITE | ALLOC | HEX_GPREL"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 80900,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".bss",
+            "information": 0,
+            "link": 0,
+            "name": ".bss",
+            "offset": 80900,
+            "original_size": 8968,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8968,
+            "type": "NOBITS",
+            "virtual_address": 4537376,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 80900,
+            "flags_list": [],
+            "fullname": ".mdebug.abi32",
+            "information": 0,
+            "link": 0,
+            "name": ".mdebug.abi32",
+            "offset": 80900,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "PROGBITS",
+            "virtual_address": 2322,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.857963528464372,
+            "entry_size": 0,
+            "file_offset": 80900,
+            "flags_list": [],
+            "fullname": ".shstrtab",
+            "information": 0,
+            "link": 0,
+            "name": ".shstrtab",
+            "offset": 80900,
+            "original_size": 100,
+            "segments": [],
+            "size": 100,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        }
+    ],
+    "segments": [
+        {
+            "alignment": 65536,
+            "file_offset": 0,
+            "physical_address": 4194304,
+            "physical_size": 75552,
+            "sections": [
+                ".init",
+                ".text",
+                ".fini",
+                ".rodata"
+            ],
+            "type": "LOAD",
+            "virtual_address": 4194304,
+            "virtual_size": 75552,
+            "flags": [
+                "RX"
+            ]
+        },
+        {
+            "alignment": 65536,
+            "file_offset": 77824,
+            "physical_address": 4534272,
+            "physical_size": 3076,
+            "sections": [
+                ".ctors",
+                ".dtors",
+                ".data.rel.ro",
+                ".data",
+                ".got",
+                ".sbss",
+                ".bss"
+            ],
+            "type": "LOAD",
+            "virtual_address": 4534272,
+            "virtual_size": 12072,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 0,
+            "sections": [],
+            "type": "GNU_STACK",
+            "virtual_address": 0,
+            "virtual_size": 0,
+            "flags": [
+                "RWX"
+            ]
+        }
+    ],
+    "strings": [
+        "User-Agent: ",
+        "Host: ",
+        "Cookie: ",
+        "abcdefghijklmnopqrstuvw012345678",
+        "^YQRTCRS7",
+        "D_R[[7",
+        "RYVU[R7",
+        "DNDCRZ7",
+        "`~t|rs7",
+        "QXBYS7",
+        "YTXEERTC7",
+        "XP^Y7",
+        "RYCRE7",
+        "VDD@XES7",
+        "ZVGD7",
+        "@VCT_SXP7",
+        "@VCT_SXP7",
+        "h@VCT_SXP7",
+        "@VCT_SXP7",
+        "T_BY\\RS7",
+        "SXDVEERDC7",
+        "YP^YO7",
+        "V[^AR7",
+        "BE[RYTXSRS7",
+        "_CCG7",
+        "gxdc7",
+        "fBREN7",
+        "TXYQ7",
+        "YVZRDREARE7",
+        "(nil)",
+        "(null)",
+        "hlLjztqZ",
+        "npxXoudifFeEgGaACScs",
+        " +0-#'I",
+        " !\"-N.Y]Z",
+        "#$%&'()*+,234567",
+        "Unknown error ",
+        "Success",
+        "Operation not permitted",
+        "No such file or directory",
+        "No such process",
+        "Interrupted system call",
+        "Input/output error",
+        "No such device or address",
+        "Argument list too long",
+        "Exec format error",
+        "Bad file descriptor",
+        "No child processes",
+        "Resource temporarily unavailable",
+        "Cannot allocate memory",
+        "Permission denied",
+        "Bad address",
+        "Block device required",
+        "Device or resource busy",
+        "File exists",
+        "Invalid cross-device link",
+        "No such device",
+        "Not a directory",
+        "Is a directory",
+        "Invalid argument",
+        "Too many open files in system",
+        "Too many open files",
+        "Inappropriate ioctl for device",
+        "Text file busy",
+        "File too large",
+        "No space left on device",
+        "Illegal seek",
+        "Read-only file system",
+        "Too many links",
+        "Broken pipe",
+        "Numerical argument out of domain",
+        "Numerical result out of range",
+        "Resource deadlock avoided",
+        "File name too long",
+        "No locks available",
+        "Function not implemented",
+        "Directory not empty",
+        "Too many levels of symbolic links",
+        "No message of desired type",
+        "Identifier removed",
+        "Channel number out of range",
+        "Level 2 not synchronized",
+        "Level 3 halted",
+        "Level 3 reset",
+        "Link number out of range",
+        "Protocol driver not attached",
+        "No CSI structure available",
+        "Level 2 halted",
+        "Invalid exchange",
+        "Invalid request descriptor",
+        "Exchange full",
+        "No anode",
+        "Invalid request code",
+        "Invalid slot",
+        "Bad font file format",
+        "Device not a stream",
+        "No data available",
+        "Timer expired",
+        "Out of streams resources",
+        "Machine is not on the network",
+        "Package not installed",
+        "Object is remote",
+        "Link has been severed",
+        "Advertise error",
+        "Srmount error",
+        "Communication error on send",
+        "Protocol error",
+        "Multihop attempted",
+        "RFS specific error",
+        "Bad message",
+        "Value too large for defined data type",
+        "Name not unique on network",
+        "File descriptor in bad state",
+        "Remote address changed",
+        "Can not access a needed shared library",
+        "Accessing a corrupted shared library",
+        ".lib section in a.out corrupted",
+        "Attempting to link in too many shared libraries",
+        "Cannot exec a shared library directly",
+        "Invalid or incomplete multibyte or wide character",
+        "Interrupted system call should be restarted",
+        "Streams pipe error",
+        "Too many users",
+        "Socket operation on non-socket",
+        "Destination address required",
+        "Message too long",
+        "Protocol wrong type for socket",
+        "Protocol not available",
+        "Protocol not supported",
+        "Socket type not supported",
+        "Operation not supported",
+        "Protocol family not supported",
+        "Address family not supported by protocol",
+        "Address already in use",
+        "Cannot assign requested address",
+        "Network is down",
+        "Network is unreachable",
+        "Network dropped connection on reset",
+        "Software caused connection abort",
+        "Connection reset by peer",
+        "No buffer space available",
+        "Transport endpoint is already connected",
+        "Transport endpoint is not connected",
+        "Cannot send after transport endpoint shutdown",
+        "Too many references: cannot splice",
+        "Connection timed out",
+        "Connection refused",
+        "Host is down",
+        "No route to host",
+        "Operation already in progress",
+        "Operation now in progress",
+        "Stale NFS file handle",
+        "Structure needs cleaning",
+        "Not a XENIX named type file",
+        "No XENIX semaphores available",
+        "Is a named type file",
+        "Remote I/O error",
+        "Disk quota exceeded",
+        "No medium found",
+        "Wrong medium type",
+        "File locking deadlock error",
+        "/dev/null"
+    ],
+    "symbols_version": [],
+    "symbols_version_definition": [],
+    "symbols_version_requirement": [],
+    "type": "CLASS32",
+    "virtual_size": 352256
+}

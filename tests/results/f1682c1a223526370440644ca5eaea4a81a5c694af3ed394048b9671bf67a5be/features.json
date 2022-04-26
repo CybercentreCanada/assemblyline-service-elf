@@ -1,0 +1,1789 @@
+{
+    "ctor_functions": [
+        {
+            "address": 7248,
+            "name": "__dt_init_array",
+            "size": 0,
+            "value": 7248
+        },
+        {
+            "address": 5984,
+            "name": "__dt_init",
+            "size": 0,
+            "value": 5984
+        }
+    ],
+    "dtor_functions": [
+        {
+            "address": 7168,
+            "name": "__dt_fini_array",
+            "size": 0,
+            "value": 7168
+        },
+        {
+            "address": 42312,
+            "name": "__dt_fini",
+            "size": 0,
+            "value": 42312
+        }
+    ],
+    "dynamic_entries": [
+        {
+            "tag": "NEEDED",
+            "value": 1522
+        },
+        {
+            "tag": "NEEDED",
+            "value": 1534
+        },
+        {
+            "tag": "NEEDED",
+            "value": 1545
+        },
+        {
+            "tag": "NEEDED",
+            "value": 1558
+        },
+        {
+            "tag": "SONAME",
+            "value": 1592
+        },
+        {
+            "tag": "INIT",
+            "value": 5984
+        },
+        {
+            "tag": "FINI",
+            "value": 42312
+        },
+        {
+            "tag": "INIT_ARRAY",
+            "value": 52868
+        },
+        {
+            "tag": "INIT_ARRAYSZ",
+            "value": 4
+        },
+        {
+            "tag": "FINI_ARRAY",
+            "value": 52872
+        },
+        {
+            "tag": "FINI_ARRAYSZ",
+            "value": 4
+        },
+        {
+            "tag": "HASH",
+            "value": 276
+        },
+        {
+            "tag": "GNU_HASH",
+            "value": 1268
+        },
+        {
+            "tag": "STRTAB",
+            "value": 3372
+        },
+        {
+            "tag": "SYMTAB",
+            "value": 1900
+        },
+        {
+            "tag": "STRSZ",
+            "value": 1658
+        },
+        {
+            "tag": "SYMENT",
+            "value": 16
+        },
+        {
+            "tag": "PLTGOT",
+            "value": 53236
+        },
+        {
+            "tag": "PLTRELSZ",
+            "value": 480
+        },
+        {
+            "tag": "PLTREL",
+            "value": 17
+        },
+        {
+            "tag": "JMPREL",
+            "value": 5504
+        },
+        {
+            "tag": "REL",
+            "value": 5296
+        },
+        {
+            "tag": "RELSZ",
+            "value": 208
+        },
+        {
+            "tag": "RELENT",
+            "value": 8
+        },
+        {
+            "tag": "VERNEED",
+            "value": 5216
+        },
+        {
+            "tag": "VERNEEDNUM",
+            "value": 1
+        },
+        {
+            "tag": "VERSYM",
+            "value": 5030
+        },
+        {
+            "tag": "RELCOUNT",
+            "value": 3
+        },
+        {
+            "tag": "NULL",
+            "value": 0
+        }
+    ],
+    "entrypoint": 6976,
+    "format": "ELF",
+    "gnu_hash": {
+        "bloom_filters": [
+            559092740,
+            38027424,
+            537264176,
+            75497744,
+            2684651521,
+            2232594,
+            16799744,
+            1191198736,
+            2147483904,
+            153094144,
+            1118044396,
+            1074004004,
+            9965568,
+            161687648,
+            150995586,
+            134708
+        ],
+        "buckets": [
+            42,
+            0,
+            43,
+            44,
+            0,
+            0,
+            0,
+            45,
+            46,
+            47,
+            48,
+            0,
+            0,
+            49,
+            0,
+            50,
+            0,
+            51,
+            0,
+            52,
+            0,
+            0,
+            0,
+            53,
+            54,
+            0,
+            55,
+            56,
+            0,
+            0,
+            57,
+            58,
+            0,
+            0,
+            59,
+            60,
+            0,
+            61,
+            62,
+            0,
+            0,
+            63,
+            64,
+            0,
+            66,
+            0,
+            0,
+            0,
+            0,
+            67,
+            0,
+            68,
+            69,
+            70,
+            72,
+            0,
+            73,
+            0,
+            74,
+            75,
+            0,
+            77,
+            0,
+            78,
+            0,
+            79,
+            80,
+            0,
+            0,
+            82,
+            0,
+            0,
+            83,
+            85,
+            86,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            87,
+            89,
+            90
+        ],
+        "hash_values": [
+            427903081,
+            4066917011,
+            954067755,
+            3958919455,
+            250711481,
+            1577688121,
+            193496435,
+            981426613,
+            167173791,
+            876581041,
+            2090001339,
+            1880951623,
+            475558361,
+            1844382259,
+            3973399875,
+            468086991,
+            3616870343,
+            2030792315,
+            3272628427,
+            335945757,
+            1402996975,
+            2449012673,
+            3865780818,
+            2009329475,
+            2081375253,
+            1770564625,
+            1180355051,
+            2052639301,
+            1440303708,
+            2090185557,
+            1238928735,
+            1522595065,
+            948601867,
+            3656505746,
+            3880726843,
+            1949833397,
+            1042746295,
+            612062153,
+            2390893538,
+            1007055699,
+            837769133,
+            2192676888,
+            3586496129,
+            1177651361,
+            250598379,
+            2120979428,
+            1284324709,
+            2461659903,
+            4265782310,
+            3244583319
+        ],
+        "nb_buckets": 88,
+        "shift2": 9,
+        "symbol_index": 42
+    },
+    "nx": true,
+    "header": {
+        "arm_flags_list": [],
+        "entrypoint": 6976,
+        "file_type": "DYNAMIC",
+        "header_size": 52,
+        "hexagon_flags_list": [],
+        "identity": [
+            127,
+            69,
+            76,
+            70,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "identity_abi_version": 0,
+        "identity_class": "CLASS32",
+        "identity_data": "LSB",
+        "identity_os_abi": "SYSTEMV",
+        "identity_version": "CURRENT",
+        "machine_type": "i386",
+        "mips_flags_list": [],
+        "numberof_sections": 28,
+        "numberof_segments": 7,
+        "object_file_version": "CURRENT",
+        "ppc64_flags_list": [],
+        "processor_flag": 0,
+        "program_header_offset": 52,
+        "program_header_size": 32,
+        "section_header_offset": 49708,
+        "section_header_size": 40,
+        "section_name_table_idx": 25
+    },
+    "imagebase": 0,
+    "position_independent": false,
+    "last_offset_section": 55243,
+    "last_offset_segment": 49400,
+    "libraries": [
+        "libX11.so.6",
+        "libXt.so.6",
+        "libXtst.so.6",
+        "libc.so.6"
+    ],
+    "name": "/tmp/f1682c1a223526370440644ca5eaea4a81a5c694af3ed394048b9671bf67a5be",
+    "next_virtual_address": 65536,
+    "overlay": "",
+    "sections": [
+        {
+            "alignment": 0,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "NULL",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.0619106272644059,
+            "entry_size": 4,
+            "file_offset": 276,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".hash",
+            "information": 0,
+            "link": 3,
+            "name": ".hash",
+            "offset": 276,
+            "original_size": 992,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 992,
+            "type": "HASH",
+            "virtual_address": 276,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.348263927752672,
+            "entry_size": 4,
+            "file_offset": 1268,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".gnu.hash",
+            "information": 0,
+            "link": 3,
+            "name": ".gnu.hash",
+            "offset": 1268,
+            "original_size": 632,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 632,
+            "type": "GNU_HASH",
+            "virtual_address": 1268,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.7095059864955373,
+            "entry_size": 16,
+            "file_offset": 1900,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".dynsym",
+            "information": 1,
+            "link": 4,
+            "name": ".dynsym",
+            "offset": 1900,
+            "original_size": 1472,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1472,
+            "type": "DYNSYM",
+            "virtual_address": 1900,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.975656686459979,
+            "entry_size": 0,
+            "file_offset": 3372,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".dynstr",
+            "information": 0,
+            "link": 0,
+            "name": ".dynstr",
+            "offset": 3372,
+            "original_size": 1658,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1658,
+            "type": "STRTAB",
+            "virtual_address": 3372,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 2,
+            "entropy": 1.1965802363227087,
+            "entry_size": 2,
+            "file_offset": 5030,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".gnu.version",
+            "information": 0,
+            "link": 3,
+            "name": ".gnu.version",
+            "offset": 5030,
+            "original_size": 184,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 184,
+            "type": "HIOS",
+            "virtual_address": 5030,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.7601275052218406,
+            "entry_size": 0,
+            "file_offset": 5216,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".gnu.version_r",
+            "information": 1,
+            "link": 4,
+            "name": ".gnu.version_r",
+            "offset": 5216,
+            "original_size": 80,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 80,
+            "type": "GNU_VERNEED",
+            "virtual_address": 5216,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.1803642132097987,
+            "entry_size": 8,
+            "file_offset": 5296,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rel.dyn",
+            "information": 0,
+            "link": 3,
+            "name": ".rel.dyn",
+            "offset": 5296,
+            "original_size": 208,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 208,
+            "type": "REL",
+            "virtual_address": 5296,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.384898334745832,
+            "entry_size": 8,
+            "file_offset": 5504,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rel.plt",
+            "information": 10,
+            "link": 3,
+            "name": ".rel.plt",
+            "offset": 5504,
+            "original_size": 480,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 480,
+            "type": "REL",
+            "virtual_address": 5504,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.0849625007211556,
+            "entry_size": 0,
+            "file_offset": 5984,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".init",
+            "information": 0,
+            "link": 0,
+            "name": ".init",
+            "offset": 5984,
+            "original_size": 12,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 12,
+            "type": "PROGBITS",
+            "virtual_address": 5984,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 3.6055400876107067,
+            "entry_size": 4,
+            "file_offset": 6000,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".plt",
+            "information": 0,
+            "link": 0,
+            "name": ".plt",
+            "offset": 6000,
+            "original_size": 976,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 976,
+            "type": "PROGBITS",
+            "virtual_address": 6000,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 5.711895008865724,
+            "entry_size": 0,
+            "file_offset": 6976,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".text",
+            "information": 0,
+            "link": 0,
+            "name": ".text",
+            "offset": 6976,
+            "original_size": 35336,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 35336,
+            "type": "PROGBITS",
+            "virtual_address": 6976,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.27280432733462,
+            "entry_size": 0,
+            "file_offset": 42312,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".fini",
+            "information": 0,
+            "link": 0,
+            "name": ".fini",
+            "offset": 42312,
+            "original_size": 21,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 21,
+            "type": "PROGBITS",
+            "virtual_address": 42312,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.891005072972579,
+            "entry_size": 0,
+            "file_offset": 42336,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rodata",
+            "information": 0,
+            "link": 0,
+            "name": ".rodata",
+            "offset": 42336,
+            "original_size": 1412,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1412,
+            "type": "PROGBITS",
+            "virtual_address": 42336,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.218218182804554,
+            "entry_size": 0,
+            "file_offset": 43748,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".eh_frame_hdr",
+            "information": 0,
+            "link": 0,
+            "name": ".eh_frame_hdr",
+            "offset": 43748,
+            "original_size": 260,
+            "segments": [
+                "LOAD",
+                "GNU_EH_FRAME"
+            ],
+            "size": 260,
+            "type": "PROGBITS",
+            "virtual_address": 43748,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.81349254560206,
+            "entry_size": 0,
+            "file_offset": 44008,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".eh_frame",
+            "information": 0,
+            "link": 0,
+            "name": ".eh_frame",
+            "offset": 44008,
+            "original_size": 1212,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1212,
+            "type": "PROGBITS",
+            "virtual_address": 44008,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.5,
+            "entry_size": 0,
+            "file_offset": 48772,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".init_array",
+            "information": 0,
+            "link": 0,
+            "name": ".init_array",
+            "offset": 48772,
+            "original_size": 4,
+            "segments": [
+                "LOAD",
+                "GNU_RELRO"
+            ],
+            "size": 4,
+            "type": "INIT_ARRAY",
+            "virtual_address": 52868,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 0.8112781244591329,
+            "entry_size": 0,
+            "file_offset": 48776,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".fini_array",
+            "information": 0,
+            "link": 0,
+            "name": ".fini_array",
+            "offset": 48776,
+            "original_size": 4,
+            "segments": [
+                "LOAD",
+                "GNU_RELRO"
+            ],
+            "size": 4,
+            "type": "FINI_ARRAY",
+            "virtual_address": 52872,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": -0.0,
+            "entry_size": 0,
+            "file_offset": 48780,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".jcr",
+            "information": 0,
+            "link": 0,
+            "name": ".jcr",
+            "offset": 48780,
+            "original_size": 4,
+            "segments": [
+                "LOAD",
+                "GNU_RELRO"
+            ],
+            "size": 4,
+            "type": "PROGBITS",
+            "virtual_address": 52876,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.727005843837126,
+            "entry_size": 8,
+            "file_offset": 48784,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".dynamic",
+            "information": 0,
+            "link": 4,
+            "name": ".dynamic",
+            "offset": 48784,
+            "original_size": 264,
+            "segments": [
+                "LOAD",
+                "DYNAMIC",
+                "GNU_RELRO"
+            ],
+            "size": 264,
+            "type": "DYNAMIC",
+            "virtual_address": 52880,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": -0.0,
+            "entry_size": 4,
+            "file_offset": 49048,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".got",
+            "information": 0,
+            "link": 0,
+            "name": ".got",
+            "offset": 49048,
+            "original_size": 92,
+            "segments": [
+                "LOAD",
+                "GNU_RELRO"
+            ],
+            "size": 92,
+            "type": "PROGBITS",
+            "virtual_address": 53144,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.009314186585817,
+            "entry_size": 4,
+            "file_offset": 49140,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".got.plt",
+            "information": 0,
+            "link": 0,
+            "name": ".got.plt",
+            "offset": 49140,
+            "original_size": 252,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 252,
+            "type": "PROGBITS",
+            "virtual_address": 53236,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.0,
+            "entry_size": 0,
+            "file_offset": 49392,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".data",
+            "information": 0,
+            "link": 0,
+            "name": ".data",
+            "offset": 49392,
+            "original_size": 8,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 53488,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.74428723181619,
+            "entry_size": 0,
+            "file_offset": 49400,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".bss",
+            "information": 0,
+            "link": 0,
+            "name": ".bss",
+            "offset": 49400,
+            "original_size": 160,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 160,
+            "type": "NOBITS",
+            "virtual_address": 53496,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.329077658573623,
+            "entry_size": 1,
+            "file_offset": 49400,
+            "flags_list": [
+                "MERGE",
+                "STRINGS"
+            ],
+            "fullname": ".comment",
+            "information": 0,
+            "link": 0,
+            "name": ".comment",
+            "offset": 49400,
+            "original_size": 87,
+            "segments": [],
+            "size": 87,
+            "type": "PROGBITS",
+            "virtual_address": 0,
+            "flags": [
+                "MERGE | STRINGS"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.190843425008842,
+            "entry_size": 0,
+            "file_offset": 49487,
+            "flags_list": [],
+            "fullname": ".shstrtab",
+            "information": 0,
+            "link": 0,
+            "name": ".shstrtab",
+            "offset": 49487,
+            "original_size": 221,
+            "segments": [],
+            "size": 221,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 2.8281580535270554,
+            "entry_size": 16,
+            "file_offset": 50828,
+            "flags_list": [],
+            "fullname": ".symtab",
+            "information": 53,
+            "link": 27,
+            "name": ".symtab",
+            "offset": 50828,
+            "original_size": 2304,
+            "segments": [],
+            "size": 2304,
+            "type": "SYMTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 5.073904313929582,
+            "entry_size": 0,
+            "file_offset": 53132,
+            "flags_list": [],
+            "fullname": ".strtab",
+            "information": 0,
+            "link": 0,
+            "name": ".strtab",
+            "offset": 53132,
+            "original_size": 2111,
+            "segments": [],
+            "size": 2111,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        }
+    ],
+    "segments": [
+        {
+            "alignment": 4096,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 45220,
+            "sections": [
+                ".hash",
+                ".gnu.hash",
+                ".dynsym",
+                ".dynstr",
+                ".gnu.version",
+                ".gnu.version_r",
+                ".rel.dyn",
+                ".rel.plt",
+                ".init",
+                ".plt",
+                ".text",
+                ".fini",
+                ".rodata",
+                ".eh_frame_hdr",
+                ".eh_frame"
+            ],
+            "type": "LOAD",
+            "virtual_address": 0,
+            "virtual_size": 45220,
+            "flags": [
+                "RX"
+            ]
+        },
+        {
+            "alignment": 4096,
+            "file_offset": 48772,
+            "physical_address": 52868,
+            "physical_size": 628,
+            "sections": [
+                ".init_array",
+                ".fini_array",
+                ".jcr",
+                ".dynamic",
+                ".got",
+                ".got.plt",
+                ".data",
+                ".bss"
+            ],
+            "type": "LOAD",
+            "virtual_address": 52868,
+            "virtual_size": 788,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 48784,
+            "physical_address": 52880,
+            "physical_size": 264,
+            "sections": [
+                ".dynamic"
+            ],
+            "type": "DYNAMIC",
+            "virtual_address": 52880,
+            "virtual_size": 264,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 43748,
+            "physical_address": 43748,
+            "physical_size": 260,
+            "sections": [
+                ".eh_frame_hdr"
+            ],
+            "type": "GNU_EH_FRAME",
+            "virtual_address": 43748,
+            "virtual_size": 260,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 0,
+            "sections": [],
+            "type": "GNU_STACK",
+            "virtual_address": 0,
+            "virtual_size": 0,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 1,
+            "file_offset": 48772,
+            "physical_address": 52868,
+            "physical_size": 380,
+            "sections": [
+                ".init_array",
+                ".fini_array",
+                ".jcr",
+                ".dynamic",
+                ".got"
+            ],
+            "type": "GNU_RELRO",
+            "virtual_address": 52868,
+            "virtual_size": 380,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 0,
+            "sections": [],
+            "type": "???",
+            "virtual_address": 0,
+            "virtual_size": 0
+        }
+    ],
+    "strings": [
+        "java/lang/NoClassDefFoundError",
+        "Unable to locate exception class.",
+        "java/lang/Thread",
+        "()Ljava/lang/Thread;",
+        "currentThread",
+        "(Ljava/lang/String;)V",
+        "setName",
+        "org/jnativehook/GlobalScreen",
+        "getInstance",
+        "dispatchEvent",
+        "startEventDispatcher",
+        "stopEventDispatcher",
+        "(IJIIICI)V",
+        "<init>",
+        "(IJIIIII)V",
+        "(IJIIII)V",
+        "(IJIIIIIII)V",
+        "()Lorg/jnativehook/GlobalScreen;",
+        "(Lorg/jnativehook/NativeInputEvent;)V",
+        "org/jnativehook/keyboard/NativeKeyEvent",
+        "org/jnativehook/mouse/NativeMouseEvent",
+        "org/jnativehook/mouse/NativeMouseWheelEvent",
+        "Failed to aquire JNI interface pointer",
+        "Failed to locate one or more required classes.",
+        "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+        "jnativehook.pointerAccelerationMultiplier",
+        "jnativehook.pointerAccelerationThreshold",
+        "jnativehook.pointerSensitivity",
+        "jnativehook.multiClickInterval",
+        "(Ljava/lang/String;)Ljava/lang/String;",
+        "java/lang/System",
+        "setProperty",
+        "jnativehook.autoRepeatRate",
+        "jnativehook.autoRepeatDelay",
+        "clearProperty",
+        "multiClickTime",
+        "MultiClickTimeout",
+        "OpenWindows",
+        "JNativeHook",
+        "JNativeHook Native Hook",
+        "Failed to open X display",
+        "Native thread start failure",
+        "Failed to open X displays",
+        "org/jnativehook/NativeHookException",
+        "Failed to create JNI global references",
+        "Failed to attach the native thread to the virtual machine",
+        "Failed to enable XRecord context",
+        "Failed to create XRecord context",
+        "Failed to allocate XRecord range",
+        "Failed to locate the X record extension"
+    ],
+    "symbols_version": [
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 3,
+            "symbol_version_auxiliary": "GLIBC_2.3.4"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 4,
+            "symbol_version_auxiliary": "GLIBC_2.1.3"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 5,
+            "symbol_version_auxiliary": "GLIBC_2.7"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 2,
+            "symbol_version_auxiliary": "GLIBC_2.0"
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 0
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 1
+        }
+    ],
+    "symbols_version_definition": [],
+    "symbols_version_requirement": [
+        {
+            "auxiliary_symbols": [
+                {
+                    "name": "GLIBC_2.7"
+                },
+                {
+                    "name": "GLIBC_2.1.3"
+                },
+                {
+                    "name": "GLIBC_2.3.4"
+                },
+                {
+                    "name": "GLIBC_2.0"
+                }
+            ],
+            "name": "libc.so.6",
+            "version": 1
+        }
+    ],
+    "sysv_hash": {
+        "buckets": [
+            29,
+            27,
+            34,
+            0,
+            43,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            58,
+            0,
+            0,
+            37,
+            64,
+            10,
+            60,
+            45,
+            77,
+            0,
+            0,
+            9,
+            70,
+            0,
+            26,
+            48,
+            0,
+            40,
+            91,
+            0,
+            0,
+            36,
+            81,
+            72,
+            0,
+            23,
+            59,
+            67,
+            79,
+            0,
+            35,
+            0,
+            12,
+            0,
+            46,
+            0,
+            49,
+            21,
+            18,
+            51,
+            0,
+            89,
+            0,
+            0,
+            0,
+            0,
+            74,
+            0,
+            0,
+            0,
+            0,
+            0,
+            73,
+            0,
+            42,
+            0,
+            0,
+            17,
+            0,
+            41,
+            88,
+            15,
+            24,
+            28,
+            61,
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            68,
+            16,
+            0,
+            66,
+            5,
+            0,
+            0,
+            6,
+            0,
+            62,
+            0,
+            13,
+            85,
+            53,
+            30,
+            86,
+            0,
+            0,
+            39,
+            0,
+            0,
+            2,
+            0,
+            0,
+            55,
+            0,
+            0,
+            0,
+            52,
+            0,
+            0,
+            7,
+            38,
+            0,
+            82,
+            0,
+            0,
+            0,
+            0,
+            0,
+            83,
+            0,
+            0,
+            0,
+            0,
+            44,
+            0,
+            90,
+            84,
+            33,
+            14,
+            87,
+            50,
+            65,
+            0,
+            57,
+            0,
+            76,
+            0,
+            22,
+            0,
+            32,
+            75,
+            4,
+            71,
+            0,
+            0,
+            19,
+            54,
+            0
+        ],
+        "chains": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            63,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            11,
+            47,
+            0,
+            0,
+            0,
+            31,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            69,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            56,
+            0,
+            0,
+            78,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            80,
+            0,
+            0,
+            0,
+            0,
+            0,
+            25,
+            0,
+            0,
+            0,
+            0
+        ],
+        "nbucket": 154,
+        "nchain": 92
+    },
+    "type": "CLASS32",
+    "virtual_size": 57344
+}

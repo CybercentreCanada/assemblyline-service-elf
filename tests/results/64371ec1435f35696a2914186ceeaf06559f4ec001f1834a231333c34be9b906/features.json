@@ -1,0 +1,408 @@
+{
+    "ctor_functions": [],
+    "dtor_functions": [],
+    "dynamic_entries": [],
+    "entrypoint": 4194720,
+    "format": "ELF",
+    "nx": false,
+    "header": {
+        "arm_flags_list": [],
+        "entrypoint": 4194720,
+        "file_type": "EXECUTABLE",
+        "header_size": 52,
+        "hexagon_flags_list": [],
+        "identity": [
+            127,
+            69,
+            76,
+            70,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "identity_abi_version": 0,
+        "identity_class": "CLASS32",
+        "identity_data": "LSB",
+        "identity_os_abi": "SYSTEMV",
+        "identity_version": "CURRENT",
+        "machine_type": "SH",
+        "mips_flags_list": [],
+        "numberof_sections": 10,
+        "numberof_segments": 3,
+        "object_file_version": "CURRENT",
+        "ppc64_flags_list": [],
+        "processor_flag": 9,
+        "program_header_offset": 52,
+        "program_header_size": 32,
+        "section_header_offset": 51184,
+        "section_header_size": 40,
+        "section_name_table_idx": 9
+    },
+    "imagebase": 4194304,
+    "position_independent": false,
+    "last_offset_section": 51760,
+    "last_offset_segment": 51120,
+    "libraries": [],
+    "name": "/tmp/64371ec1435f35696a2914186ceeaf06559f4ec001f1834a231333c34be9b906",
+    "next_virtual_address": 8388608,
+    "overlay": "",
+    "sections": [
+        {
+            "alignment": 0,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "NULL",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.365601562950723,
+            "entry_size": 0,
+            "file_offset": 148,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".init",
+            "information": 0,
+            "link": 0,
+            "name": ".init",
+            "offset": 148,
+            "original_size": 48,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 48,
+            "type": "PROGBITS",
+            "virtual_address": 4194452,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 6.854385139225476,
+            "entry_size": 0,
+            "file_offset": 224,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".text",
+            "information": 0,
+            "link": 0,
+            "name": ".text",
+            "offset": 224,
+            "original_size": 48960,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 48960,
+            "type": "PROGBITS",
+            "virtual_address": 4194528,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 4.503258334775644,
+            "entry_size": 0,
+            "file_offset": 49184,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": ".fini",
+            "information": 0,
+            "link": 0,
+            "name": ".fini",
+            "offset": 49184,
+            "original_size": 36,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 36,
+            "type": "PROGBITS",
+            "virtual_address": 4243488,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 3.9088394021773962,
+            "entry_size": 0,
+            "file_offset": 49220,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": ".rodata",
+            "information": 0,
+            "link": 0,
+            "name": ".rodata",
+            "offset": 49220,
+            "original_size": 1528,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1528,
+            "type": "PROGBITS",
+            "virtual_address": 4243524,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.0,
+            "entry_size": 0,
+            "file_offset": 50752,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".ctors",
+            "information": 0,
+            "link": 0,
+            "name": ".ctors",
+            "offset": 50752,
+            "original_size": 8,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 4310592,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 1.0,
+            "entry_size": 0,
+            "file_offset": 50760,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".dtors",
+            "information": 0,
+            "link": 0,
+            "name": ".dtors",
+            "offset": 50760,
+            "original_size": 8,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 4310600,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 0.802123342704601,
+            "entry_size": 0,
+            "file_offset": 50772,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".data",
+            "information": 0,
+            "link": 0,
+            "name": ".data",
+            "offset": 50772,
+            "original_size": 348,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 348,
+            "type": "PROGBITS",
+            "virtual_address": 4310612,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 51120,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": ".bss",
+            "information": 0,
+            "link": 0,
+            "name": ".bss",
+            "offset": 51120,
+            "original_size": 640,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 640,
+            "type": "NOBITS",
+            "virtual_address": 4310960,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.5847266094525856,
+            "entry_size": 0,
+            "file_offset": 51120,
+            "flags_list": [],
+            "fullname": ".shstrtab",
+            "information": 0,
+            "link": 0,
+            "name": ".shstrtab",
+            "offset": 51120,
+            "original_size": 62,
+            "segments": [],
+            "size": 62,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        }
+    ],
+    "segments": [
+        {
+            "alignment": 65536,
+            "file_offset": 0,
+            "physical_address": 4194304,
+            "physical_size": 50748,
+            "sections": [
+                ".init",
+                ".text",
+                ".fini",
+                ".rodata"
+            ],
+            "type": "LOAD",
+            "virtual_address": 4194304,
+            "virtual_size": 50748,
+            "flags": [
+                "RX"
+            ]
+        },
+        {
+            "alignment": 65536,
+            "file_offset": 50752,
+            "physical_address": 4310592,
+            "physical_size": 368,
+            "sections": [
+                ".ctors",
+                ".dtors",
+                ".data",
+                ".bss"
+            ],
+            "type": "LOAD",
+            "virtual_address": 4310592,
+            "virtual_size": 1008,
+            "flags": [
+                "RW"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 0,
+            "physical_address": 0,
+            "physical_size": 0,
+            "sections": [],
+            "type": "GNU_STACK",
+            "virtual_address": 0,
+            "virtual_size": 0,
+            "flags": [
+                "RWX"
+            ]
+        }
+    ],
+    "strings": [
+        "107.189.12.187",
+        "58 '8%",
+        "#$6;b",
+        ",7gaae",
+        "\"=.,\"",
+        "?8\"efg",
+        "509=:",
+        ".-50efg`",
+        ".8,,z",
+        "?;d\"=.,\"",
+        "?;d509=:",
+        "<=gael",
+        "75 edfm",
+        "5::=1fdef",
+        "7<5:3191",
+        "3!1' ",
+        "efg`a.",
+        "efg`ab",
+        "$5''#;&0",
+        "509=:efg`",
+        "'!$$;& ",
+        "93gadd",
+        "91&8=:",
+        "0519;:",
+        "0125!8 ",
+        "'<188T",
+        "1:5681T",
+        "'-' 19T",
+        "nt5$$81 t:; t2;!:0T",
+        ":7;&&17 T",
+        "{6=:{6!'-6;,t$'T",
+        "{6=:{6!'-6;,t?=88tymtT",
+        "{$&;7{T",
+        "{1,1T",
+        "{95$'T",
+        "{$&;7{:1 { 7$T",
+        "{' 5 !'T",
+        "z5:=91T",
+        "{$&;7{:1 {&;! 1T",
+        "5''#;&0T",
+        "{1 7{&1';8\"z7;:2T",
+        ":591'1&\"1&tT",
+        "{01\"{#5 7<0;3T",
+        "{01\"{9='7{#5 7<0;3T",
+        "$662*7!E",
+        ";3=:T",
+        "1: 1&T",
+        "e365`70;9ag:<$ef1=d?2>T",
+        ";::17 10t",
+        "!1&-T",
+        "/dev/null"
+    ],
+    "symbols_version": [],
+    "symbols_version_definition": [],
+    "symbols_version_requirement": [],
+    "type": "CLASS32",
+    "virtual_size": 118784
+}

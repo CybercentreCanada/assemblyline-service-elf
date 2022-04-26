@@ -1,0 +1,97 @@
+{
+    "classification": "TLP:W",
+    "response": {
+        "milestones": {
+            "service_started": null,
+            "service_completed": null
+        },
+        "service_version": null,
+        "service_name": null,
+        "service_tool_version": null,
+        "supplementary": [
+            {
+                "name": "features.json",
+                "sha256": "cbb05ebbe63a1d71e42d8d308e0b08190a87aeb4557f2d4ad4ad712989180b13",
+                "description": "Features extracted from the ELF file, as a JSON file",
+                "classification": "TLP:W",
+                "path": "/tmp/working_directory/features.json",
+                "is_section_image": false
+            }
+        ],
+        "extracted": [],
+        "service_context": null,
+        "service_debug_info": null
+    },
+    "result": {
+        "score": 0,
+        "sections": [
+            {
+                "body": "Entrypoint: 0x0\nMachine: i386\nFile Type: DYNAMIC\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 90112\nNX: False\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Headers",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": null,
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Segments",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PHDR\nFlags: ('R',)\nPhysical Size: 224\nVirtual Size: 224",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "PHDR"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - PHDR",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 86880\nVirtual Size: 86880",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "LOAD"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - LOAD",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            }
+        ]
+    },
+    "sha256": "55021193a05d54c66b88bd71e76b62c7bea1b60b3825f639faa716db3a7c855d",
+    "drop_file": false,
+    "temp_submission_data": {}
+}

@@ -1,0 +1,413 @@
+{
+    "classification": "TLP:W",
+    "response": {
+        "milestones": {
+            "service_started": null,
+            "service_completed": null
+        },
+        "service_version": null,
+        "service_name": null,
+        "service_tool_version": null,
+        "supplementary": [
+            {
+                "name": "features.json",
+                "sha256": "939547b0f194b16c8a551755da6cce7a3042f8c9d06a1318696bb4ee53b5db47",
+                "description": "Features extracted from the ELF file, as a JSON file",
+                "classification": "TLP:W",
+                "path": "/tmp/working_directory/features.json",
+                "is_section_image": false
+            }
+        ],
+        "extracted": [],
+        "service_context": null,
+        "service_debug_info": null
+    },
+    "result": {
+        "score": 0,
+        "sections": [
+            {
+                "body": "Entrypoint: 0x400260\nMachine: MIPS\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: MSB\nVirtual Size: 352256\nNX: False\nPosition Independent: False\nProcessor Flag: 4103\nOverlay size: 0",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Headers",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": null,
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Sections",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Section - ",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 4.058234483065513\nSize: 140\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".init"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .init",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 5.398314009807573\nSize: 68640\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".text"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .text",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 4.077029120739808\nSize: 92\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".fini"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .fini",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 5.181799328060553\nSize: 6528\nFlags: ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".rodata"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .rodata",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 1.0\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".ctors"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .ctors",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 1.0\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".dtors"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .dtors",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 4.002018413380519\nSize: 1024\nFlags: WRITE, ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".data.rel.ro"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .data.rel.ro",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 2.524766933255638\nSize: 928\nFlags: WRITE, ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".data"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .data",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 3.9304137796121297\nSize: 1092\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".got"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .got",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: NOBITS\nEntropy: 3.267894147619623\nSize: 24\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".sbss"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .sbss",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: NOBITS\nEntropy: 0.0\nSize: 8968\nFlags: WRITE, ALLOC\nSegments: LOAD",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".bss"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .bss",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: PROGBITS\nEntropy: 0.0\nSize: 0\nFlags: ",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".mdebug.abi32"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .mdebug.abi32",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: STRTAB\nEntropy: 3.857963528464372\nSize: 100\nFlags: ",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "sections": {
+                                "name": [
+                                    ".shstrtab"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Section - .shstrtab",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": null,
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 0,
+                "heuristic": null,
+                "tags": {},
+                "title_text": "Segments",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 75552\nVirtual Size: 75552\nSections: .init, .text, .fini, .rodata",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "LOAD"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - LOAD",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 3076\nVirtual Size: 12072\nSections: .ctors, .dtors, .data.rel.ro, .data, .got, .sbss, .bss",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "LOAD"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - LOAD",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            },
+            {
+                "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+                "classification": "TLP:W",
+                "body_format": "TEXT",
+                "depth": 1,
+                "heuristic": null,
+                "tags": {
+                    "file": {
+                        "elf": {
+                            "segments": {
+                                "type": [
+                                    "GNU_STACK"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "title_text": "Segment - GNU_STACK",
+                "zeroize_on_tag_safe": false,
+                "auto_collapse": false
+            }
+        ]
+    },
+    "sha256": "0fb3505db411da107f8f8ac888c6b753abf2ae015c346ec985371449e93835bf",
+    "drop_file": false,
+    "temp_submission_data": {}
+}
