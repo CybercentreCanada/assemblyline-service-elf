@@ -44,7 +44,12 @@ class ELF(ServiceBase):
             temp_path = os.path.join(self.working_directory, file_name)
             with open(temp_path, "wb") as myfile:
                 myfile.write(overlay)
-            self.request.add_extracted(temp_path, file_name, f"{file_name} extracted from binary's resources")
+            self.request.add_extracted(
+                temp_path,
+                file_name,
+                f"{file_name} extracted from binary's resources",
+                safelist_interface=self.api_interface,
+            )
 
         self.file_res.add_section(res)
 
@@ -77,7 +82,7 @@ class ELF(ServiceBase):
             sub_res = ResultSection(f"Segment - {segment['type']}")
             sub_res.add_line(f"Type: {segment['type']}")
             sub_res.add_tag("file.elf.segments.type", segment["type"])
-            if 'flags' in segment:
+            if "flags" in segment:
                 sub_res.add_line(f"Flags: {segment['flags']}")
             sub_res.add_line(f"Physical Size: {segment['physical_size']}")
             sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
