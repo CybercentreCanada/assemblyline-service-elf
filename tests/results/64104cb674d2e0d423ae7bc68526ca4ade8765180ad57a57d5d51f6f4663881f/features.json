@@ -1,0 +1,865 @@
+{
+    "ctor_functions": [],
+    "dtor_functions": [],
+    "dynamic_entries": [],
+    "entrypoint": 4565296,
+    "format": "ELF",
+    "interpreter": "/lib64/ld-linux-x86-64.so.2",
+    "notes": [
+        {
+            "description": [
+                105,
+                117,
+                49,
+                118,
+                117,
+                51,
+                109,
+                108,
+                113,
+                115,
+                95,
+                81,
+                116,
+                102,
+                101,
+                113,
+                77,
+                119,
+                55,
+                118,
+                47,
+                88,
+                109,
+                113,
+                86,
+                82,
+                117,
+                111,
+                77,
+                80,
+                115,
+                121,
+                100,
+                112,
+                82,
+                66,
+                121,
+                75,
+                116,
+                45,
+                49,
+                47,
+                86,
+                97,
+                84,
+                98,
+                97,
+                55,
+                107,
+                79,
+                55,
+                116,
+                48,
+                104,
+                111,
+                50,
+                86,
+                90,
+                118,
+                109,
+                90,
+                71,
+                47,
+                80,
+                81,
+                75,
+                108,
+                67,
+                82,
+                81,
+                51,
+                65,
+                120,
+                70,
+                56,
+                75,
+                100,
+                53,
+                82,
+                76,
+                84,
+                55,
+                88,
+                0
+            ],
+            "is_android": false,
+            "is_core": false,
+            "name": "Go",
+            "type": "GOLD_VERSION",
+            "type_core": "TASKSTRUCT"
+        }
+    ],
+    "nx": false,
+    "header": {
+        "arm_flags_list": [],
+        "entrypoint": 4565296,
+        "file_type": "EXECUTABLE",
+        "header_size": 64,
+        "hexagon_flags_list": [],
+        "identity": [
+            127,
+            69,
+            76,
+            70,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "identity_abi_version": 0,
+        "identity_class": "CLASS64",
+        "identity_data": "LSB",
+        "identity_os_abi": "SYSTEMV",
+        "identity_version": "CURRENT",
+        "machine_type": "x86_64",
+        "mips_flags_list": [],
+        "numberof_sections": 26,
+        "numberof_segments": 10,
+        "object_file_version": "CURRENT",
+        "ppc64_flags_list": [],
+        "processor_flag": 0,
+        "program_header_offset": 64,
+        "program_header_size": 56,
+        "section_header_offset": 624,
+        "section_header_size": 64,
+        "section_name_table_idx": 9
+    },
+    "imagebase": 4194304,
+    "position_independent": false,
+    "last_offset_section": 8751960,
+    "last_offset_segment": 8379749,
+    "libraries": [],
+    "name": "/tmp/64104cb674d2e0d423ae7bc68526ca4ade8765180ad57a57d5d51f6f4663881f",
+    "next_virtual_address": 16777216,
+    "overlay": "",
+    "sections": [
+        {
+            "alignment": 0,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 0,
+            "segments": [],
+            "size": 0,
+            "type": "NULL",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 5.852176523646755,
+            "entry_size": 0,
+            "file_offset": 4096,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "information": 0,
+            "link": 0,
+            "name": "\\xe0\u000e\u0004",
+            "offset": 4096,
+            "original_size": 4063606,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 4063606,
+            "type": "PROGBITS",
+            "virtual_address": 4198400,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 16,
+            "entropy": 3.5831549379865497,
+            "entry_size": 16,
+            "file_offset": 4067712,
+            "flags_list": [
+                "ALLOC",
+                "EXECINSTR"
+            ],
+            "fullname": "\u001a\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u001a\u0004",
+            "offset": 4067712,
+            "original_size": 544,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 544,
+            "type": "PROGBITS",
+            "virtual_address": 8262016,
+            "flags": [
+                "ALLOC | EXECINSTR"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 4.3839799525404075,
+            "entry_size": 0,
+            "file_offset": 4071424,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0012\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0012\u0004",
+            "offset": 4071424,
+            "original_size": 1494374,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 1494374,
+            "type": "PROGBITS",
+            "virtual_address": 8265728,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.0424812503605785,
+            "entry_size": 24,
+            "file_offset": 5565800,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0019\u0004",
+            "information": 0,
+            "link": 11,
+            "name": "\u0019\u0004",
+            "offset": 5565800,
+            "original_size": 24,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 24,
+            "type": "RELA",
+            "virtual_address": 9760104,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.9452391385875902,
+            "entry_size": 24,
+            "file_offset": 5565824,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 2,
+            "link": 11,
+            "name": "",
+            "offset": 5565824,
+            "original_size": 792,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 792,
+            "type": "RELA",
+            "virtual_address": 9760128,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 2,
+            "entropy": 3.1798798965324964,
+            "entry_size": 2,
+            "file_offset": 5566624,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0004",
+            "information": 0,
+            "link": 11,
+            "name": "\u0004",
+            "offset": 5566624,
+            "original_size": 76,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 76,
+            "type": "HIOS",
+            "virtual_address": 9760928,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.547680725739763,
+            "entry_size": 0,
+            "file_offset": 5566720,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 2,
+            "link": 10,
+            "name": "",
+            "offset": 5566720,
+            "original_size": 80,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 80,
+            "type": "GNU_VERNEED",
+            "virtual_address": 9761024,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.8287271957001088,
+            "entry_size": 4,
+            "file_offset": 5566816,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "`\u0015\u0004",
+            "information": 0,
+            "link": 11,
+            "name": "`\u0015\u0004",
+            "offset": 5566816,
+            "original_size": 188,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 188,
+            "type": "HASH",
+            "virtual_address": 9761120,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.4781870829698596,
+            "entry_size": 0,
+            "file_offset": 5567008,
+            "flags_list": [],
+            "fullname": "\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0004",
+            "offset": 5567008,
+            "original_size": 232,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 232,
+            "type": "STRTAB",
+            "virtual_address": 0,
+            "flags": [
+                "NONE"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 4.282478811874299,
+            "entry_size": 0,
+            "file_offset": 5567264,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u001d\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u001d\u0004",
+            "offset": 5567264,
+            "original_size": 543,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 543,
+            "type": "STRTAB",
+            "virtual_address": 9761568,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 4.57259206203384,
+            "entry_size": 24,
+            "file_offset": 5567808,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0017\u0004",
+            "information": 0,
+            "link": 10,
+            "name": "\u0017\u0004",
+            "offset": 5567808,
+            "original_size": 912,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 912,
+            "type": "DYNSYM",
+            "virtual_address": 9762112,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 3.6321809033540813,
+            "entry_size": 0,
+            "file_offset": 5568736,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0013\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0013\u0004",
+            "offset": 5568736,
+            "original_size": 14112,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 14112,
+            "type": "PROGBITS",
+            "virtual_address": 9763040,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.169523644558338,
+            "entry_size": 0,
+            "file_offset": 5582848,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 5582848,
+            "original_size": 3120,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 3120,
+            "type": "PROGBITS",
+            "virtual_address": 9777152,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 5585968,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0013\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0013\u0004",
+            "offset": 5585968,
+            "original_size": 0,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 0,
+            "type": "PROGBITS",
+            "virtual_address": 9780272,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 5.614361624359087,
+            "entry_size": 0,
+            "file_offset": 5585984,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 5585984,
+            "original_size": 2793765,
+            "segments": [
+                "LOAD"
+            ],
+            "size": 2793765,
+            "type": "PROGBITS",
+            "virtual_address": 9780288,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 6.100635455238614,
+            "entry_size": 8,
+            "file_offset": 8380416,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 8380416,
+            "original_size": 288,
+            "segments": [],
+            "size": 288,
+            "type": "PROGBITS",
+            "virtual_address": 12574720,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 3.897752701459649,
+            "entry_size": 16,
+            "file_offset": 8380704,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": " \u0017\u0004",
+            "information": 0,
+            "link": 10,
+            "name": " \u0017\u0004",
+            "offset": 8380704,
+            "original_size": 304,
+            "segments": [],
+            "size": 304,
+            "type": "DYNAMIC",
+            "virtual_address": 12575008,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 2.25,
+            "entry_size": 8,
+            "file_offset": 8381008,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0004",
+            "offset": 8381008,
+            "original_size": 8,
+            "segments": [],
+            "size": 8,
+            "type": "PROGBITS",
+            "virtual_address": 12575312,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 5.591684504224562,
+            "entry_size": 0,
+            "file_offset": 8381024,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0004",
+            "offset": 8381024,
+            "original_size": 181025,
+            "segments": [],
+            "size": 181025,
+            "type": "PROGBITS",
+            "virtual_address": 12575328,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 8562080,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0004",
+            "offset": 8562080,
+            "original_size": 45488,
+            "segments": [],
+            "size": 45488,
+            "type": "PROGBITS",
+            "virtual_address": 12756384,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 8607584,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "`\u000e\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "`\u000e\u0004",
+            "offset": 8607584,
+            "original_size": 130800,
+            "segments": [],
+            "size": 130800,
+            "type": "NOBITS",
+            "virtual_address": 12801888,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 32,
+            "entropy": 0.0,
+            "entry_size": 0,
+            "file_offset": 8738400,
+            "flags_list": [
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "\u000e\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u000e\u0004",
+            "offset": 8738400,
+            "original_size": 13560,
+            "segments": [],
+            "size": 13560,
+            "type": "NOBITS",
+            "virtual_address": 12932704,
+            "flags": [
+                "WRITE | ALLOC"
+            ]
+        },
+        {
+            "alignment": 8,
+            "entropy": 2.75,
+            "entry_size": 0,
+            "file_offset": 0,
+            "flags_list": [
+                "TLS",
+                "WRITE",
+                "ALLOC"
+            ],
+            "fullname": "",
+            "information": 0,
+            "link": 0,
+            "name": "",
+            "offset": 0,
+            "original_size": 8,
+            "segments": [],
+            "size": 8,
+            "type": "NOBITS",
+            "virtual_address": 0,
+            "flags": [
+                "WRITE | ALLOC | TLS"
+            ]
+        },
+        {
+            "alignment": 1,
+            "entropy": 3.940759832540089,
+            "entry_size": 0,
+            "file_offset": 4068,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "information": 0,
+            "link": 0,
+            "name": "\\xe0\u0014\u0004",
+            "offset": 4068,
+            "original_size": 28,
+            "segments": [
+                "INTERP",
+                "LOAD"
+            ],
+            "size": 28,
+            "type": "PROGBITS",
+            "virtual_address": 4198372,
+            "flags": [
+                "ALLOC"
+            ]
+        },
+        {
+            "alignment": 4,
+            "entropy": 5.298171939471842,
+            "entry_size": 0,
+            "file_offset": 3968,
+            "flags_list": [
+                "ALLOC"
+            ],
+            "fullname": "\u0010\u0004",
+            "information": 0,
+            "link": 0,
+            "name": "\u0010\u0004",
+            "offset": 3968,
+            "original_size": 100,
+            "segments": [
+                "NOTE",
+                "LOAD"
+            ],
+            "size": 100,
+            "type": "NOTE",
+            "virtual_address": 4198272,
+            "flags": [
+                "ALLOC"
+            ]
+        }
+    ],
+    "segments": [
+        {
+            "alignment": 4096,
+            "file_offset": 64,
+            "physical_address": 4194368,
+            "physical_size": 560,
+            "sections": [],
+            "type": "PHDR",
+            "virtual_address": 4194368,
+            "virtual_size": 560,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 1,
+            "file_offset": 4068,
+            "physical_address": 4198372,
+            "physical_size": 28,
+            "sections": [
+                "\\xe0\u0014\u0004"
+            ],
+            "type": "INTERP",
+            "virtual_address": 4198372,
+            "virtual_size": 28,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 4,
+            "file_offset": 3968,
+            "physical_address": 4198272,
+            "physical_size": 100,
+            "sections": [
+                "\u0010\u0004"
+            ],
+            "type": "NOTE",
+            "virtual_address": 4198272,
+            "virtual_size": 100,
+            "flags": [
+                "R"
+            ]
+        },
+        {
+            "alignment": 4096,
+            "file_offset": 0,
+            "physical_address": 4194304,
+            "physical_size": 4068256,
+            "sections": [
+                "\\xe0\u000e\u0004",
+                "\u001a\u0004",
+                "\\xe0\u0014\u0004",
+                "\u0010\u0004"
+            ],
+            "type": "LOAD",
+            "virtual_address": 4194304,
+            "virtual_size": 4068256,
+            "flags": [
+                "RX"
+            ]
+        },
+        {
+            "alignment": 4096,
+            "file_offset": 4071424,
+            "physical_address": 8265728,
+            "physical_size": 4308325,
+            "sections": [
+                "\u0012\u0004",
+                "\u0019\u0004",
+                "",
+                "\u0004",
+                "",
+                "`\u0015\u0004",
+                "\u0004",
+                "\u001d\u0004",
+                "\u0017\u0004",
+                "\u0013\u0004",
+                "",
+                "\u0013\u0004",
+                ""
+            ],
+            "type": "LOAD",
+            "virtual_address": 8265728,
+            "virtual_size": 4308325,
+            "flags": [
+                "R"
+            ]
+        }
+    ],
+    "strings": [],
+    "symbols_version": [],
+    "symbols_version_definition": [],
+    "symbols_version_requirement": [],
+    "type": "CLASS64",
+    "virtual_size": 8380416
+}

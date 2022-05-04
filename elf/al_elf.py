@@ -162,7 +162,7 @@ class AL_ELF:
                 "entry_size": section.entry_size,
                 "file_offset": section.file_offset,
                 "flags_list": [flag.name for flag in section.flags_list],
-                "fullname": section.fullname,
+                "fullname": "",
                 "information": section.information,
                 "link": section.link,
                 "name": section.name,
@@ -173,6 +173,12 @@ class AL_ELF:
                 "type": section.type.name,
                 "virtual_address": section.virtual_address,
             }
+
+            try:
+                section_struct["fullname"] = section.fullname
+            except UnicodeDecodeError:
+                section_struct.pop("fullname", None)
+
             try:
                 section_struct["flags"] = (
                     " | ".join([section_flags_entries[x].name for x in get_powers(section.flags.__int__())]),

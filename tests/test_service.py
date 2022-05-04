@@ -53,7 +53,7 @@ def create_service_task(sample):
             "deep_scan": False,
             "service_name": "Not Important",
             "service_config": {},
-            "fileinfo": dict((k, v) for k, v in fileinfo(f"/tmp/{sample}").items() if k in fileinfo_keys),
+            "fileinfo": {k: v for k, v in fileinfo(f"/tmp/{sample}").items() if k in fileinfo_keys},
             "filename": sample,
             "min_classification": "TLP:WHITE",
             "max_files": 501,
@@ -120,16 +120,16 @@ class TestService:
         correct_path = os.path.join(SELF_LOCATION, "tests", "results", sample, "features.json")
         if os.path.exists(correct_path):
             with open(correct_path, "r") as f:
-                correct_result = json.loads(f.read())
+                correct_result = json.load(f)
 
             test_path = os.path.join(cls.working_directory, "features.json")
             with open(test_path, "r") as f:
-                test_result = json.loads(f.read())
+                test_result = json.load(f)
 
             if overwrite_results:
                 if test_result != correct_result:
                     with open(correct_path, "w") as f:
-                        f.write(json.dumps(test_result))
+                        json.dump(test_result, f)
             else:
                 assert test_result == correct_result
 
@@ -139,7 +139,7 @@ class TestService:
         # Get the assumed "correct" result of the sample
         correct_path = os.path.join(SELF_LOCATION, "tests", "results", sample, "result.json")
         with open(correct_path, "r") as f:
-            correct_result = json.loads(f.read())
+            correct_result = json.load(f)
 
         # Assert values of the class instance are expected
         assert cls.file_res == service_request.result
@@ -148,6 +148,6 @@ class TestService:
         if overwrite_results:
             if test_result != correct_result:
                 with open(correct_path, "w") as f:
-                    f.write(json.dumps(test_result))
+                    json.dump(test_result, f)
         else:
             assert test_result == correct_result

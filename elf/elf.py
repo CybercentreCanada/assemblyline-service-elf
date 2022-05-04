@@ -11,7 +11,7 @@ import elf.al_elf
 
 class ELF(ServiceBase):
     def __init__(self, config=None):
-        super(ELF, self).__init__(config)
+        super().__init__(config)
 
     def start(self):
         self.log.info("Starting ELF")
