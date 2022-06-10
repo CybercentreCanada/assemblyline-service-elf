@@ -8,6 +8,9 @@ from assemblyline_v4_service.common.result import Heuristic, Result, ResultSecti
 
 import elf.al_elf
 
+# Disable logging from LIEF
+lief.logging.disable()
+
 
 class ELF(ServiceBase):
     def __init__(self, config=None):
