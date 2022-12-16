@@ -4,7 +4,7 @@ import os
 import lief
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
-from assemblyline_v4_service.common.result import Heuristic, Result, ResultSection
+from assemblyline_v4_service.common.result import Heuristic, Result, ResultSection, BODY_FORMAT
 
 import elf.al_elf
 
@@ -153,6 +153,16 @@ class ELF(ServiceBase):
         # symbols_version_requirement
         pass
 
+    def add_functions(self):
+        if hasattr(self.elf, "imported_functions") and self.elf.imported_functions:
+            res = ResultSection("Imported Functions")
+            res.set_body(json.dumps(self.elf.imported_functions), BODY_FORMAT.JSON)
+            self.file_res.add_section(res)
+        if hasattr(self.elf, "exported_functions") and self.elf.exported_functions:
+            res = ResultSection("Exported Functions")
+            res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
+            self.file_res.add_section(res)
+
     def execute(self, request: ServiceRequest):
         request.result = Result()
         self.file_res = request.result
@@ -178,6 +188,7 @@ class ELF(ServiceBase):
         self.add_notes()
         self.add_hash()
         self.add_symbols_version()
+        self.add_functions()
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
