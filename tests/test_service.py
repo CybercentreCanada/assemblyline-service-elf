@@ -4,14 +4,13 @@ import os
 from collections import defaultdict
 from pathlib import Path
 
+import elf.elf
 import pytest
 from assemblyline.common import forge
 from assemblyline.odm.messages.task import Task as ServiceTask
 from assemblyline_v4_service.common.request import ServiceRequest
 from assemblyline_v4_service.common.task import Task
 from cart import unpack_file
-
-import elf.elf
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(TEST_DIR)
