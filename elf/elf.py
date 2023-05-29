@@ -1,12 +1,11 @@
 import json
 import os
 
+import elf.al_elf
 import lief
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
-from assemblyline_v4_service.common.result import Heuristic, Result, ResultSection, BODY_FORMAT
-
-import elf.al_elf
+from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
 
 # Disable logging from LIEF
 lief.logging.disable()
