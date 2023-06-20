@@ -1,835 +1,1062 @@
 {
-    "classification": "TLP:W",
-    "response": {
-        "milestones": {
-            "service_started": null,
-            "service_completed": null
-        },
-        "service_version": null,
-        "service_name": null,
-        "service_tool_version": null,
-        "supplementary": [
-            {
-                "name": "features.json",
-                "sha256": "d5e2e9c6a7905c416437796e2ae7d5d65132218777605542f3812140abcf4194",
-                "description": "Features extracted from the ELF file, as a JSON file",
-                "classification": "TLP:W",
-                "path": "/tmp/working_directory/features.json",
-                "is_section_image": false
-            }
-        ],
-        "extracted": [],
-        "service_context": null,
-        "service_debug_info": null
-    },
-    "result": {
-        "score": 0,
-        "sections": [
-            {
-                "body": "Entrypoint: 0x1b40\nMachine: i386\nFile Type: DYNAMIC\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 57344\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "Headers",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": null,
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "Sections",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "Section - ",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: HASH\nEntropy: 1.0619106272644059\nSize: 992\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".hash"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .hash",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: GNU_HASH\nEntropy: 4.348263927752672\nSize: 632\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".gnu.hash"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .gnu.hash",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: DYNSYM\nEntropy: 2.7095059864955373\nSize: 1472\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".dynsym"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .dynsym",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: STRTAB\nEntropy: 4.975656686459979\nSize: 1658\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".dynstr"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .dynstr",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: HIOS\nEntropy: 1.1965802363227087\nSize: 184\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".gnu.version"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .gnu.version",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: GNU_VERNEED\nEntropy: 2.7601275052218406\nSize: 80\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".gnu.version_r"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .gnu.version_r",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: REL\nEntropy: 3.1803642132097987\nSize: 208\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".rel.dyn"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .rel.dyn",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: REL\nEntropy: 3.384898334745832\nSize: 480\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".rel.plt"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .rel.plt",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 3.0849625007211556\nSize: 12\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".init"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .init",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 3.6055400876107067\nSize: 976\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".plt"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .plt",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 5.711895008865724\nSize: 35336\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".text"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .text",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 3.27280432733462\nSize: 21\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".fini"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .fini",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 4.891005072972579\nSize: 1412\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".rodata"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .rodata",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 4.218218182804554\nSize: 260\nFlags: ALLOC\nSegments: LOAD, GNU_EH_FRAME",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".eh_frame_hdr"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .eh_frame_hdr",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 4.81349254560206\nSize: 1212\nFlags: ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".eh_frame"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .eh_frame",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: INIT_ARRAY\nEntropy: 1.5\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".init_array"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .init_array",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: FINI_ARRAY\nEntropy: 0.8112781244591329\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".fini_array"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .fini_array",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".jcr"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .jcr",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: DYNAMIC\nEntropy: 2.727005843837126\nSize: 264\nFlags: WRITE, ALLOC\nSegments: LOAD, DYNAMIC, GNU_RELRO",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".dynamic"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .dynamic",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 92\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".got"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .got",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 3.009314186585817\nSize: 252\nFlags: WRITE, ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".got.plt"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .got.plt",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 2.0\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".data"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .data",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: NOBITS\nEntropy: 4.74428723181619\nSize: 160\nFlags: WRITE, ALLOC\nSegments: LOAD",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".bss"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .bss",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: PROGBITS\nEntropy: 4.329077658573623\nSize: 87\nFlags: MERGE, STRINGS",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".comment"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .comment",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: STRTAB\nEntropy: 4.190843425008842\nSize: 221\nFlags: ",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".shstrtab"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .shstrtab",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: SYMTAB\nEntropy: 2.8281580535270554\nSize: 2304\nFlags: ",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".symtab"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .symtab",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: STRTAB\nEntropy: 5.073904313929582\nSize: 2111\nFlags: ",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "sections": {
-                                "name": [
-                                    ".strtab"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Section - .strtab",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": null,
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "Segments",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 45220\nVirtual Size: 45220\nSections: .hash, .gnu.hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .rel.plt, .init, .plt, .text, .fini, .rodata, .eh_frame_hdr, .eh_frame",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "LOAD"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - LOAD",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 628\nVirtual Size: 788\nSections: .init_array, .fini_array, .jcr, .dynamic, .got, .got.plt, .data, .bss",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "LOAD"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - LOAD",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: DYNAMIC\nFlags: ('RW',)\nPhysical Size: 264\nVirtual Size: 264\nSections: .dynamic",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "DYNAMIC"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - DYNAMIC",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: GNU_EH_FRAME\nFlags: ('R',)\nPhysical Size: 260\nVirtual Size: 260\nSections: .eh_frame_hdr",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "GNU_EH_FRAME"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - GNU_EH_FRAME",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: GNU_STACK\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 0",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "GNU_STACK"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - GNU_STACK",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: GNU_RELRO\nFlags: ('R',)\nPhysical Size: 380\nVirtual Size: 380\nSections: .init_array, .fini_array, .jcr, .dynamic, .got",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "GNU_RELRO"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - GNU_RELRO",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Type: ???\nPhysical Size: 0\nVirtual Size: 0",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 1,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "segments": {
-                                "type": [
-                                    "???"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "title_text": "Segment - ???",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "libX11.so.6\nlibXt.so.6\nlibXtst.so.6\nlibc.so.6",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {
-                    "file": {
-                        "elf": {
-                            "libraries": [
-                                "libX11.so.6",
-                                "libXt.so.6",
-                                "libXtst.so.6",
-                                "libc.so.6"
-                            ]
-                        }
-                    }
-                },
-                "title_text": "Libraries",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Bloom Filters: [559092740, 38027424, 537264176, 75497744, 2684651521, 2232594, 16799744, 1191198736, 2147483904, 153094144, 1118044396, 1074004004, 9965568, 161687648, 150995586, 134708]\nBuckets: [42, 0, 43, 44, 0, 0, 0, 45, 46, 47, 48, 0, 0, 49, 0, 50, 0, 51, 0, 52, 0, 0, 0, 53, 54, 0, 55, 56, 0, 0, 57, 58, 0, 0, 59, 60, 0, 61, 62, 0, 0, 63, 64, 0, 66, 0, 0, 0, 0, 67, 0, 68, 69, 70, 72, 0, 73, 0, 74, 75, 0, 77, 0, 78, 0, 79, 80, 0, 0, 82, 0, 0, 83, 85, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 87, 89, 90]\nHash Values: [427903081, 4066917011, 954067755, 3958919455, 250711481, 1577688121, 193496435, 981426613, 167173791, 876581041, 2090001339, 1880951623, 475558361, 1844382259, 3973399875, 468086991, 3616870343, 2030792315, 3272628427, 335945757, 1402996975, 2449012673, 3865780818, 2009329475, 2081375253, 1770564625, 1180355051, 2052639301, 1440303708, 2090185557, 1238928735, 1522595065, 948601867, 3656505746, 3880726843, 1949833397, 1042746295, 612062153, 2390893538, 1007055699, 837769133, 2192676888, 3586496129, 1177651361, 250598379, 2120979428, 1284324709, 2461659903, 4265782310, 3244583319]\nNumber of buckets: 88\nShift2: 9\nSymbol Index: 42",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "GNU Hash",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            },
-            {
-                "body": "Buckets: [29, 27, 34, 0, 43, 0, 0, 0, 8, 0, 0, 0, 58, 0, 0, 37, 64, 10, 60, 45, 77, 0, 0, 9, 70, 0, 26, 48, 0, 40, 91, 0, 0, 36, 81, 72, 0, 23, 59, 67, 79, 0, 35, 0, 12, 0, 46, 0, 49, 21, 18, 51, 0, 89, 0, 0, 0, 0, 74, 0, 0, 0, 0, 0, 73, 0, 42, 0, 0, 17, 0, 41, 88, 15, 24, 28, 61, 0, 0, 0, 20, 0, 0, 0, 68, 16, 0, 66, 5, 0, 0, 6, 0, 62, 0, 13, 85, 53, 30, 86, 0, 0, 39, 0, 0, 2, 0, 0, 55, 0, 0, 0, 52, 0, 0, 7, 38, 0, 82, 0, 0, 0, 0, 0, 83, 0, 0, 0, 0, 44, 0, 90, 84, 33, 14, 87, 50, 65, 0, 57, 0, 76, 0, 22, 0, 32, 75, 4, 71, 0, 0, 19, 54, 0]\nChains: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 11, 47, 0, 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 0, 78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0]\nNumber of buckets: 154\nNumber of chains: 92",
-                "classification": "TLP:W",
-                "body_format": "TEXT",
-                "depth": 0,
-                "heuristic": null,
-                "tags": {},
-                "title_text": "SYSV Hash",
-                "zeroize_on_tag_safe": false,
-                "auto_collapse": false
-            }
-        ]
-    },
-    "sha256": "f1682c1a223526370440644ca5eaea4a81a5c694af3ed394048b9671bf67a5be",
+  "extra": {
     "drop_file": false,
+    "score": 0,
+    "sections": [
+      {
+        "auto_collapse": false,
+        "body": "Entrypoint: 0x1b40\nMachine: i386\nFile Type: DYNAMIC\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 57344\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "Headers",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "Sections",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "Section - ",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: HASH\nEntropy: 1.0619106272644059\nSize: 992\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".hash"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .hash",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_HASH\nEntropy: 4.348263927752672\nSize: 632\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.hash"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.hash",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNSYM\nEntropy: 2.7095059864955373\nSize: 1472\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynsym"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynsym",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: STRTAB\nEntropy: 4.975656686459979\nSize: 1658\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynstr"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynstr",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: HIOS\nEntropy: 1.1965802363227087\nSize: 184\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.version"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.version",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_VERNEED\nEntropy: 2.7601275052218406\nSize: 80\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.version_r"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.version_r",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: REL\nEntropy: 3.1803642132097987\nSize: 208\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rel.dyn"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rel.dyn",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: REL\nEntropy: 3.384898334745832\nSize: 480\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rel.plt"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rel.plt",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.0849625007211556\nSize: 12\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".init"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .init",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.6055400876107067\nSize: 976\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".plt"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .plt",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 5.711895008865724\nSize: 35336\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".text"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .text",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.27280432733462\nSize: 21\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".fini"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .fini",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.891005072972579\nSize: 1412\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rodata"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rodata",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.218218182804554\nSize: 260\nFlags: ALLOC\nSegments: LOAD, GNU_EH_FRAME",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".eh_frame_hdr"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .eh_frame_hdr",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.81349254560206\nSize: 1212\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".eh_frame"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .eh_frame",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: INIT_ARRAY\nEntropy: 1.5\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".init_array"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .init_array",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: FINI_ARRAY\nEntropy: 0.8112781244591329\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".fini_array"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .fini_array",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".jcr"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .jcr",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nEntropy: 2.727005843837126\nSize: 264\nFlags: WRITE, ALLOC\nSegments: LOAD, DYNAMIC, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynamic"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynamic",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 92\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".got"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .got",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.009314186585817\nSize: 252\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".got.plt"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .got.plt",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 2.0\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".data"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .data",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOBITS\nEntropy: 4.74428723181619\nSize: 160\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".bss"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .bss",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.329077658573623\nSize: 87\nFlags: MERGE, STRINGS",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".comment"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .comment",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: STRTAB\nEntropy: 4.190843425008842\nSize: 221\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".shstrtab"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .shstrtab",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: SYMTAB\nEntropy: 2.8281580535270554\nSize: 2304\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".symtab"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .symtab",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: STRTAB\nEntropy: 5.073904313929582\nSize: 2111\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".strtab"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .strtab",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "Segments",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 45220\nVirtual Size: 45220\nSections: .hash, .gnu.hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .rel.plt, .init, .plt, .text, .fini, .rodata, .eh_frame_hdr, .eh_frame",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 628\nVirtual Size: 788\nSections: .init_array, .fini_array, .jcr, .dynamic, .got, .got.plt, .data, .bss",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nFlags: ('RW',)\nPhysical Size: 264\nVirtual Size: 264\nSections: .dynamic",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "DYNAMIC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - DYNAMIC",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_EH_FRAME\nFlags: ('R',)\nPhysical Size: 260\nVirtual Size: 260\nSections: .eh_frame_hdr",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_EH_FRAME"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_EH_FRAME",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_STACK\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_STACK"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_STACK",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_RELRO\nFlags: ('R',)\nPhysical Size: 380\nVirtual Size: 380\nSections: .init_array, .fini_array, .jcr, .dynamic, .got",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_RELRO"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_RELRO",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: ???\nPhysical Size: 0\nVirtual Size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "???"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - ???",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "libX11.so.6\nlibXt.so.6\nlibXtst.so.6\nlibc.so.6",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "libraries": [
+                "libX11.so.6",
+                "libXt.so.6",
+                "libXtst.so.6",
+                "libc.so.6"
+              ]
+            }
+          }
+        },
+        "title_text": "Libraries",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Bloom Filters: [559092740, 38027424, 537264176, 75497744, 2684651521, 2232594, 16799744, 1191198736, 2147483904, 153094144, 1118044396, 1074004004, 9965568, 161687648, 150995586, 134708]\nBuckets: [42, 0, 43, 44, 0, 0, 0, 45, 46, 47, 48, 0, 0, 49, 0, 50, 0, 51, 0, 52, 0, 0, 0, 53, 54, 0, 55, 56, 0, 0, 57, 58, 0, 0, 59, 60, 0, 61, 62, 0, 0, 63, 64, 0, 66, 0, 0, 0, 0, 67, 0, 68, 69, 70, 72, 0, 73, 0, 74, 75, 0, 77, 0, 78, 0, 79, 80, 0, 0, 82, 0, 0, 83, 85, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 87, 89, 90]\nHash Values: [427903081, 4066917011, 954067755, 3958919455, 250711481, 1577688121, 193496435, 981426613, 167173791, 876581041, 2090001339, 1880951623, 475558361, 1844382259, 3973399875, 468086991, 3616870343, 2030792315, 3272628427, 335945757, 1402996975, 2449012673, 3865780818, 2009329475, 2081375253, 1770564625, 1180355051, 2052639301, 1440303708, 2090185557, 1238928735, 1522595065, 948601867, 3656505746, 3880726843, 1949833397, 1042746295, 612062153, 2390893538, 1007055699, 837769133, 2192676888, 3586496129, 1177651361, 250598379, 2120979428, 1284324709, 2461659903, 4265782310, 3244583319]\nNumber of buckets: 88\nShift2: 9\nSymbol Index: 42",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "GNU Hash",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Buckets: [29, 27, 34, 0, 43, 0, 0, 0, 8, 0, 0, 0, 58, 0, 0, 37, 64, 10, 60, 45, 77, 0, 0, 9, 70, 0, 26, 48, 0, 40, 91, 0, 0, 36, 81, 72, 0, 23, 59, 67, 79, 0, 35, 0, 12, 0, 46, 0, 49, 21, 18, 51, 0, 89, 0, 0, 0, 0, 74, 0, 0, 0, 0, 0, 73, 0, 42, 0, 0, 17, 0, 41, 88, 15, 24, 28, 61, 0, 0, 0, 20, 0, 0, 0, 68, 16, 0, 66, 5, 0, 0, 6, 0, 62, 0, 13, 85, 53, 30, 86, 0, 0, 39, 0, 0, 2, 0, 0, 55, 0, 0, 0, 52, 0, 0, 7, 38, 0, 82, 0, 0, 0, 0, 0, 83, 0, 0, 0, 0, 44, 0, 90, 84, 33, 14, 87, 50, 65, 0, 57, 0, 76, 0, 22, 0, 32, 75, 4, 71, 0, 0, 19, 54, 0]\nChains: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 11, 47, 0, 0, 0, 31, 0, 0, 0, 0, 0, 0, 0, 69, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 0, 78, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0]\nNumber of buckets: 154\nNumber of chains: 92",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "tags": {},
+        "title_text": "SYSV Hash",
+        "zeroize_on_tag_safe": false
+      }
+    ]
+  },
+  "files": {
+    "extracted": [],
+    "supplementary": [
+      {
+        "name": "features.json",
+        "sha256": "d5e2e9c6a7905c416437796e2ae7d5d65132218777605542f3812140abcf4194"
+      }
+    ]
+  },
+  "results": {
+    "heuristics": [],
+    "tags": {
+      "file.elf.libraries": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libX11.so.6"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libXt.so.6"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libXtst.so.6"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libc.so.6"
+        }
+      ],
+      "file.elf.sections.name": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".bss"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".comment"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".data"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynamic"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynstr"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynsym"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".eh_frame"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".eh_frame_hdr"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".fini"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".fini_array"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.hash"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.version"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.version_r"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".got"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".got.plt"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".hash"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".init"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".init_array"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".jcr"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".plt"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rel.dyn"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rel.plt"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rodata"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".shstrtab"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".strtab"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".symtab"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".text"
+        }
+      ],
+      "file.elf.segments.type": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "???"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "DYNAMIC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_EH_FRAME"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_RELRO"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_STACK"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        }
+      ]
+    },
     "temp_submission_data": {}
+  }
 }
