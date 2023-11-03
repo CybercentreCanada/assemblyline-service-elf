@@ -2,9 +2,10 @@ import json
 import os
 
 import lief
+from assemblyline.odm.models.result import BODY_FORMAT
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
-from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
+from assemblyline_v4_service.common.result import Heuristic, Result, ResultSection
 
 import elf.al_elf
 
