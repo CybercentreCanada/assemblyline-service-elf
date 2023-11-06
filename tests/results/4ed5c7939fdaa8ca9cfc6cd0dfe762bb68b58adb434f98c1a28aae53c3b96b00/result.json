@@ -1,0 +1,92 @@
+{
+  "extra": {
+    "drop_file": false,
+    "score": 100,
+    "sections": [
+      {
+        "auto_collapse": false,
+        "body": "Entrypoint: 0x400078\nMachine: x86_64\nFile Type: EXECUTABLE\nIdentity Class: CLASS64\nEndianness: LSB\nVirtual Size: 4096\nNX: False\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Headers",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": {
+          "attack_ids": [],
+          "frequency": 1,
+          "heur_id": 3,
+          "score": 100,
+          "score_map": {},
+          "signatures": {}
+        },
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Segments",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: ('RWX',)\nPhysical Size: 302\nVirtual Size: 484",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      }
+    ]
+  },
+  "files": {
+    "extracted": [],
+    "supplementary": [
+      {
+        "name": "features.json",
+        "sha256": "c0791f762e45c0d52c762396937e59a183fe01ed8d838e796252ff962729a9e0"
+      }
+    ]
+  },
+  "results": {
+    "heuristics": [
+      {
+        "attack_ids": [],
+        "heur_id": 3,
+        "signatures": []
+      }
+    ],
+    "tags": {
+      "file.elf.segments.type": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        }
+      ]
+    },
+    "temp_submission_data": {}
+  }
+}
