@@ -86,6 +86,9 @@ class ELF(ServiceBase):
             if len(segment["sections"]):
                 sub_res.add_line(f"Sections: {', '.join(segment['sections'])}")
             res.add_subsection(sub_res)
+        if len(self.elf.segments) == 1 and self.elf.segments[0]["type"] == "LOAD" and len(self.elf.sections) == 0:
+            res.set_heuristic(3)
+
         self.file_res.add_section(res)
 
     def add_libraries(self):
