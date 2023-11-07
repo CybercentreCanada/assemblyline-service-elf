@@ -33,6 +33,12 @@ heuristics:
     name: High section entropy
     score: 100
 
+  - description: Sample contains only a LOAD segment without any section mappings
+    filetype: "executable/linux/.*"
+    heur_id: 3
+    name: LOAD without section mappings
+    score: 100
+
 docker_config:
   image: ${REGISTRY}cccs/assemblyline-service-elf:$SERVICE_TAG
   cpu_cores: 1
