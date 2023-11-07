@@ -33,7 +33,7 @@ heuristics:
     name: High section entropy
     score: 100
 
-  - description: Sample contains only a LOAD segment with out any section mappings
+  - description: Sample contains only a LOAD segment without any section mappings
     filetype: "executable/linux/.*"
     heur_id: 3
     name: LOAD without section mappings
