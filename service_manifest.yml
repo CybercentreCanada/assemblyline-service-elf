@@ -104,6 +104,34 @@ heuristics:
     name: No exported symbol found
     score: 0
 
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
+  - description: Lief could not find an imported function
+    filetype: "executable/linux/.*"
+    heur_id: 13
+    name: No imported function found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+  - description: Lief could not find an imported symbol
+    filetype: "executable/linux/.*"
+    heur_id: 14
+    name: No imported symbol found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1073
+  - description: Lief could not find an object relocation
+    filetype: "executable/linux/.*"
+    heur_id: 15
+    name: No object relocation found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1098
+  - description: Lief could not find a relocation
+    filetype: "executable/linux/.*"
+    heur_id: 16
+    name: No relocation found
+    score: 0
+
 docker_config:
   image: ${REGISTRY}cccs/assemblyline-service-elf:$SERVICE_TAG
   cpu_cores: 1

@@ -177,10 +177,27 @@ class ELF(ServiceBase):
         if not self.lief_binary.symbols:
             heur = Heuristic(9)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+        else:
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
+            if not self.lief_binary.exported_symbols:
+                heur = Heuristic(12)
+                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+            # https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+            if not self.lief_binary.imported_symbols:
+                heur = Heuristic(14)
+                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
-        elif not self.lief_binary.exported_symbols:
-            heur = Heuristic(12)
+    # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1064
+    # and https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
+    def check_relocations(self):
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1073
+        if not self.lief_binary.object_relocations:
+            heur = Heuristic(15)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
+        if not self.lief_binary.relocations:
+            heur = Heuristic(16)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     def add_symbols_version(self):
@@ -195,6 +212,10 @@ class ELF(ServiceBase):
             res = ResultSection("Imported Functions")
             res.set_body(json.dumps(self.elf.imported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
+        else:
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L798
+            heur = Heuristic(13)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
         if hasattr(self.elf, "exported_functions") and self.elf.exported_functions:
             res = ResultSection("Exported Functions")
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
@@ -231,6 +252,7 @@ class ELF(ServiceBase):
         self.check_symbols()
         self.add_symbols_version()
         self.add_functions()
+        self.check_relocations()
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
