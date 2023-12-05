@@ -1,11 +1,12 @@
 import json
 import os
 
-import elf.al_elf
 import lief
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
 from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
+
+import elf.al_elf
 
 # Disable logging from LIEF
 lief.logging.disable()
@@ -15,26 +16,8 @@ class ELF(ServiceBase):
     def add_header(self):
         res = ResultSection("Headers")
         res.add_line(f"Entrypoint: {hex(self.elf.entrypoint)}")
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L334
-        if not self.lief_binary.header.entrypoint:
-            heur = Heuristic(5)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         res.add_line(f"Machine: {self.elf.header['machine_type']}")
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L351
-        if not self.lief_binary.header.machine_type:
-            heur = Heuristic(6)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         res.add_line(f"File Type: {self.elf.header['file_type']}")
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L314
-        if not self.lief_binary.header.file_type:
-            heur = Heuristic(4)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         res.add_line(f"Identity Class: {self.elf.header['identity_class']}")
         res.add_line(f"Endianness: {self.elf.header['identity_data']}")
         res.add_line(f"Virtual Size: {self.elf.virtual_size}")
@@ -50,11 +33,6 @@ class ELF(ServiceBase):
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L374
-        if not self.lief_binary.has_interpreter:
-            heur = Heuristic(7)
-            ResultSection(heur.name, heuristic=heur, parent=res)
 
         overlay = bytes.fromhex(self.elf.overlay)
         res.add_line(f"Overlay size: {len(overlay)}")
@@ -84,7 +62,6 @@ class ELF(ServiceBase):
             sub_res.add_line(f"Type: {section['type']}")
             sub_res.add_line(f"Entropy: {section['entropy']}")
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
-            # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
             if section["entropy"] > 7.5:
                 sub_res.set_heuristic(2)
             sub_res.add_line(f"Size: {section['size']}")
@@ -116,10 +93,7 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_libraries(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
-        if len(self.lief_binary.libraries) == 0:
-            heur = Heuristic(8)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+        if len(self.elf.libraries) == 0:
             return
 
         res = ResultSection("Libraries")
@@ -129,10 +103,9 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_notes(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L562
-        if not hasattr(self.elf, "notes") or len(self.elf.notes) == 0:
-            heur = Heuristic(10)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+        if not hasattr(self.elf, "notes"):
+            return
+        if len(self.elf.notes) == 0:
             return
 
         res = ResultSection("Notes")
@@ -171,51 +144,6 @@ class ELF(ServiceBase):
             res.add_line(f"Number of chains: {self.elf.sysv_hash['nchain']}")
             self.file_res.add_section(res)
 
-    # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L403
-    def check_symbols(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L426
-        if not self.lief_binary.symbols:
-            heur = Heuristic(9)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-        else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
-            if not self.lief_binary.exported_symbols:
-                heur = Heuristic(12)
-                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
-            if not self.lief_binary.imported_symbols:
-                heur = Heuristic(14)
-                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
-            if not self.lief_binary.dynamic_symbols:
-                heur = Heuristic(18)
-                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1560
-            if not self.lief_binary.static_symbols:
-                heur = Heuristic(19)
-                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
-    # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1064
-    # and https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
-    def check_relocations(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1073
-        if not self.lief_binary.object_relocations:
-            heur = Heuristic(15)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
-        if not self.lief_binary.relocations:
-            heur = Heuristic(16)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
-    def check_dynamic_entries(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
-        if not self.elf.dynamic_entries:
-            heur = Heuristic(17)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-
     def add_symbols_version(self):
         # TODO: Find and example that populates at least one of:
         # symbols_version
@@ -228,18 +156,10 @@ class ELF(ServiceBase):
             res = ResultSection("Imported Functions")
             res.set_body(json.dumps(self.elf.imported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
-        else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L798
-            heur = Heuristic(13)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
         if hasattr(self.elf, "exported_functions") and self.elf.exported_functions:
             res = ResultSection("Exported Functions")
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
-        else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L760
-            heur = Heuristic(11)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     def execute(self, request: ServiceRequest):
         request.result = Result()
@@ -265,11 +185,8 @@ class ELF(ServiceBase):
         self.add_libraries()
         self.add_notes()
         self.add_hash()
-        self.check_symbols()
         self.add_symbols_version()
         self.add_functions()
-        self.check_relocations()
-        self.check_dynamic_entries()
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
