@@ -182,9 +182,19 @@ class ELF(ServiceBase):
             if not self.lief_binary.exported_symbols:
                 heur = Heuristic(12)
                 ResultSection(heur.name, heuristic=heur, parent=self.file_res)
-            # https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
             if not self.lief_binary.imported_symbols:
                 heur = Heuristic(14)
+                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+            if not self.lief_binary.dynamic_symbols:
+                heur = Heuristic(18)
+                ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1560
+            if not self.lief_binary.static_symbols:
+                heur = Heuristic(19)
                 ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1064
@@ -198,6 +208,12 @@ class ELF(ServiceBase):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
         if not self.lief_binary.relocations:
             heur = Heuristic(16)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
+    def check_dynamic_entries(self):
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
+        if not self.elf.dynamic_entries:
+            heur = Heuristic(17)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     def add_symbols_version(self):
@@ -253,6 +269,7 @@ class ELF(ServiceBase):
         self.add_symbols_version()
         self.add_functions()
         self.check_relocations()
+        self.check_dynamic_entries()
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
