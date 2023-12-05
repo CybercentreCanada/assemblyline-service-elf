@@ -61,6 +61,7 @@ class ELF(ServiceBase):
                 sub_res.add_tag("file.elf.sections.name", section["name"])
             sub_res.add_line(f"Type: {section['type']}")
             sub_res.add_line(f"Entropy: {section['entropy']}")
+            # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
             if section["entropy"] > 7.5:
                 sub_res.set_heuristic(2)
             sub_res.add_line(f"Size: {section['size']}")
