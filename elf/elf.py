@@ -1,12 +1,11 @@
 import json
 import os
 
+import elf.al_elf
 import lief
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
 from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
-
-import elf.al_elf
 
 # Disable logging from LIEF
 lief.logging.disable()
@@ -117,23 +116,23 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_libraries(self):
-        res = ResultSection("Libraries")
-
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
         if len(self.lief_binary.libraries) == 0:
             heur = Heuristic(8)
-            ResultSection(heur.name, heuristic=heur, parent=res)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
 
+        res = ResultSection("Libraries")
         for library in self.elf.libraries:
             res.add_line(library)
             res.add_tag("file.elf.libraries", library)
         self.file_res.add_section(res)
 
     def add_notes(self):
-        if not hasattr(self.elf, "notes"):
-            return
-        if len(self.elf.notes) == 0:
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L562
+        if not hasattr(self.elf, "notes") or len(self.elf.notes) == 0:
+            heur = Heuristic(10)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
 
         res = ResultSection("Notes")
@@ -172,6 +171,18 @@ class ELF(ServiceBase):
             res.add_line(f"Number of chains: {self.elf.sysv_hash['nchain']}")
             self.file_res.add_section(res)
 
+    # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L403
+    def check_symbols(self):
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L426
+        if not self.lief_binary.symbols:
+            heur = Heuristic(9)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
+        elif not self.lief_binary.exported_symbols:
+            heur = Heuristic(12)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+
     def add_symbols_version(self):
         # TODO: Find and example that populates at least one of:
         # symbols_version
@@ -188,6 +199,10 @@ class ELF(ServiceBase):
             res = ResultSection("Exported Functions")
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
+        else:
+            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L760
+            heur = Heuristic(11)
+            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     def execute(self, request: ServiceRequest):
         request.result = Result()
@@ -213,6 +228,7 @@ class ELF(ServiceBase):
         self.add_libraries()
         self.add_notes()
         self.add_hash()
+        self.check_symbols()
         self.add_symbols_version()
         self.add_functions()
 
