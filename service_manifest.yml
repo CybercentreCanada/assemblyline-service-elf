@@ -25,6 +25,7 @@ heuristics:
     name: Invalid ELF look-alike
     score: 100
 
+  # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
   - description: >-
       This ELF contains at least one section with entropy > 7.5, which
       may indicate packed or encrypted code.
