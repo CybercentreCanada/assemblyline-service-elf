@@ -26,6 +26,7 @@ heuristics:
     score: 100
 
   # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
+  # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
   - description: >-
       This ELF contains at least one section with entropy > 7.5, which
       may indicate packed or encrypted code.
@@ -39,6 +40,41 @@ heuristics:
     heur_id: 3
     name: LOAD without section mappings
     score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L314
+  - description: Lief could not determine the file type
+    filetype: "executable/linux/.*"
+    heur_id: 4
+    name: No file type found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L334
+  - description: Lief could not determine the entrypoint
+    filetype: "executable/linux/.*"
+    heur_id: 5
+    name: No entrypoint found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L351
+  - description: Lief could not determine the architecture
+    filetype: "executable/linux/.*"
+    heur_id: 6
+    name: No architecture found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L374
+  - description: Lief could not determine the interpreter
+    filetype: "executable/linux/.*"
+    heur_id: 7
+    name: No interpreter found
+    score: 0
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
+  - description: Lief could not find a dynamic library
+    filetype: "executable/linux/.*"
+    heur_id: 8
+    name: No dynamic library found
+    score: 0
 
 docker_config:
   image: ${REGISTRY}cccs/assemblyline-service-elf:$SERVICE_TAG

@@ -16,8 +16,26 @@ class ELF(ServiceBase):
     def add_header(self):
         res = ResultSection("Headers")
         res.add_line(f"Entrypoint: {hex(self.elf.entrypoint)}")
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L334
+        if not self.lief_binary.header.entrypoint:
+            heur = Heuristic(5)
+            ResultSection(heur.name, heuristic=heur, parent=res)
+
         res.add_line(f"Machine: {self.elf.header['machine_type']}")
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L351
+        if not self.lief_binary.header.machine_type:
+            heur = Heuristic(6)
+            ResultSection(heur.name, heuristic=heur, parent=res)
+
         res.add_line(f"File Type: {self.elf.header['file_type']}")
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L314
+        if not self.lief_binary.header.file_type:
+            heur = Heuristic(4)
+            ResultSection(heur.name, heuristic=heur, parent=res)
+
         res.add_line(f"Identity Class: {self.elf.header['identity_class']}")
         res.add_line(f"Endianness: {self.elf.header['identity_data']}")
         res.add_line(f"Virtual Size: {self.elf.virtual_size}")
@@ -33,6 +51,11 @@ class ELF(ServiceBase):
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L374
+        if not self.lief_binary.has_interpreter:
+            heur = Heuristic(7)
+            ResultSection(heur.name, heuristic=heur, parent=res)
 
         overlay = bytes.fromhex(self.elf.overlay)
         res.add_line(f"Overlay size: {len(overlay)}")
@@ -62,6 +85,7 @@ class ELF(ServiceBase):
             sub_res.add_line(f"Type: {section['type']}")
             sub_res.add_line(f"Entropy: {section['entropy']}")
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
+            # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
             if section["entropy"] > 7.5:
                 sub_res.set_heuristic(2)
             sub_res.add_line(f"Size: {section['size']}")
@@ -93,10 +117,14 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_libraries(self):
-        if len(self.elf.libraries) == 0:
+        res = ResultSection("Libraries")
+
+        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
+        if len(self.lief_binary.libraries) == 0:
+            heur = Heuristic(8)
+            ResultSection(heur.name, heuristic=heur, parent=res)
             return
 
-        res = ResultSection("Libraries")
         for library in self.elf.libraries:
             res.add_line(library)
             res.add_tag("file.elf.libraries", library)
