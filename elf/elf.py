@@ -95,7 +95,7 @@ class ELF(ServiceBase):
     def add_libraries(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
         if len(self.lief_binary.libraries) == 0:
-            heur = Heuristic(8)
+            heur = Heuristic(4)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
 
@@ -189,7 +189,7 @@ class ELF(ServiceBase):
     def check_dynamic_entries(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
         if not self.elf.dynamic_entries:
-            heur = Heuristic(17)
+            heur = Heuristic(5)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
 
     def add_symbols_version(self):

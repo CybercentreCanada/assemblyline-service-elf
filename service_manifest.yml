@@ -44,9 +44,16 @@ heuristics:
   # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
   - description: Lief could not find a dynamic library
     filetype: "executable/linux/.*"
-    heur_id: 8
+    heur_id: 4
     name: No dynamic library found
-    score: 0
+    score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
+  - description: Lief could not find a dynamic entry
+    filetype: "executable/linux/.*"
+    heur_id: 5
+    name: No dynamic entry found
+    score: 100
 
   # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L426
   - description: Lief could not find a symbol
@@ -95,13 +102,6 @@ heuristics:
     filetype: "executable/linux/.*"
     heur_id: 16
     name: No relocation found
-    score: 0
-
-  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
-  - description: Lief could not find a dynamic entry
-    filetype: "executable/linux/.*"
-    heur_id: 17
-    name: No dynamic entry found
     score: 0
 
   # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1549
