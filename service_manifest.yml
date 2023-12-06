@@ -55,13 +55,6 @@ heuristics:
     name: No symbol found
     score: 0
 
-  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L562
-  - description: Lief could not find notes
-    filetype: "executable/linux/.*"
-    heur_id: 10
-    name: No note found
-    score: 0
-
   # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L760
   - description: Lief could not find an exported function
     filetype: "executable/linux/.*"

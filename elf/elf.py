@@ -106,10 +106,9 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_notes(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L562
-        if not hasattr(self.elf, "notes") or len(self.elf.notes) == 0:
-            heur = Heuristic(10)
-            ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+        if not hasattr(self.elf, "notes"):
+            return
+        if len(self.elf.notes) == 0:
             return
 
         res = ResultSection("Notes")
