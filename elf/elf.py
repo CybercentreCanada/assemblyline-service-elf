@@ -94,7 +94,7 @@ class ELF(ServiceBase):
 
     def add_libraries(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
-        if len(self.lief_binary.libraries) == 0:
+        if len(self.elf.libraries) == 0:
             heur = Heuristic(4)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
