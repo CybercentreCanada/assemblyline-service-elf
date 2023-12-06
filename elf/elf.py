@@ -33,11 +33,6 @@ class ELF(ServiceBase):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
 
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L374
-        if not self.lief_binary.has_interpreter:
-            heur = Heuristic(7)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         overlay = bytes.fromhex(self.elf.overlay)
         res.add_line(f"Overlay size: {len(overlay)}")
         if len(overlay) > 0:
