@@ -156,6 +156,7 @@ class ELF(ServiceBase):
             # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
             if not self.lief_binary.exported_symbols:
                 ResultSection("No exported symbol found", parent=self.file_res)
+
             # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
             if not self.lief_binary.imported_symbols:
                 ResultSection("No imported symbol found", parent=self.file_res)

@@ -1,7 +1,7 @@
 {
   "extra": {
     "drop_file": false,
-    "score": 0,
+    "score": 200,
     "sections": [
       {
         "auto_collapse": false,
@@ -703,8 +703,8 @@
         "heuristic": {
           "attack_ids": [],
           "frequency": 1,
-          "heur_id": 8,
-          "score": 0,
+          "heur_id": 4,
+          "score": 100,
           "score_map": {},
           "signatures": {}
         },
@@ -759,14 +759,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 9,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No symbol found",
@@ -779,14 +772,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 13,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No imported function found",
@@ -799,14 +785,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 11,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No exported function found",
@@ -819,14 +798,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 15,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No object relocation found",
@@ -842,8 +814,8 @@
         "heuristic": {
           "attack_ids": [],
           "frequency": 1,
-          "heur_id": 17,
-          "score": 0,
+          "heur_id": 5,
+          "score": 100,
           "score_map": {},
           "signatures": {}
         },
@@ -867,32 +839,12 @@
     "heuristics": [
       {
         "attack_ids": [],
-        "heur_id": 8,
+        "heur_id": 4,
         "signatures": []
       },
       {
         "attack_ids": [],
-        "heur_id": 9,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 11,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 13,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 15,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 17,
+        "heur_id": 5,
         "signatures": []
       }
     ],
