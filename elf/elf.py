@@ -15,12 +15,6 @@ class ELF(ServiceBase):
     def add_header(self):
         res = ResultSection("Headers")
         res.add_line(f"Entrypoint: {hex(self.elf.entrypoint)}")
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L334
-        if not self.lief_binary.header.entrypoint:
-            heur = Heuristic(5)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         res.add_line(f"Machine: {self.elf.header['machine_type']}")
 
         # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L351
