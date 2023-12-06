@@ -16,12 +16,6 @@ class ELF(ServiceBase):
         res = ResultSection("Headers")
         res.add_line(f"Entrypoint: {hex(self.elf.entrypoint)}")
         res.add_line(f"Machine: {self.elf.header['machine_type']}")
-
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/    00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L351
-        if not self.lief_binary.header.machine_type:
-            heur = Heuristic(6)
-            ResultSection(heur.name, heuristic=heur, parent=res)
-
         res.add_line(f"File Type: {self.elf.header['file_type']}")
         res.add_line(f"Identity Class: {self.elf.header['identity_class']}")
         res.add_line(f"Endianness: {self.elf.header['identity_data']}")
