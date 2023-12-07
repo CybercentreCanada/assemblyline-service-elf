@@ -22,26 +22,6 @@
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
-        "depth": 1,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 7,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
-        "promote_to": null,
-        "tags": {},
-        "title_text": "No interpreter found",
-        "zeroize_on_tag_safe": false
-      },
-      {
-        "auto_collapse": false,
-        "body": null,
-        "body_config": {},
-        "body_format": "TEXT",
-        "classification": "TLP:C",
         "depth": 0,
         "heuristic": null,
         "promote_to": null,
@@ -883,26 +863,6 @@
       },
       {
         "auto_collapse": false,
-        "body": null,
-        "body_config": {},
-        "body_format": "TEXT",
-        "classification": "TLP:C",
-        "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 10,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
-        "promote_to": null,
-        "tags": {},
-        "title_text": "No note found",
-        "zeroize_on_tag_safe": false
-      },
-      {
-        "auto_collapse": false,
         "body": "Bloom Filters: [559092740, 38027424, 537264176, 75497744, 2684651521, 2232594, 16799744, 1191198736, 2147483904, 153094144, 1118044396, 1074004004, 9965568, 161687648, 150995586, 134708]\nBuckets: [42, 0, 43, 44, 0, 0, 0, 45, 46, 47, 48, 0, 0, 49, 0, 50, 0, 51, 0, 52, 0, 0, 0, 53, 54, 0, 55, 56, 0, 0, 57, 58, 0, 0, 59, 60, 0, 61, 62, 0, 0, 63, 64, 0, 66, 0, 0, 0, 0, 67, 0, 68, 69, 70, 72, 0, 73, 0, 74, 75, 0, 77, 0, 78, 0, 79, 80, 0, 0, 82, 0, 0, 83, 85, 86, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 87, 89, 90]\nHash Values: [427903081, 4066917011, 954067755, 3958919455, 250711481, 1577688121, 193496435, 981426613, 167173791, 876581041, 2090001339, 1880951623, 475558361, 1844382259, 3973399875, 468086991, 3616870343, 2030792315, 3272628427, 335945757, 1402996975, 2449012673, 3865780818, 2009329475, 2081375253, 1770564625, 1180355051, 2052639301, 1440303708, 2090185557, 1238928735, 1522595065, 948601867, 3656505746, 3880726843, 1949833397, 1042746295, 612062153, 2390893538, 1007055699, 837769133, 2192676888, 3586496129, 1177651361, 250598379, 2120979428, 1284324709, 2461659903, 4265782310, 3244583319]\nNumber of buckets: 88\nShift2: 9\nSymbol Index: 42",
         "body_config": {},
         "body_format": "TEXT",
@@ -934,14 +894,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 13,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No imported function found",
@@ -954,14 +907,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 11,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No exported function found",
@@ -974,14 +920,7 @@
         "body_format": "TEXT",
         "classification": "TLP:C",
         "depth": 0,
-        "heuristic": {
-          "attack_ids": [],
-          "frequency": 1,
-          "heur_id": 15,
-          "score": 0,
-          "score_map": {},
-          "signatures": {}
-        },
+        "heuristic": null,
         "promote_to": null,
         "tags": {},
         "title_text": "No object relocation found",
@@ -999,33 +938,7 @@
     ]
   },
   "results": {
-    "heuristics": [
-      {
-        "attack_ids": [],
-        "heur_id": 7,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 10,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 11,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 13,
-        "signatures": []
-      },
-      {
-        "attack_ids": [],
-        "heur_id": 15,
-        "signatures": []
-      }
-    ],
+    "heuristics": [],
     "tags": {
       "file.elf.libraries": [
         {
