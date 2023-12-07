@@ -104,10 +104,16 @@ class AL_ELF:
                     "description": note.description,
                     "is_android": note.is_android,
                     "is_core": note.is_core,
-                    "name": note.name,
+                    "name": "",
                     "type": note.type.name,
                     "type_core": note.type_core.name,
                 }
+
+                try:
+                    note_struct["name"] = note.name
+                except UnicodeDecodeError:
+                    note_struct.pop("name", None)
+
                 if isinstance(note.details, lief.ELF.NoteAbi):
                     note_struct["details"] = {
                         "abi": note.details.abi.name,

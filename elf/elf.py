@@ -113,8 +113,11 @@ class ELF(ServiceBase):
 
         res = ResultSection("Notes")
         for note in self.elf.notes:
-            sub_res = ResultSection(f"Note - {note['name']}")
-            sub_res.add_tag("file.elf.notes.name", note["name"])
+            if "name" in note:
+                sub_res = ResultSection(f"Note - {note['name']}")
+                sub_res.add_tag("file.elf.notes.name", note["name"])
+            else:
+                sub_res = ResultSection("Note")
             sub_res.add_line(f"Description: {note['description']}")
             sub_res.add_line(f"Type: {note['type']}")
             sub_res.add_tag("file.elf.notes.type", note["type"])

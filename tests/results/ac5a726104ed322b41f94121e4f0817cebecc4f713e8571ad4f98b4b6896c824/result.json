@@ -1,0 +1,2447 @@
+{
+  "extra": {
+    "drop_file": false,
+    "score": 100,
+    "sections": [
+      {
+        "auto_collapse": false,
+        "body": "Entrypoint: 0x3370\nMachine: x86_64\nFile Type: DYNAMIC\nIdentity Class: CLASS64\nEndianness: LSB\nVirtual Size: 2146304\nNX: True\nPosition Independent: True\nProcessor Flag: 0\nInterpreter: /lib64/ld-linux-x86-64.so.2\nOverlay size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "interpreter": [
+                "/lib64/ld-linux-x86-64.so.2"
+              ]
+            }
+          }
+        },
+        "title_text": "Headers",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Sections",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Section - ",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.940759832540089\nSize: 28\nFlags: ALLOC\nSegments: INTERP, LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".interp"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .interp",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nEntropy: 1.8716407621868583\nSize: 32\nFlags: ALLOC\nSegments: LOAD, NOTE, GNU_PROPERTY",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".note.gnu.property"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .note.gnu.property",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nEntropy: 1.561278124459133\nSize: 32\nFlags: ALLOC\nSegments: LOAD, NOTE",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".note.ABI-tag"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .note.ABI-tag",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nEntropy: 4.136056086195821\nSize: 36\nFlags: ALLOC\nSegments: LOAD, NOTE",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".note.gnu.build-id"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .note.gnu.build-id",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_HASH\nEntropy: 4.997898181591155\nSize: 92\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.hash"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.hash",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNSYM\nEntropy: 1.2600453082973533\nSize: 3192\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynsym"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynsym",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: STRTAB\nEntropy: 4.65405791546734\nSize: 1375\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynstr"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynstr",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: HIOS\nEntropy: 1.6600605233562638\nSize: 266\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.version"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.version",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_VERNEED\nEntropy: 2.9534945078400887\nSize: 208\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.version_r"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.version_r",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: RELA\nEntropy: 1.8771009379547767\nSize: 624\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rela.dyn"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rela.dyn",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: RELA\nEntropy: 1.7559929855890588\nSize: 2784\nFlags: INFO_LINK, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rela.plt"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rela.plt",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.236368983644952\nSize: 27\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".init"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .init",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.345355006390201\nSize: 1872\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".plt"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .plt",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.001860636640668\nSize: 1856\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".plt.sec"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .plt.sec",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 6.023211363252782\nSize: 19154\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".text"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .text",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 3.2389012566026305\nSize: 13\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".fini"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .fini",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 5.086154348662819\nSize: 5116\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".rodata"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .rodata",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.331078074566848\nSize: 324\nFlags: ALLOC\nSegments: LOAD, GNU_EH_FRAME",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".eh_frame_hdr"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .eh_frame_hdr",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.895898787162538\nSize: 1848\nFlags: ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".eh_frame"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .eh_frame",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: INIT_ARRAY\nEntropy: 1.061278124459133\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".init_array"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .init_array",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: FINI_ARRAY\nEntropy: 1.061278124459133\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".fini_array"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .fini_array",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 0.9240190594288893\nSize: 448\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".data.rel.ro"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .data.rel.ro",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nEntropy: 1.5610836280284945\nSize: 544\nFlags: WRITE, ALLOC\nSegments: LOAD, DYNAMIC, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".dynamic"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .dynamic",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 1.7847196347264769\nSize: 992\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".got"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .got",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 4\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".data"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .data",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOBITS\nEntropy: 2.651486634474121\nSize: 112\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".bss"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .bss",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nEntropy: 3.97118834861683\nSize: 1384\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu.build.attributes"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu.build.attributes",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 4.308768198567053\nSize: 44\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu_debuglink"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu_debuglink",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PROGBITS\nEntropy: 7.852495349224461\nSize: 1380\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": {
+          "attack_ids": [],
+          "frequency": 1,
+          "heur_id": 2,
+          "score": 100,
+          "score_map": {},
+          "signatures": {}
+        },
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".gnu_debugdata"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .gnu_debugdata",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: STRTAB\nEntropy: 4.281554056275664\nSize: 318\nFlags: ",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "sections": {
+                "name": [
+                  ".shstrtab"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Section - .shstrtab",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Segments",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: PHDR\nFlags: ('R',)\nPhysical Size: 616\nVirtual Size: 616",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "PHDR"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - PHDR",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: INTERP\nFlags: ('R',)\nPhysical Size: 28\nVirtual Size: 28\nSections: .interp",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "INTERP"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - INTERP",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 39600\nVirtual Size: 39600\nSections: .interp, .note.gnu.property, .note.ABI-tag, .note.gnu.build-id, .gnu.hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rela.dyn, .rela.plt, .init, .plt, .plt.sec, .text, .fini, .rodata, .eh_frame_hdr, .eh_frame",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 2004\nVirtual Size: 2144\nSections: .init_array, .fini_array, .data.rel.ro, .dynamic, .got, .data, .bss",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nFlags: ('RW',)\nPhysical Size: 544\nVirtual Size: 544\nSections: .dynamic",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "DYNAMIC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - DYNAMIC",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nFlags: ('R',)\nPhysical Size: 32\nVirtual Size: 32\nSections: .note.gnu.property",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "NOTE"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - NOTE",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: NOTE\nFlags: ('R',)\nPhysical Size: 68\nVirtual Size: 68\nSections: .note.ABI-tag, .note.gnu.build-id",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "NOTE"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - NOTE",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_PROPERTY\nFlags: ('R',)\nPhysical Size: 32\nVirtual Size: 32\nSections: .note.gnu.property",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_PROPERTY"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_PROPERTY",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_EH_FRAME\nFlags: ('R',)\nPhysical Size: 324\nVirtual Size: 324\nSections: .eh_frame_hdr",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_EH_FRAME"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_EH_FRAME",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_STACK\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_STACK"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_STACK",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_RELRO\nFlags: ('R',)\nPhysical Size: 2000\nVirtual Size: 2000\nSections: .init_array, .fini_array, .data.rel.ro, .dynamic, .got",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_RELRO"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_RELRO",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "libpam.so.0\nlibpam_misc.so.0\nlibutil.so.1\nlibc.so.6",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "libraries": [
+                "libpam.so.0",
+                "libpam_misc.so.0",
+                "libutil.so.1",
+                "libc.so.6"
+              ]
+            }
+          }
+        },
+        "title_text": "Libraries",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Notes",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [2, 0, 0, 192, 4, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]\nType: PROPERTY_TYPE_0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GNU"
+                ],
+                "type": [
+                  "PROPERTY_TYPE_0"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GNU",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [0, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]\nType: ABI_TAG\nDetails: LINUX 3.2.0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GNU"
+                ],
+                "type": [
+                  "ABI_TAG"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GNU",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [5, 254, 54, 169, 205, 62, 138, 168, 152, 178, 48, 85, 78, 234, 124, 58, 177, 206, 12, 236]\nType: BUILD_ID",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GNU"
+                ],
+                "type": [
+                  "BUILD_ID"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GNU",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [152, 36, 0, 0, 0, 0, 0, 0, 159, 51, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u00013a1\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x013a1\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [80, 51, 0, 0, 0, 0, 0, 0, 34, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u00013p1094\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x013p1094\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0002\u0003\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x02\\x03\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u0005annobin gcc 8.5.0 20210514\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x05annobin gcc 8.5.0 20210514\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u0005plugin name: gcc-annobin\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x05plugin name: gcc-annobin\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u0005running gcc 8.5.0 20210514\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x05running gcc 8.5.0 20210514\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0006\u0012\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x06\\x12\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA!\b\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA!\\x08\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*FORTIFY\u0000\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*FORTIFY\\x00\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA+GLIBCXX_ASSERTIONS\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA+GLIBCXX_ASSERTIONS\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*cf_protection\u0000\b\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*cf_protection\\x00\\x08\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA+omit_frame_pointer\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA+omit_frame_pointer\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA+stack_clash\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA+stack_clash\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA!stack_realign\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA!stack_realign\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [80, 51, 0, 0, 0, 0, 0, 0, 143, 125, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [80, 51, 0, 0, 0, 0, 0, 0, 103, 110, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0007\u0004\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x07\\x04\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [160, 51, 0, 0, 0, 0, 0, 0, 49, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u00013a1\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x013a1\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [112, 110, 0, 0, 0, 0, 0, 0, 5, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA$\u00013p1094\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA$\\x013p1094\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [112, 110, 0, 0, 0, 0, 0, 0, 72, 122, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [112, 110, 0, 0, 0, 0, 0, 0, 144, 120, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0007\u0004\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x07\\x04\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [144, 120, 0, 0, 0, 0, 0, 0, 5, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0007\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x07\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [80, 122, 0, 0, 0, 0, 0, 0, 34, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*\u0007\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*\\x07\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [144, 125, 0, 0, 0, 0, 0, 0, 5, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*GOW\u0000*\u0005\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*GOW\\x00*\\x05\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [16, 126, 0, 0, 0, 0, 0, 0, 34, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*GOW\u0000*\u0005\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_OPEN"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*GOW\\x00*\\x05\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [96, 52, 0, 0, 0, 0, 0, 0, 245, 125, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*FORTIFY\u0000\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_FUNC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*FORTIFY\\x00\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: []\nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA+GLIBCXX_ASSERTIONS\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_FUNC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA+GLIBCXX_ASSERTIONS\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Description: [112, 110, 0, 0, 0, 0, 0, 0, 34, 126, 0, 0, 0, 0, 0, 0]\nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "notes": {
+                "name": [
+                  "GA*FORTIFY\u0000\u0002\u0000"
+                ],
+                "type": [
+                  "GNU_BUILD_ATTRIBUTE_FUNC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Note - GA*FORTIFY\\x00\\x02\\x00",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Bloom Filters: [2165106972557312416, 2251971629679672]\nBuckets: [121, 126, 131]\nHash Values: [478944552, 3973399874, 2416282052, 1805901222, 2090001339, 2658554044, 475558360, 1084012996, 4114703076, 478933561, 318227506, 318218931]\nNumber of buckets: 3\nShift2: 7\nSymbol Index: 121",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "GNU Hash",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "No static symbol found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "No imported function found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "No exported function found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": null,
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "No object relocation found",
+        "zeroize_on_tag_safe": false
+      }
+    ]
+  },
+  "files": {
+    "extracted": [],
+    "supplementary": [
+      {
+        "name": "features.json",
+        "sha256": "5392b5d663e16baf5a9ced0e425894f8ad50c3552589a195224828961f0985b9"
+      }
+    ]
+  },
+  "results": {
+    "heuristics": [
+      {
+        "attack_ids": [],
+        "heur_id": 2,
+        "signatures": []
+      }
+    ],
+    "tags": {
+      "file.elf.interpreter": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "/lib64/ld-linux-x86-64.so.2"
+        }
+      ],
+      "file.elf.libraries": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libc.so.6"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libpam.so.0"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libpam_misc.so.0"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "libutil.so.1"
+        }
+      ],
+      "file.elf.notes.name": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA!\b\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA!stack_realign\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u00013a1\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u00013a1\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u00013p1094\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u00013p1094\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u0005annobin gcc 8.5.0 20210514\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u0005plugin name: gcc-annobin\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA$\u0005running gcc 8.5.0 20210514\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0002\u0003\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0006\u0012\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0007\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0007\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0007\u0004\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*\u0007\u0004\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*FORTIFY\u0000\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*FORTIFY\u0000\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*FORTIFY\u0000\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*GOW\u0000*\u0005\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*GOW\u0000*\u0005\u0002\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA*cf_protection\u0000\b\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA+GLIBCXX_ASSERTIONS\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA+GLIBCXX_ASSERTIONS\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA+omit_frame_pointer\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GA+stack_clash\u0000"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU"
+        }
+      ],
+      "file.elf.notes.type": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "ABI_TAG"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "BUILD_ID"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_FUNC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_FUNC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_FUNC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_BUILD_ATTRIBUTE_OPEN"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "PROPERTY_TYPE_0"
+        }
+      ],
+      "file.elf.sections.name": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".bss"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".data"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".data.rel.ro"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynamic"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynstr"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".dynsym"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".eh_frame"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".eh_frame_hdr"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".fini"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".fini_array"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.build.attributes"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.hash"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.version"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu.version_r"
+        },
+        {
+          "heur_id": 2,
+          "signatures": [],
+          "value": ".gnu_debugdata"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".gnu_debuglink"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".got"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".init"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".init_array"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".interp"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".note.ABI-tag"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".note.gnu.build-id"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".note.gnu.property"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".plt"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".plt.sec"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rela.dyn"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rela.plt"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".rodata"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".shstrtab"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": ".text"
+        }
+      ],
+      "file.elf.segments.type": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "DYNAMIC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_EH_FRAME"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_PROPERTY"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_RELRO"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_STACK"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "INTERP"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "NOTE"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "NOTE"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "PHDR"
+        }
+      ]
+    },
+    "temp_submission_data": {}
+  }
+}
