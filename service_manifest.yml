@@ -26,6 +26,7 @@ heuristics:
     score: 100
 
   # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
+  # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
   - description: >-
       This ELF contains at least one section with entropy > 7.5, which
       may indicate packed or encrypted code.
@@ -38,6 +39,20 @@ heuristics:
     filetype: "executable/linux/.*"
     heur_id: 3
     name: LOAD without section mappings
+    score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L401
+  - description: Lief could not find a dynamic library
+    filetype: "executable/linux/.*"
+    heur_id: 4
+    name: No dynamic library found
+    score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538
+  - description: Lief could not find a dynamic entry
+    filetype: "executable/linux/.*"
+    heur_id: 5
+    name: No dynamic entry found
     score: 100
 
 docker_config:
