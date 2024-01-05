@@ -154,18 +154,21 @@ class ELF(ServiceBase):
     def check_symbols(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L426
         if not self.lief_binary.symbols:
-            ResultSection("No symbol found", parent=self.file_res)
+            heur = Heuristic(8)
+            ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
         else:
             # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
             if not self.lief_binary.dynamic_symbols:
-                ResultSection("No dynamic symbol found", parent=self.file_res)
+                heur = Heuristic(6)
+                ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
 
     # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1064
     # and https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
     def check_relocations(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
         if not self.lief_binary.relocations:
-            ResultSection("No relocation found", parent=self.file_res)
+            heur = Heuristic(7)
+            ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
 
     def check_dynamic_entries(self):
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1538

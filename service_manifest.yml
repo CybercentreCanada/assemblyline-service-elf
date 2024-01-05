@@ -55,6 +55,27 @@ heuristics:
     name: No dynamic entry found
     score: 100
 
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+  - description: Lief could not find a dynamic symbol
+    filetype: "executable/linux/.*"
+    heur_id: 6
+    name: No dynamic symbol found
+    score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
+  - description: Lief could not find any relocations
+    filetype: "executable/linux/.*"
+    heur_id: 7
+    name: No relocation found
+    score: 100
+
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L426
+  - description: Lief could not find any symbols
+    filetype: "executable/linux/.*"
+    heur_id: 8
+    name: No symbol found
+    score: 100
+
 docker_config:
   image: ${REGISTRY}cccs/assemblyline-service-elf:$SERVICE_TAG
   cpu_cores: 1
