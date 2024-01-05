@@ -156,29 +156,13 @@ class ELF(ServiceBase):
         if not self.lief_binary.symbols:
             ResultSection("No symbol found", parent=self.file_res)
         else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L782
-            if not self.lief_binary.exported_symbols:
-                ResultSection("No exported symbol found", parent=self.file_res)
-
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
-            if not self.lief_binary.imported_symbols:
-                ResultSection("No imported symbol found", parent=self.file_res)
-
             # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
             if not self.lief_binary.dynamic_symbols:
                 ResultSection("No dynamic symbol found", parent=self.file_res)
 
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1560
-            if not self.lief_binary.static_symbols:
-                ResultSection("No static symbol found", parent=self.file_res)
-
     # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1064
     # and https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
     def check_relocations(self):
-        # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1073
-        if not self.lief_binary.object_relocations:
-            ResultSection("No object relocation found", parent=self.file_res)
-
         # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1075
         if not self.lief_binary.relocations:
             ResultSection("No relocation found", parent=self.file_res)
@@ -201,16 +185,10 @@ class ELF(ServiceBase):
             res = ResultSection("Imported Functions")
             res.set_body(json.dumps(self.elf.imported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
-        else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L798
-            ResultSection("No imported function found", parent=self.file_res)
         if hasattr(self.elf, "exported_functions") and self.elf.exported_functions:
             res = ResultSection("Exported Functions")
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
-        else:
-            # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L760
-            ResultSection("No exported function found", parent=self.file_res)
 
     def execute(self, request: ServiceRequest):
         request.result = Result()
