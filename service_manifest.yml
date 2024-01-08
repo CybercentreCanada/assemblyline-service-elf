@@ -55,7 +55,7 @@ heuristics:
     name: No dynamic entry found
     score: 100
 
-  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L820
+  # Inspired by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L1549
   - description: Lief could not find a dynamic symbol
     filetype: "executable/linux/.*"
     heur_id: 6
