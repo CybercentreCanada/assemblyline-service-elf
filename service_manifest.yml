@@ -17,6 +17,7 @@ disable_cache: false
 enabled: true
 is_external: false
 licence_count: 0
+privileged: true
 
 heuristics:
   - description: This file looks like an ELF file but fails to load
