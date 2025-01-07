@@ -1,1 +1,3 @@
+assemblyline
+assemblyline-v4-service
 lief==0.13.2
