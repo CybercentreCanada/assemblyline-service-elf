@@ -16,32 +16,175 @@ from assemblyline_v4_service.common.result import (
     ResultSection,
 )
 
-import elf.al_elf
+
+def bytes_to_backslashreplace_utf8_str(value):
+    if isinstance(value, bytes):
+        return value.decode("utf-8", "backslashreplace")
+    return value
+
+
+def extract_fn(fn):
+    return {
+        "address": fn.address,
+        "name": bytes_to_backslashreplace_utf8_str(fn.name),
+        "size": fn.size,
+        "value": fn.value,
+    }
+
+
+def extract_symbol(symbol):
+    symbol_struct = {
+        "binding": symbol.binding.name,
+        "name": bytes_to_backslashreplace_utf8_str(symbol.name),
+        "type": symbol.type.name,
+        "exported": symbol.exported,
+        "imported": symbol.imported,
+        "visibility": symbol.visibility.name,
+    }
+    if symbol.name != symbol.demangled_name:
+        symbol_struct["demangled_name"] = bytes_to_backslashreplace_utf8_str(symbol.demangled_name)
+    return symbol_struct
+
+
+def extract_gnu_property(prop):
+    prop_struct = {"type": prop.type.name}
+    if isinstance(prop, lief.ELF.X86Features):
+        prop_struct["features"] = [{"flag": flag.name, "feature": feature.name} for flag, feature in prop.features]
+    elif isinstance(prop, lief.ELF.X86ISA):
+        prop_struct["values"] = [{"flag": flag.name, "isa": isa.name} for flag, isa in prop.values]
+    elif isinstance(prop, lief.ELF.AArch64Feature):
+        prop_struct["features"] = [feature.name for feature in prop.features]
+    elif isinstance(prop, lief.ELF.StackSize):
+        prop_struct["stack_size"] = prop.stack_size
+    elif isinstance(prop, lief.ELF.Needed):
+        prop_struct["needs"] = [need.name for need in prop.needs]
+    return prop_struct
+
+
+def extract_note(note):
+    # Extract a note and the specific fields into the details key.
+    note_struct = {
+        "description": bytes(note.description).hex(),
+        "name": "",
+        "type": note.type.name,
+        "original_type": note.original_type,
+    }
+
+    try:
+        note_struct["name"] = bytes_to_backslashreplace_utf8_str(note.name)
+    except UnicodeDecodeError:
+        note_struct.pop("name", None)
+
+    if isinstance(note, lief.ELF.NoteAbi):
+        if note.abi is not None and note.version is not None:
+            note_struct["details"] = {
+                "abi": note.abi.name,
+                "version": note.version,
+            }
+    elif isinstance(note, lief.ELF.NoteGnuProperty):
+        note_struct["details"] = {"properties": [extract_gnu_property(prop) for prop in note.properties]}
+    elif isinstance(note, lief.ELF.CorePrPsInfo):
+        if note.info is not None:
+            note_struct["details"] = {
+                "filename": bytes_to_backslashreplace_utf8_str(note.info.filename_stripped),
+                "args": bytes_to_backslashreplace_utf8_str(note.info.args_stripped),
+                "pid": note.info.pid,
+                "ppid": note.info.ppid,
+                "pgrp": note.info.pgrp,
+                "uid": note.info.uid,
+                "gid": note.info.gid,
+            }
+    elif isinstance(note, lief.ELF.CorePrStatus):
+        status = note.status
+        note_struct["details"] = {
+            "pid": status.pid,
+            "ppid": status.ppid,
+            "cursig": status.cursig,
+            "pc": note.pc,
+            "sp": note.sp,
+        }
+    elif isinstance(note, lief.ELF.CoreFile):
+        note_struct["details"] = {
+            "files": [
+                {
+                    "path": bytes_to_backslashreplace_utf8_str(entry.path),
+                    "start": entry.start,
+                    "end": entry.end,
+                }
+                for entry in note.files
+            ]
+        }
+    elif isinstance(note, lief.ELF.CoreSigInfo):
+        note_struct["details"] = {
+            "signo": note.signo,
+            "sigcode": note.sigcode,
+            "sigerrno": note.sigerrno,
+        }
+
+    return note_struct
 
 
 class ELF(ServiceBase):
     def add_header(self):
+        self.features["entrypoint"] = self.binary.entrypoint
+        self.features["format"] = self.binary.format.name
+        self.features["nx"] = self.binary.has_nx
+        self.features["header"] = {
+            "flags_list": [flag.name for flag in self.binary.header.flags_list],
+            "entrypoint": self.binary.header.entrypoint,
+            "file_type": self.binary.header.file_type.name,
+            "header_size": self.binary.header.header_size,
+            "identity": list(self.binary.header.identity),
+            "identity_abi_version": self.binary.header.identity_abi_version,
+            "identity_class": self.binary.header.identity_class.name,
+            "identity_data": self.binary.header.identity_data.name,
+            "identity_os_abi": self.binary.header.identity_os_abi.name,
+            "identity_version": self.binary.header.identity_version.name,
+            "machine_type": self.binary.header.machine_type.name,
+            "numberof_sections": self.binary.header.numberof_sections,
+            "numberof_segments": self.binary.header.numberof_segments,
+            "object_file_version": self.binary.header.object_file_version.name,
+            "processor_flag": self.binary.header.processor_flag,
+            "program_header_offset": self.binary.header.program_header_offset,
+            "program_header_size": self.binary.header.program_header_size,
+            "section_header_offset": self.binary.header.section_header_offset,
+            "section_header_size": self.binary.header.section_header_size,
+            "section_name_table_idx": self.binary.header.section_name_table_idx,
+        }
+        self.features["imagebase"] = self.binary.imagebase
+        self.features["is_targeting_android"] = self.binary.is_targeting_android
+        self.features["page_size"] = self.binary.page_size
+        self.features["eof_offset"] = self.binary.eof_offset
+        self.features["position_independent"] = self.binary.is_pie
+        self.features["last_offset_section"] = self.binary.last_offset_section
+        self.features["last_offset_segment"] = self.binary.last_offset_segment
+        self.features["next_virtual_address"] = self.binary.next_virtual_address
+        self.features["type"] = self.binary.type.name
+        self.features["virtual_size"] = self.binary.virtual_size
+
         res = ResultSection("Headers")
-        res.add_line(f"Entrypoint: {hex(self.elf.entrypoint)}")
-        res.add_line(f"Machine: {self.elf.header['machine_type']}")
-        res.add_line(f"File Type: {self.elf.header['file_type']}")
-        res.add_line(f"Identity Class: {self.elf.header['identity_class']}")
-        res.add_line(f"Endianness: {self.elf.header['identity_data']}")
-        res.add_line(f"Virtual Size: {self.elf.virtual_size}")
-        res.add_line(f"NX: {self.elf.nx}")
-        res.add_line(f"Position Independent: {self.elf.position_independent}")
-        res.add_line(f"Processor Flag: {self.elf.header['processor_flag']}")
-        if len(self.elf.header["flags_list"]) > 0:
-            res.add_line(f"Processor Flags: {', '.join(self.elf.header['flags_list'])}")
-        if self.elf.is_targeting_android:
+        res.add_line(f"Entrypoint: {hex(self.features['entrypoint'])}")
+        res.add_line(f"Machine: {self.features['header']['machine_type']}")
+        res.add_line(f"File Type: {self.features['header']['file_type']}")
+        res.add_line(f"Identity Class: {self.features['header']['identity_class']}")
+        res.add_line(f"Endianness: {self.features['header']['identity_data']}")
+        res.add_line(f"Virtual Size: {self.features['virtual_size']}")
+        res.add_line(f"NX: {self.features['nx']}")
+        res.add_line(f"Position Independent: {self.features['position_independent']}")
+        res.add_line(f"Processor Flag: {self.features['header']['processor_flag']}")
+        if len(self.features["header"]["flags_list"]) > 0:
+            res.add_line(f"Processor Flags: {', '.join(self.features['header']['flags_list'])}")
+        if self.features["is_targeting_android"]:
             res.add_line("Targeting Android: True")
-        if hasattr(self.elf, "interpreter"):
-            res.add_line(f"Interpreter: {self.elf.interpreter}")
-            res.add_tag("file.elf.interpreter", self.elf.interpreter)
+
+        if self.binary.has_interpreter:
+            self.features["interpreter"] = bytes_to_backslashreplace_utf8_str(self.binary.interpreter)
+            res.add_line(f"Interpreter: {self.features['interpreter']}")
+            res.add_tag("file.elf.interpreter", self.features["interpreter"])
             # The interpreter of standard toolchains lives in /lib*, e.g. /lib64/ld-linux-x86-64.so.2,
             # /lib/ld-musl-x86_64.so.1, /system/bin/linker64 (Android). Anything else (relative path,
             # /tmp, a regular library, ...) means execution starts in attacker-chosen code.
-            interpreter = self.elf.interpreter.rstrip("\x00")
+            interpreter = self.features["interpreter"].rstrip("\x00")
             interpreter_name = interpreter.rsplit("/", 1)[-1]
             if not (
                 interpreter.startswith(("/lib", "/usr/lib", "/system/bin/", "/apex/"))
@@ -52,74 +195,156 @@ class ELF(ServiceBase):
 
         self.file_res.add_section(res)
 
+    def add_overlay(self):
+        overlay = bytes(self.binary.overlay)
+
+        res = ResultMultiSection("Overlay", parent=self.file_res)
+        entropy, partitioned_entropy = calculate_partition_entropy(BytesIO(overlay))
+        overlay_kv_body = OrderedKVSectionBody()
+        overlay_kv_body.add_item("Size", len(overlay))
+        overlay_kv_body.add_item("Entropy", entropy)
+        res.add_section_part(overlay_kv_body)
+        if len(overlay) == 0:
+            return
+
+        overlay_graph_body = GraphSectionBody()
+        overlay_graph_body.set_colormap(cmap_min=0, cmap_max=8, values=[round(x, 5) for x in partitioned_entropy])
+        res.add_section_part(overlay_graph_body)
+
+        file_name = "overlay"
+        temp_path = os.path.join(self.working_directory, file_name)
+        with open(temp_path, "wb") as myfile:
+            myfile.write(overlay)
+        self.request.add_extracted(
+            temp_path,
+            file_name,
+            f"{file_name} extracted from binary",
+            safelist_interface=self.api_interface,
+        )
+
+        # Droppers can append their payload after the last section/segment: check if the overlay itself is an executable
+        nested = lief.ELF.parse(overlay) or lief.PE.parse(overlay)
+        if nested is not None:
+            nested_res = ResultSection(
+                f"The overlay is itself a{'n ELF' if isinstance(nested, lief.ELF.Binary) else ' PE'} binary",
+                parent=res,
+            )
+            nested_res.add_line("The extracted overlay will be analyzed as its own submission.")
+
     def add_sections(self):
-        if len(self.elf.sections) == 0:
+        self.features["sections"] = []
+        if len(self.binary.sections) == 0:
             return
 
         res = ResultSection("Sections")
-        for section in self.elf.sections:
-            sub_res = ResultMultiSection(f"Section - {section['name']}")
-            if section["name"] != "":
-                sub_res.add_tag("file.elf.sections.name", section["name"])
+        for section in self.binary.sections:
+            section_struct = {
+                "alignment": section.alignment,
+                # "content": section.content,
+                "entropy": section.entropy,
+                "entry_size": section.entry_size,
+                "file_offset": section.file_offset,
+                "flags_list": [flag.name for flag in section.flags_list],
+                "fullname": bytes_to_backslashreplace_utf8_str(section.fullname),
+                "information": section.information,
+                "link": section.link,
+                "name": bytes_to_backslashreplace_utf8_str(section.name),
+                "offset": section.offset,
+                "original_size": section.original_size,
+                "segments": [segment.type.name for segment in section.segments],
+                "size": section.size,
+                "type": section.type.name,
+                "virtual_address": section.virtual_address,
+            }
+            self.features["sections"].append(section_struct)
+
+            sub_res = ResultMultiSection(f"Section - {section_struct['name']}")
+            if section_struct["name"] != "":
+                sub_res.add_tag("file.elf.sections.name", section_struct["name"])
             section_kv_body = OrderedKVSectionBody()
-            section_kv_body.add_item("Type", section["type"])
-            section_kv_body.add_item("Entropy", section["entropy"])
+            section_kv_body.add_item("Type", section_struct["type"])
+            section_kv_body.add_item("Entropy", section_struct["entropy"])
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
-            if section["entropy"] > 7.5:
+            if section_struct["entropy"] > 7.5:
                 sub_res.set_heuristic(2)
-            section_kv_body.add_item("Size", section["size"])
-            section_kv_body.add_item("Flags", ", ".join(section["flags_list"]))
-            if len(section["segments"]):
-                section_kv_body.add_item("Segments", ", ".join(section["segments"]))
+            section_kv_body.add_item("Size", section_struct["size"])
+            section_kv_body.add_item("Flags", ", ".join(section_struct["flags_list"]))
+            if len(section_struct["segments"]):
+                section_kv_body.add_item("Segments", ", ".join(section_struct["segments"]))
             sub_res.add_section_part(section_kv_body)
-            if section["partitioned_entropy"]:
+            _, partitioned_entropy = calculate_partition_entropy(BytesIO(bytes(section.content)))
+            if partitioned_entropy:
                 section_graph_body = GraphSectionBody()
-                section_graph_body.set_colormap(cmap_min=0, cmap_max=8, values=section["partitioned_entropy"])
+                section_graph_body.set_colormap(
+                    cmap_min=0, cmap_max=8, values=[round(x, 5) for x in partitioned_entropy]
+                )
                 sub_res.add_section_part(section_graph_body)
             res.add_subsection(sub_res)
         self.file_res.add_section(res)
 
     def add_segments(self):
-        if len(self.elf.segments) == 0:
+        self.features["segments"] = []
+        if len(self.binary.segments) == 0:
             return
 
         res = ResultSection("Segments")
-        for segment in self.elf.segments:
-            sub_res = ResultSection(f"Segment - {segment['type']}")
-            sub_res.add_line(f"Type: {segment['type']}")
-            sub_res.add_tag("file.elf.segments.type", segment["type"])
-            sub_res.add_line(f"Flags: {''.join(segment['flags'].split('|')[::-1])}")
-            sub_res.add_line(f"Physical Size: {segment['physical_size']}")
-            sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
-            if len(segment["sections"]):
-                sub_res.add_line(f"Sections: {', '.join(segment['sections'])}")
+        for segment in self.binary.segments:
+            segment_dict = {
+                "alignment": segment.alignment,
+                # "content": segment.content,
+                "file_offset": segment.file_offset,
+                "physical_address": segment.physical_address,
+                "physical_size": segment.physical_size,
+                "sections": [bytes_to_backslashreplace_utf8_str(section.name) for section in segment.sections],
+                "type": segment.type.name,
+                "virtual_address": segment.virtual_address,
+                "virtual_size": segment.virtual_size,
+                "flags": segment.flags.name,
+                "raw_flags": segment.raw_flags,
+            }
+            self.features["segments"].append(segment_dict)
+
+            sub_res = ResultSection(f"Segment - {segment_dict['type']}")
+            sub_res.add_line(f"Type: {segment_dict['type']}")
+            sub_res.add_tag("file.elf.segments.type", segment_dict["type"])
+            sub_res.add_line(f"Flags: {''.join(segment_dict['flags'].split('|')[::-1])}")
+            sub_res.add_line(f"Physical Size: {segment_dict['physical_size']}")
+            sub_res.add_line(f"Virtual Size: {segment_dict['virtual_size']}")
+            if len(segment_dict["sections"]):
+                sub_res.add_line(f"Sections: {', '.join(segment_dict['sections'])}")
             res.add_subsection(sub_res)
-        if len(self.elf.segments) == 1 and self.elf.segments[0]["type"] == "LOAD" and len(self.elf.sections) == 0:
+        if (
+            len(self.features["segments"]) == 1
+            and self.features["segments"][0]["type"] == "LOAD"
+            and len(self.features["sections"]) == 0
+        ):
             res.set_heuristic(3)
 
         self.file_res.add_section(res)
 
     def add_libraries(self):
-        if len(self.elf.libraries) == 0:
+        self.features["libraries"] = [bytes_to_backslashreplace_utf8_str(library) for library in self.binary.libraries]
+        if len(self.features["libraries"]) == 0:
             heur = Heuristic(4)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
 
         res = ResultSection("Libraries")
-        for library in self.elf.libraries:
+        for library in self.features["libraries"]:
             res.add_line(library)
             res.add_tag("file.elf.libraries", library)
         self.file_res.add_section(res)
 
     def add_notes(self):
-        if not hasattr(self.elf, "notes"):
+        if not self.binary.has_notes:
             return
-        if len(self.elf.notes) == 0:
+        self.features["notes"] = [extract_note(note) for note in self.binary.notes]
+        if len(self.features["notes"]) == 0:
             return
 
         res = ResultSection("Notes")
-        for note in self.elf.notes:
+        for note in self.features["notes"]:
             if "name" in note:
                 sub_res = ResultSection(f"Note - {note['name']}")
                 sub_res.add_tag("file.elf.notes.name", note["name"])
@@ -161,46 +386,155 @@ class ELF(ServiceBase):
         self.file_res.add_section(res)
 
     def add_hash(self):
-        if hasattr(self.elf, "gnu_hash"):
+        if self.binary.use_gnu_hash:
+            self.features["gnu_hash"] = {
+                "bloom_filters": self.binary.gnu_hash.bloom_filters,
+                "buckets": self.binary.gnu_hash.buckets,
+                "hash_values": self.binary.gnu_hash.hash_values,
+                "nb_buckets": self.binary.gnu_hash.nb_buckets,
+                "shift2": self.binary.gnu_hash.shift2,
+                "symbol_index": self.binary.gnu_hash.symbol_index,
+            }
             res = ResultSection("GNU Hash")
-            res.add_line(f"Bloom Filters: {self.elf.gnu_hash['bloom_filters']}")
-            res.add_line(f"Buckets: {self.elf.gnu_hash['buckets']}")
-            res.add_line(f"Hash Values: {self.elf.gnu_hash['hash_values']}")
-            res.add_line(f"Number of buckets: {self.elf.gnu_hash['nb_buckets']}")
-            res.add_line(f"Shift2: {self.elf.gnu_hash['shift2']}")
-            res.add_line(f"Symbol Index: {self.elf.gnu_hash['symbol_index']}")
+            res.add_line(f"Bloom Filters: {self.features['gnu_hash']['bloom_filters']}")
+            res.add_line(f"Buckets: {self.features['gnu_hash']['buckets']}")
+            res.add_line(f"Hash Values: {self.features['gnu_hash']['hash_values']}")
+            res.add_line(f"Number of buckets: {self.features['gnu_hash']['nb_buckets']}")
+            res.add_line(f"Shift2: {self.features['gnu_hash']['shift2']}")
+            res.add_line(f"Symbol Index: {self.features['gnu_hash']['symbol_index']}")
             self.file_res.add_section(res)
 
-        if hasattr(self.elf, "sysv_hash"):
+        if self.binary.use_sysv_hash:
+            # TODO: Verify why len(bucket) != nbucket and len(chains) != nchain
+            self.features["sysv_hash"] = {
+                "buckets": self.binary.sysv_hash.buckets,
+                "chains": self.binary.sysv_hash.chains,
+                "nbucket": self.binary.sysv_hash.nbucket,
+                "nchain": self.binary.sysv_hash.nchain,
+            }
             res = ResultSection("SYSV Hash")
-            res.add_line(f"Buckets: {self.elf.sysv_hash['buckets']}")
-            res.add_line(f"Chains: {self.elf.sysv_hash['chains']}")
-            res.add_line(f"Number of buckets: {self.elf.sysv_hash['nbucket']}")
-            res.add_line(f"Number of chains: {self.elf.sysv_hash['nchain']}")
+            res.add_line(f"Buckets: {self.features['sysv_hash']['buckets']}")
+            res.add_line(f"Chains: {self.features['sysv_hash']['chains']}")
+            res.add_line(f"Number of buckets: {self.features['sysv_hash']['nbucket']}")
+            res.add_line(f"Number of chains: {self.features['sysv_hash']['nchain']}")
             self.file_res.add_section(res)
 
-    def check_symbols(self):
-        if not self.lief_binary.symbols:
+    def add_ctor_dtor_functions(self):
+        self.features["ctor_functions"] = [extract_fn(fn) for fn in self.binary.ctor_functions]
+        self.features["dtor_functions"] = [extract_fn(fn) for fn in self.binary.dtor_functions]
+
+    def add_strings(self):
+        self.features["strings"] = [bytes_to_backslashreplace_utf8_str(s) for s in self.binary.strings]
+
+    def add_symbols(self):
+        if self.request.deep_scan:
+            self.features["dynamic_symbols"] = [extract_symbol(symbol) for symbol in self.binary.dynamic_symbols]
+            self.features["exported_symbols"] = [extract_symbol(symbol) for symbol in self.binary.exported_symbols]
+            self.features["imported_symbols"] = [extract_symbol(symbol) for symbol in self.binary.imported_symbols]
+            self.features["static_symbols"] = [extract_symbol(symbol) for symbol in self.binary.symtab_symbols]
+
+        if not self.binary.symbols:
             heur = Heuristic(8)
             ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
-        else:
-            if not self.lief_binary.dynamic_symbols:
-                heur = Heuristic(6)
-                ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
+        elif not self.binary.dynamic_symbols:
+            heur = Heuristic(6)
+            ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
 
-    def check_relocations(self):
-        if not self.lief_binary.relocations:
+    def add_symbols_version(self):
+        self.features["symbols_version"] = []
+        for sv in self.binary.symbols_version:
+            sv_struct = {
+                "value": sv.value,
+            }
+            if sv.has_auxiliary_version:
+                sv_struct["symbol_version_auxiliary"] = bytes_to_backslashreplace_utf8_str(
+                    sv.symbol_version_auxiliary.name
+                )
+            self.features["symbols_version"].append(sv_struct)
+
+        self.features["symbols_version_definition"] = [
+            {
+                "auxiliary_symbols": [
+                    {"name": bytes_to_backslashreplace_utf8_str(aux_s.name)} for aux_s in svd.auxiliary_symbols
+                ],
+                "flags": svd.flags,
+                "hash": svd.hash,
+                "version": svd.version,
+            }
+            for svd in self.binary.symbols_version_definition
+        ]
+
+        self.features["symbols_version_requirement"] = [
+            {
+                "auxiliary_symbols": [
+                    {"name": bytes_to_backslashreplace_utf8_str(aux_s.name)} for aux_s in svd.get_auxiliary_symbols()
+                ],
+                "name": bytes_to_backslashreplace_utf8_str(svd.name),
+                "version": svd.version,
+            }
+            for svd in self.binary.symbols_version_requirement
+        ]
+
+        # TODO: Find an example that populates at least one of:
+        # symbols_version
+        # symbols_version_definition
+        # symbols_version_requirement
+
+    def add_functions(self):
+        if not self.request.deep_scan:
+            return
+
+        self.features["exported_functions"] = [extract_fn(fn) for fn in self.binary.exported_functions]
+        self.features["functions"] = [extract_fn(fn) for fn in self.binary.functions]
+        self.features["imported_functions"] = [extract_fn(fn) for fn in self.binary.imported_functions]
+
+        if self.features["imported_functions"]:
+            res = ResultSection("Imported Functions")
+            res.set_body(json.dumps(self.features["imported_functions"]), BODY_FORMAT.JSON)
+            self.file_res.add_section(res)
+        if self.features["exported_functions"]:
+            res = ResultSection("Exported Functions")
+            res.set_body(json.dumps(self.features["exported_functions"]), BODY_FORMAT.JSON)
+            self.file_res.add_section(res)
+
+    def add_relocations(self):
+        if self.request.deep_scan:
+            # TODO: Find one and work on it.
+            self.features["dynamic_relocations"] = [
+                {"purpose": entry.purpose.name} for entry in self.binary.dynamic_relocations
+            ]
+            self.features["object_relocations"] = {}
+            self.features["pltgot_relocations"] = {}
+            self.features["relocations"] = {}
+
+        if not self.binary.relocations:
             heur = Heuristic(7)
             ResultSection(heur.name, body=heur.description, heuristic=heur, parent=self.file_res)
 
-    def check_dynamic_entries(self):
-        if not self.elf.dynamic_entries:
+    def add_dynamic_entries(self):
+        self.features["dynamic_entries"] = []
+        for entry in self.binary.dynamic_entries:
+            entry_struct = {
+                "tag": entry.tag.name,
+                "value": entry.value,
+            }
+            if isinstance(entry, lief.ELF.DynamicEntryFlags):
+                entry_struct["flags"] = [flag.name for flag in entry.flags]
+            elif isinstance(entry, (lief.ELF.DynamicEntryLibrary, lief.ELF.DynamicSharedObject)):
+                entry_struct["name"] = bytes_to_backslashreplace_utf8_str(entry.name)
+            elif isinstance(entry, lief.ELF.DynamicEntryRpath):
+                entry_struct["paths"] = [bytes_to_backslashreplace_utf8_str(path) for path in entry.paths]
+            elif isinstance(entry, lief.ELF.DynamicEntryRunPath):
+                entry_struct["paths"] = [bytes_to_backslashreplace_utf8_str(path) for path in entry.paths]
+            self.features["dynamic_entries"].append(entry_struct)
+
+        if not self.features["dynamic_entries"]:
             heur = Heuristic(5)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
             return
 
         res = None
-        for entry in self.elf.dynamic_entries:
+        for entry in self.features["dynamic_entries"]:
             line = None
             if "flags" in entry:
                 line = f"{entry['tag']}: {', '.join(entry['flags'])}"
@@ -213,58 +547,6 @@ class ELF(ServiceBase):
                 if res is None:
                     res = ResultSection("Dynamic Entries", parent=self.file_res)
                 res.add_line(line)
-
-    def add_symbols_version(self):
-        # TODO: Find and example that populates at least one of:
-        # symbols_version
-        # symbols_version_definition
-        # symbols_version_requirement
-        pass
-
-    def add_functions(self):
-        if hasattr(self.elf, "imported_functions") and self.elf.imported_functions:
-            res = ResultSection("Imported Functions")
-            res.set_body(json.dumps(self.elf.imported_functions), BODY_FORMAT.JSON)
-            self.file_res.add_section(res)
-        if hasattr(self.elf, "exported_functions") and self.elf.exported_functions:
-            res = ResultSection("Exported Functions")
-            res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
-            self.file_res.add_section(res)
-
-    def add_overlay(self):
-        overlay = bytes.fromhex(self.elf.overlay)
-        res = ResultMultiSection("Overlay", parent=self.file_res)
-        entropy, partitioned_entropy = calculate_partition_entropy(BytesIO(overlay))
-        overlay_kv_body = OrderedKVSectionBody()
-        overlay_kv_body.add_item("Size", len(overlay))
-        overlay_kv_body.add_item("Entropy", entropy)
-        res.add_section_part(overlay_kv_body)
-        if len(overlay) == 0:
-            return
-
-        overlay_graph_body = GraphSectionBody()
-        overlay_graph_body.set_colormap(cmap_min=0, cmap_max=8, values=[round(x, 5) for x in partitioned_entropy])
-        res.add_section_part(overlay_graph_body)
-
-        file_name = "overlay"
-        temp_path = os.path.join(self.working_directory, file_name)
-        with open(temp_path, "wb") as myfile:
-            myfile.write(overlay)
-        self.request.add_extracted(
-            temp_path,
-            file_name,
-            f"{file_name} extracted from binary",
-            safelist_interface=self.api_interface,
-        )
-
-        # Droppers can append their payload after the last section/segment: check if the overlay itself is an executable
-        nested = lief.ELF.parse(overlay) or lief.PE.parse(overlay)
-        if nested is not None:
-            nested_res = ResultSection(
-                f"The overlay is itself a{'n ELF' if isinstance(nested, lief.ELF.Binary) else ' PE'} binary",
-                parent=res,
-            )
-            nested_res.add_line("The extracted overlay will be analyzed as its own submission.")
 
     def add_lief_logging(self, lief_output_file):
         if not os.path.exists(lief_output_file):
@@ -294,6 +576,11 @@ class ELF(ServiceBase):
                     corrupted_res = ResultSection("Corrupted ELF structures", parent=res)
                 corrupted_res.add_line(output_line)
 
+    def _cleanup(self):
+        self.binary = None
+        self.features = None
+        super()._cleanup()
+
     def execute(self, request: ServiceRequest):
         request.result = Result()
         self.file_res = request.result
@@ -302,35 +589,31 @@ class ELF(ServiceBase):
         lief_output_file = os.path.join(self.working_directory, "lief_output")
         lief.logging.set_path(lief_output_file)
 
-        self.lief_binary = lief.ELF.parse(request.file_path)
-        if self.lief_binary is None:
+        self.binary = lief.ELF.parse(request.file_path)
+        if self.binary is None:
             res = ResultSection("This file looks like an ELF but failed loading.", heuristic=Heuristic(1))
             self.file_res.add_section(res)
             self.add_lief_logging(lief_output_file)
             return
 
-        self.elf = elf.al_elf.AL_ELF(
-            binary=self.lief_binary,
-            extract_relocations=request.deep_scan,
-            extract_symbols=request.deep_scan,
-            extract_functions=request.deep_scan,
-        )
-
+        self.features = {}
         self.add_header()
         self.add_sections()
         self.add_segments()
         self.add_libraries()
         self.add_notes()
         self.add_hash()
-        self.check_symbols()
+        self.add_ctor_dtor_functions()
+        self.add_strings()
+        self.add_symbols()
         self.add_symbols_version()
         self.add_functions()
-        self.check_relocations()
-        self.check_dynamic_entries()
+        self.add_relocations()
+        self.add_dynamic_entries()
         self.add_overlay()
         self.add_lief_logging(lief_output_file)
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:
-            myfile.write(json.dumps(self.elf.__dict__))
+            myfile.write(json.dumps(self.features))
         request.add_supplementary(temp_path, "features.json", "Features extracted from the ELF file, as a JSON file")
