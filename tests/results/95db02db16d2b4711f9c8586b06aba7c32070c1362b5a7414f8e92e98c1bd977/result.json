@@ -855,7 +855,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 726cbc700f62e9f9a18af7d90c283808a7791a90\nType: GNU_BUILD_ID",
+        "body": "Type: GNU_BUILD_ID\nBuild ID: 726cbc700f62e9f9a18af7d90c283808a7791a90",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -881,7 +881,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 676f6c6420312e3131000000\nType: GNU_GOLD_VERSION",
+        "body": "Type: GNU_GOLD_VERSION\nDescription: 676f6c6420312e3131000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -925,7 +925,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "3c85a0cb2f2b67003fbb202571b0b982e186a0c62593070b26f6518b2763899a"
+        "sha256": "5eb40cf39378cdcc5969c67c5b0344a457a278ac8c5d18ee52da0a064f457c35"
       }
     ]
   },

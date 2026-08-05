@@ -1022,7 +1022,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 00000000030000000200000000000000\nType: GNU_ABI_TAG\nDetails: LINUX 3.2.0",
+        "body": "Type: GNU_ABI_TAG\nDescription: 00000000030000000200000000000000\nDetails: LINUX 3.2.0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1048,7 +1048,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 2c883ef74cef85f0720efd994389dcc0832541f7\nType: GNU_BUILD_ID",
+        "body": "Type: GNU_BUILD_ID\nBuild ID: 2c883ef74cef85f0720efd994389dcc0832541f7",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1092,7 +1092,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "55a636cb7e0a1d3dc4c38fc45f19e98805e8f8fd95f0ad2443fef04e3a6c1b88"
+        "sha256": "e4bedc1967522bd37a1dc5659cca2d318aa7bd68c6ffb4701e3eaa7ccbf89e3c"
       }
     ]
   },

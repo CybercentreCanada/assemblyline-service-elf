@@ -1052,7 +1052,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 020000c0040000000300000000000000\nType: GNU_PROPERTY_TYPE_0",
+        "body": "Type: GNU_PROPERTY_TYPE_0\nDescription: 020000c0040000000300000000000000\nx86 Features: IBT, SHSTK",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1078,7 +1078,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 00000000030000000200000000000000\nType: GNU_ABI_TAG\nDetails: LINUX 3.2.0",
+        "body": "Type: GNU_ABI_TAG\nDescription: 00000000030000000200000000000000\nDetails: LINUX 3.2.0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1104,7 +1104,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 05fe36a9cd3e8aa898b230554eea7c3ab1ce0cec\nType: GNU_BUILD_ID",
+        "body": "Type: GNU_BUILD_ID\nBuild ID: 05fe36a9cd3e8aa898b230554eea7c3ab1ce0cec",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1130,7 +1130,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 98240000000000009f33000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 98240000000000009f33000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1156,7 +1156,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 5033000000000000227e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 5033000000000000227e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1182,7 +1182,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1208,7 +1208,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1234,7 +1234,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1260,7 +1260,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1286,7 +1286,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1312,7 +1312,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1338,7 +1338,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1364,7 +1364,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1390,7 +1390,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1416,7 +1416,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1442,7 +1442,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1468,7 +1468,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1494,7 +1494,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 50330000000000008f7d000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 50330000000000008f7d000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1517,7 +1517,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 5033000000000000676e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 5033000000000000676e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1543,7 +1543,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: a033000000000000317e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: a033000000000000317e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1569,7 +1569,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 706e000000000000057e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 706e000000000000057e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1595,7 +1595,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 706e000000000000487a000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 706e000000000000487a000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1618,7 +1618,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 706e0000000000009078000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 706e0000000000009078000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1644,7 +1644,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 9078000000000000057e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 9078000000000000057e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1670,7 +1670,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 507a000000000000227e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 507a000000000000227e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1696,7 +1696,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 907d000000000000057e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 907d000000000000057e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1722,7 +1722,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 107e000000000000227e000000000000\nType: GNU_BUILD_ATTRIBUTE_OPEN",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_OPEN\nDescription: 107e000000000000227e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1748,7 +1748,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 6034000000000000f57d000000000000\nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_FUNC\nDescription: 6034000000000000f57d000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1774,7 +1774,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: \nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_FUNC\nDescription: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1800,7 +1800,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: 706e000000000000227e000000000000\nType: GNU_BUILD_ATTRIBUTE_FUNC",
+        "body": "Type: GNU_BUILD_ATTRIBUTE_FUNC\nDescription: 706e000000000000227e000000000000",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1844,7 +1844,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "f66a3743290fe928d9e0788ab542a7f2092b8b6143dbfe7f2294d680ee2f9751"
+        "sha256": "6c4e25cbcaa1f675a1e0915faf7cd9f1fc9999bae4baaf38d767d739698ad27a"
       }
     ]
   },

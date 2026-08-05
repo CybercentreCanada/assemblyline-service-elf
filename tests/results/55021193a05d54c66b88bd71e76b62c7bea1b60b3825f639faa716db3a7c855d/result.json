@@ -269,6 +269,32 @@
         "tags": {},
         "title_text": "No dynamic entry found",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "  Can't parse section #00\nThe .shstr index is out of range of the section table\nSegment #2 has a physical size larger than the current stream size (537462 > 536085). The content will be truncated with the stream size.\nFailed to access segment content LOAD:0x16b80\nPT_DYNAMIC parsing failed with error",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "LIEF logging information.",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "  Can't parse section #00\nThe .shstr index is out of range of the section table\nFailed to access segment content LOAD:0x16b80\nPT_DYNAMIC parsing failed with error",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Corrupted ELF structures",
+        "zeroize_on_tag_safe": false
       }
     ]
   },

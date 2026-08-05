@@ -965,7 +965,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: c7b99f94d09e5bd8f07072dd27243d92b501e351\nType: GNU_BUILD_ID",
+        "body": "Type: GNU_BUILD_ID\nBuild ID: c7b99f94d09e5bd8f07072dd27243d92b501e351",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -1009,7 +1009,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "800773c969fc5083f8f11c175400659ea6c5d0b9cbe48ec54094c4697665f529"
+        "sha256": "17c297889f492a7c50e5f1fc0478ce81fb18327048142f9bd42b7f44f882c56f"
       }
     ]
   },

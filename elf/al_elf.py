@@ -16,6 +16,84 @@ def extract_fn(fn):
     }
 
 
+def extract_gnu_property(prop):
+    prop_struct = {"type": prop.type.name}
+    if isinstance(prop, lief.ELF.X86Features):
+        prop_struct["features"] = [{"flag": flag.name, "feature": feature.name} for flag, feature in prop.features]
+    elif isinstance(prop, lief.ELF.X86ISA):
+        prop_struct["values"] = [{"flag": flag.name, "isa": isa.name} for flag, isa in prop.values]
+    elif isinstance(prop, lief.ELF.AArch64Feature):
+        prop_struct["features"] = [feature.name for feature in prop.features]
+    elif isinstance(prop, lief.ELF.StackSize):
+        prop_struct["stack_size"] = prop.stack_size
+    elif isinstance(prop, lief.ELF.Needed):
+        prop_struct["needs"] = [need.name for need in prop.needs]
+    return prop_struct
+
+
+def extract_note(note):
+    # Extract a note and the specific fields into the details key.
+    note_struct = {
+        "description": bytes(note.description).hex(),
+        "name": "",
+        "type": note.type.name,
+        "original_type": note.original_type,
+    }
+
+    try:
+        note_struct["name"] = bytes_to_backslashreplace_utf8_str(note.name)
+    except UnicodeDecodeError:
+        note_struct.pop("name", None)
+
+    if isinstance(note, lief.ELF.NoteAbi):
+        if note.abi is not None and note.version is not None:
+            note_struct["details"] = {
+                "abi": note.abi.name,
+                "version": note.version,
+            }
+    elif isinstance(note, lief.ELF.NoteGnuProperty):
+        note_struct["details"] = {"properties": [extract_gnu_property(prop) for prop in note.properties]}
+    elif isinstance(note, lief.ELF.CorePrPsInfo):
+        if note.info is not None:
+            note_struct["details"] = {
+                "filename": bytes_to_backslashreplace_utf8_str(note.info.filename_stripped),
+                "args": bytes_to_backslashreplace_utf8_str(note.info.args_stripped),
+                "pid": note.info.pid,
+                "ppid": note.info.ppid,
+                "pgrp": note.info.pgrp,
+                "uid": note.info.uid,
+                "gid": note.info.gid,
+            }
+    elif isinstance(note, lief.ELF.CorePrStatus):
+        status = note.status
+        note_struct["details"] = {
+            "pid": status.pid,
+            "ppid": status.ppid,
+            "cursig": status.cursig,
+            "pc": note.pc,
+            "sp": note.sp,
+        }
+    elif isinstance(note, lief.ELF.CoreFile):
+        note_struct["details"] = {
+            "files": [
+                {
+                    "path": bytes_to_backslashreplace_utf8_str(entry.path),
+                    "start": entry.start,
+                    "end": entry.end,
+                }
+                for entry in note.files
+            ]
+        }
+    elif isinstance(note, lief.ELF.CoreSigInfo):
+        note_struct["details"] = {
+            "signo": note.signo,
+            "sigcode": note.sigcode,
+            "sigerrno": note.sigerrno,
+        }
+
+    return note_struct
+
+
 def extract_symbol(symbol):
     symbol_struct = {
         "binding": symbol.binding.name,
@@ -88,30 +166,7 @@ class AL_ELF:
             self.interpreter = bytes_to_backslashreplace_utf8_str(binary.interpreter)
 
         if binary.has_notes:
-            self.notes = []
-            for note in binary.notes:
-                # TODO: Remove the is_core/is_android fields.
-                note_type = note.type.name
-                note_struct = {
-                    "description": bytes(note.description).hex(),
-                    "is_android": note_type.startswith("ANDROID_"),
-                    "is_core": note_type.startswith("CORE_"),
-                    "name": "",
-                    "type": note_type,
-                    "original_type": note.original_type,
-                }
-
-                try:
-                    note_struct["name"] = bytes_to_backslashreplace_utf8_str(note.name)
-                except UnicodeDecodeError:
-                    note_struct.pop("name", None)
-
-                if isinstance(note, lief.ELF.NoteAbi) and note.abi is not None and note.version is not None:
-                    note_struct["details"] = {
-                        "abi": note.abi.name,
-                        "version": note.version,
-                    }
-                self.notes.append(note_struct)
+            self.notes = [extract_note(note) for note in binary.notes]
 
         self.nx = binary.has_nx
 

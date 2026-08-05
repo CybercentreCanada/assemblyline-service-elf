@@ -8,9 +8,6 @@ from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result
 
 import elf.al_elf
 
-# Disable logging from LIEF
-lief.logging.disable()
-
 
 class ELF(ServiceBase):
     def add_header(self):
@@ -113,16 +110,38 @@ class ELF(ServiceBase):
                 sub_res.add_tag("file.elf.notes.name", note["name"])
             else:
                 sub_res = ResultSection("Note")
-            sub_res.add_line(f"Description: {note['description']}")
             sub_res.add_line(f"Type: {note['type']}")
             sub_res.add_tag("file.elf.notes.type", note["type"])
-            if note["is_core"]:
-                sub_res.add_line(f"Core: {note['is_core']}, {note['type']}")
+            description_label = "Build ID" if note["type"] == "GNU_BUILD_ID" else "Description"
+            sub_res.add_line(f"{description_label}: {note['description']}")
+            if note["type"].startswith("CORE_"):
+                sub_res.add_line(f"Core: True, {note['type']}")
                 sub_res.add_tag("file.elf.notes.type_core", note["type"])
-            if note["is_android"]:
-                sub_res.add_line(f"Android: {note['is_android']}")
-            if "details" in note:
-                sub_res.add_line(f"Details: {note['details']['abi']} {'.'.join(map(str, note['details']['version']))}")
+            if note["type"].startswith("ANDROID_"):
+                sub_res.add_line("Android: True")
+            details = note.get("details", {})
+            if "abi" in details:
+                sub_res.add_line(f"Details: {details['abi']} {'.'.join(map(str, details['version']))}")
+            for prop in details.get("properties", []):
+                if "features" in prop and prop["type"] == "X86_FEATURE":
+                    features = ", ".join(feature["feature"] for feature in prop["features"])
+                    sub_res.add_line(f"x86 Features: {features}")
+                elif "features" in prop:
+                    sub_res.add_line(f"AArch64 Features: {', '.join(prop['features'])}")
+                elif "values" in prop:
+                    isas = ", ".join(f"{value['flag']} {value['isa']}" for value in prop["values"])
+                    sub_res.add_line(f"x86 ISA: {isas}")
+                elif "stack_size" in prop:
+                    sub_res.add_line(f"Stack Size: {prop['stack_size']}")
+                elif "needs" in prop:
+                    sub_res.add_line(f"Needed: {', '.join(prop['needs'])}")
+            if "filename" in details:
+                sub_res.add_line(f"Process: {details['filename']} (args: {details['args']}, pid: {details['pid']})")
+            if "files" in details:
+                for entry in details["files"][:20]:
+                    sub_res.add_line(f"Mapped file: {entry['path']}")
+            if "signo" in details:
+                sub_res.add_line(f"Signal: {details['signo']} (code: {details['sigcode']})")
             res.add_subsection(sub_res)
         self.file_res.add_section(res)
 
@@ -181,15 +200,47 @@ class ELF(ServiceBase):
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
 
+    def add_lief_logging(self, lief_output_file):
+        if not os.path.exists(lief_output_file):
+            return
+
+        with open(lief_output_file, "rb") as f:
+            lief_output = f.readlines()
+
+        lief_logging = {}
+        for line in lief_output:
+            line = line.decode("utf-8", "backslashreplace").rstrip().rstrip("\x00")
+            if not line:
+                continue
+            lief_logging[line] = lief_logging.get(line, 0) + 1
+
+        if not lief_logging:
+            return
+
+        res = ResultSection("LIEF logging information.", parent=self.file_res)
+        corrupted_res = None
+        corruption_markers = ("corrupted", "can't parse", "out of range", "failed", "can't read", "invalid")
+        for line, count in lief_logging.items():
+            output_line = f"({count}x) {line}" if count > 1 else line
+            res.add_line(output_line)
+            if any(marker in line.lower() for marker in corruption_markers):
+                if corrupted_res is None:
+                    corrupted_res = ResultSection("Corrupted ELF structures", parent=res)
+                corrupted_res.add_line(output_line)
+
     def execute(self, request: ServiceRequest):
         request.result = Result()
         self.file_res = request.result
         self.request = request
 
+        lief_output_file = os.path.join(self.working_directory, "lief_output")
+        lief.logging.set_path(lief_output_file)
+
         self.lief_binary = lief.ELF.parse(request.file_path)
         if self.lief_binary is None:
             res = ResultSection("This file looks like an ELF but failed loading.", heuristic=Heuristic(1))
             self.file_res.add_section(res)
+            self.add_lief_logging(lief_output_file)
             return
 
         self.elf = elf.al_elf.AL_ELF(
@@ -210,6 +261,7 @@ class ELF(ServiceBase):
         self.add_functions()
         self.check_relocations()
         self.check_dynamic_entries()
+        self.add_lief_logging(lief_output_file)
 
         temp_path = os.path.join(self.working_directory, "features.json")
         with open(temp_path, "w") as myfile:

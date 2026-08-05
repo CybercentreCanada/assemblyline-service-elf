@@ -138,6 +138,19 @@
         "tags": {},
         "title_text": "No dynamic entry found",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "The current binary doesn't have a section header",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "LIEF logging information.",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
