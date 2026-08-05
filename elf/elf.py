@@ -1,11 +1,12 @@
 import json
 import os
 
-import elf.al_elf
 import lief
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
 from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
+
+import elf.al_elf
 
 # Disable logging from LIEF
 lief.logging.disable()
@@ -23,12 +24,8 @@ class ELF(ServiceBase):
         res.add_line(f"NX: {self.elf.nx}")
         res.add_line(f"Position Independent: {self.elf.position_independent}")
         res.add_line(f"Processor Flag: {self.elf.header['processor_flag']}")
-        if len(self.elf.header["arm_flags_list"]) > 0:
-            res.add_line(f"ARM Flags: {', '.join(self.elf.header['arm_flags_list'])}")
-        if len(self.elf.header["mips_flags_list"]) > 0:
-            res.add_line(f"MIPS Flags: {', '.join(self.elf.header['mips_flags_list'])}")
-        if len(self.elf.header["ppc64_flags_list"]) > 0:
-            res.add_line(f"PPC64 Flags: {', '.join(self.elf.header['ppc64_flags_list'])}")
+        if len(self.elf.header["flags_list"]) > 0:
+            res.add_line(f"Processor Flags: {', '.join(self.elf.header['flags_list'])}")
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
@@ -80,8 +77,7 @@ class ELF(ServiceBase):
             sub_res = ResultSection(f"Segment - {segment['type']}")
             sub_res.add_line(f"Type: {segment['type']}")
             sub_res.add_tag("file.elf.segments.type", segment["type"])
-            if "flags" in segment:
-                sub_res.add_line(f"Flags: {segment['flags']}")
+            sub_res.add_line(f"Flags: {''.join(segment['flags'].split('|')[::-1])}")
             sub_res.add_line(f"Physical Size: {segment['physical_size']}")
             sub_res.add_line(f"Virtual Size: {segment['virtual_size']}")
             if len(segment["sections"]):
@@ -121,8 +117,8 @@ class ELF(ServiceBase):
             sub_res.add_line(f"Type: {note['type']}")
             sub_res.add_tag("file.elf.notes.type", note["type"])
             if note["is_core"]:
-                sub_res.add_line(f"Core: {note['is_core']}, {note['type_core']}")
-                sub_res.add_tag("file.elf.notes.type_core", note["type_core"])
+                sub_res.add_line(f"Core: {note['is_core']}, {note['type']}")
+                sub_res.add_tag("file.elf.notes.type_core", note["type"])
             if note["is_android"]:
                 sub_res.add_line(f"Android: {note['is_android']}")
             if "details" in note:
@@ -190,7 +186,7 @@ class ELF(ServiceBase):
         self.file_res = request.result
         self.request = request
 
-        self.lief_binary = lief.parse(request.file_path)
+        self.lief_binary = lief.ELF.parse(request.file_path)
         if self.lief_binary is None:
             res = ResultSection("This file looks like an ELF but failed loading.", heuristic=Heuristic(1))
             self.file_res.add_section(res)

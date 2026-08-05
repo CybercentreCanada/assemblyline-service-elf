@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x8194\nMachine: ARM\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 143360\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nARM Flags: EABI_VER4\nOverlay size: 0",
+        "body": "Entrypoint: 0x8194\nMachine: ARM\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 143360\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nProcessor Flags: ARM_EABI_VER4\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -159,7 +159,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ARM_EXIDX\nEntropy: 4.438768258633953\nSize: 280\nFlags: LINK_ORDER, ALLOC\nSegments: ARM_UNWIND, LOAD",
+        "body": "Type: ARM_EXIDX\nEntropy: 4.438768258633953\nSize: 280\nFlags: ALLOC, LINK_ORDER\nSegments: ARM_EXIDX, LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -205,7 +205,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOBITS\nEntropy: 2.0\nSize: 8\nFlags: TLS, WRITE, ALLOC\nSegments: LOAD, TLS",
+        "body": "Type: NOBITS\nEntropy: 2.0\nSize: 8\nFlags: WRITE, ALLOC, TLS\nSegments: LOAD, TLS",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -701,7 +701,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ARM_UNWIND\nFlags: ('R',)\nPhysical Size: 280\nVirtual Size: 280\nSections: .ARM.exidx",
+        "body": "Type: ARM_EXIDX\nFlags: R\nPhysical Size: 280\nVirtual Size: 280\nSections: .ARM.exidx",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -713,41 +713,18 @@
             "elf": {
               "segments": {
                 "type": [
-                  "ARM_UNWIND"
+                  "ARM_EXIDX"
                 ]
               }
             }
           }
         },
-        "title_text": "Segment - ARM_UNWIND",
+        "title_text": "Segment - ARM_EXIDX",
         "zeroize_on_tag_safe": false
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 79252\nVirtual Size: 79252\nSections: .init, .text, .fini, .rodata, .ARM.extab, .ARM.exidx",
-        "body_config": {},
-        "body_format": "TEXT",
-        "classification": "TLP:C",
-        "depth": 1,
-        "heuristic": null,
-        "promote_to": null,
-        "tags": {
-          "file": {
-            "elf": {
-              "segments": {
-                "type": [
-                  "LOAD"
-                ]
-              }
-            }
-          }
-        },
-        "title_text": "Segment - LOAD",
-        "zeroize_on_tag_safe": false
-      },
-      {
-        "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 712\nVirtual Size: 29472\nSections: .eh_frame, .tbss, .init_array, .fini_array, .jcr, .got, .data, .bss",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 79252\nVirtual Size: 79252\nSections: .init, .text, .fini, .rodata, .ARM.extab, .ARM.exidx",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -770,7 +747,30 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: TLS\nFlags: ('R',)\nPhysical Size: 0\nVirtual Size: 8\nSections: .tbss, .init_array, .fini_array",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 712\nVirtual Size: 29472\nSections: .eh_frame, .tbss, .init_array, .fini_array, .jcr, .got, .data, .bss",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: TLS\nFlags: R\nPhysical Size: 0\nVirtual Size: 8\nSections: .tbss, .init_array, .fini_array",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -793,7 +793,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RWX\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -901,7 +901,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "012f61de591f994c406eeb59906457ed13f23dcf0c063a2de9346a1584b4d467"
+        "sha256": "4e9656043f88686c27bc99837cbffbcec362f2f1aab5928943c94324535f70a6"
       }
     ]
   },
@@ -1075,7 +1075,7 @@
         {
           "heur_id": null,
           "signatures": [],
-          "value": "ARM_UNWIND"
+          "value": "ARM_EXIDX"
         },
         {
           "heur_id": null,

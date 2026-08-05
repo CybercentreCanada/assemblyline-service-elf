@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x804e5a8\nMachine: i386\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 90112\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 240",
+        "body": "Entrypoint: 0x804e5a8\nMachine: I386\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 90112\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 240",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 30620\nVirtual Size: 30620",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 30620\nVirtual Size: 30620",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -54,7 +54,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 57252",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 0\nVirtual Size: 57252",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -77,7 +77,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RW\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -190,7 +190,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "6ad0461b341ea85beea9b3a4b8297a0cfa6957b02c43787c2f49039d01fd785e"
+        "sha256": "fe92f9d21700de8850221e05a1a14a1e2b2bc64da8dac86650bf6dd4118e5bc7"
       }
     ]
   },

@@ -1,25 +1,16 @@
 import lief
 
-section_flags_entries = {entry.__int__(): entry for entry, txt in lief.ELF.SECTION_FLAGS.__entries.values()}
-segment_flags_entries = {entry.__int__(): entry for entry, txt in lief.ELF.SEGMENT_FLAGS.__entries.values()}
 
-
-def get_powers(x):
-    if x == 0:
-        return [0]
-    powers = []
-    i = 1
-    while i <= x:
-        if i & x:
-            powers.append(i)
-        i <<= 1
-    return powers
+def bytes_to_backslashreplace_utf8_str(value):
+    if isinstance(value, bytes):
+        return value.decode("utf-8", "backslashreplace")
+    return value
 
 
 def extract_fn(fn):
     return {
         "address": fn.address,
-        "name": fn.name,
+        "name": bytes_to_backslashreplace_utf8_str(fn.name),
         "size": fn.size,
         "value": fn.value,
     }
@@ -28,14 +19,14 @@ def extract_fn(fn):
 def extract_symbol(symbol):
     symbol_struct = {
         "binding": symbol.binding.name,
-        "name": symbol.name,
+        "name": bytes_to_backslashreplace_utf8_str(symbol.name),
         "type": symbol.type.name,
         "exported": symbol.exported,
         "imported": symbol.imported,
         "visibility": symbol.visibility.name,
     }
     if symbol.name != symbol.demangled_name:
-        symbol_struct["demangled_name"] = symbol.demangled_name
+        symbol_struct["demangled_name"] = bytes_to_backslashreplace_utf8_str(symbol.demangled_name)
     return symbol_struct
 
 
@@ -67,8 +58,7 @@ class AL_ELF:
             self.dynamic_symbols = [extract_symbol(symbol) for symbol in binary.dynamic_symbols]
             self.exported_symbols = [extract_symbol(symbol) for symbol in binary.exported_symbols]
             self.imported_symbols = [extract_symbol(symbol) for symbol in binary.imported_symbols]
-            self.static_symbols = [extract_symbol(symbol) for symbol in binary.static_symbols]
-            # binary.symbols contains both static and dynamic symbols
+            self.static_symbols = [extract_symbol(symbol) for symbol in binary.symtab_symbols]
 
         if extract_functions:
             self.exported_functions = [extract_fn(fn) for fn in binary.exported_functions]
@@ -95,52 +85,51 @@ class AL_ELF:
             }
 
         if binary.has_interpreter:
-            self.interpreter = binary.interpreter
+            self.interpreter = bytes_to_backslashreplace_utf8_str(binary.interpreter)
 
         if binary.has_notes:
             self.notes = []
             for note in binary.notes:
+                # TODO: Remove the is_core/is_android fields.
+                note_type = note.type.name
                 note_struct = {
-                    "description": note.description,
-                    "is_android": note.is_android,
-                    "is_core": note.is_core,
+                    "description": bytes(note.description).hex(),
+                    "is_android": note_type.startswith("ANDROID_"),
+                    "is_core": note_type.startswith("CORE_"),
                     "name": "",
-                    "type": note.type.name,
-                    "type_core": note.type_core.name,
+                    "type": note_type,
+                    "original_type": note.original_type,
                 }
 
                 try:
-                    note_struct["name"] = note.name
+                    note_struct["name"] = bytes_to_backslashreplace_utf8_str(note.name)
                 except UnicodeDecodeError:
                     note_struct.pop("name", None)
 
-                if isinstance(note.details, lief.ELF.NoteAbi):
+                if isinstance(note, lief.ELF.NoteAbi) and note.abi is not None and note.version is not None:
                     note_struct["details"] = {
-                        "abi": note.details.abi.name,
-                        "version": note.details.version,
+                        "abi": note.abi.name,
+                        "version": note.version,
                     }
                 self.notes.append(note_struct)
 
         self.nx = binary.has_nx
 
         self.header = {
-            "arm_flags_list": [flag.name for flag in binary.header.arm_flags_list],
+            "flags_list": [flag.name for flag in binary.header.flags_list],
             "entrypoint": binary.header.entrypoint,
             "file_type": binary.header.file_type.name,
             "header_size": binary.header.header_size,
-            "hexagon_flags_list": [flag.name for flag in binary.header.hexagon_flags_list],
-            "identity": binary.header.identity,
+            "identity": list(binary.header.identity),
             "identity_abi_version": binary.header.identity_abi_version,
             "identity_class": binary.header.identity_class.name,
             "identity_data": binary.header.identity_data.name,
             "identity_os_abi": binary.header.identity_os_abi.name,
             "identity_version": binary.header.identity_version.name,
             "machine_type": binary.header.machine_type.name,
-            "mips_flags_list": [flag.name for flag in binary.header.mips_flags_list],
             "numberof_sections": binary.header.numberof_sections,
             "numberof_segments": binary.header.numberof_segments,
             "object_file_version": binary.header.object_file_version.name,
-            "ppc64_flags_list": [flag.name for flag in binary.header.ppc64_flags_list],
             "processor_flag": binary.header.processor_flag,
             "program_header_offset": binary.header.program_header_offset,
             "program_header_size": binary.header.program_header_size,
@@ -154,8 +143,7 @@ class AL_ELF:
         self.position_independent = binary.is_pie
         self.last_offset_section = binary.last_offset_section
         self.last_offset_segment = binary.last_offset_segment
-        self.libraries = binary.libraries
-        self.name = binary.name
+        self.libraries = [bytes_to_backslashreplace_utf8_str(library) for library in binary.libraries]
         self.next_virtual_address = binary.next_virtual_address
         self.overlay = bytearray(binary.overlay).hex()
         self.sections = []
@@ -171,7 +159,7 @@ class AL_ELF:
                 "fullname": "",
                 "information": section.information,
                 "link": section.link,
-                "name": section.name,
+                "name": bytes_to_backslashreplace_utf8_str(section.name),
                 "offset": section.offset,
                 "original_size": section.original_size,
                 "segments": [segment.type.name for segment in section.segments],
@@ -180,17 +168,7 @@ class AL_ELF:
                 "virtual_address": section.virtual_address,
             }
 
-            try:
-                section_struct["fullname"] = section.fullname
-            except UnicodeDecodeError:
-                section_struct.pop("fullname", None)
-
-            try:
-                section_struct["flags"] = (
-                    " | ".join([section_flags_entries[x].name for x in get_powers(section.flags.__int__())]),
-                )
-            except KeyError:
-                pass
+            section_struct["fullname"] = bytes_to_backslashreplace_utf8_str(section.fullname)
             self.sections.append(section_struct)
 
         self.segments = []
@@ -201,20 +179,16 @@ class AL_ELF:
                 "file_offset": segment.file_offset,
                 "physical_address": segment.physical_address,
                 "physical_size": segment.physical_size,
-                "sections": [section.name for section in segment.sections],
+                "sections": [bytes_to_backslashreplace_utf8_str(section.name) for section in segment.sections],
                 "type": segment.type.name,
                 "virtual_address": segment.virtual_address,
                 "virtual_size": segment.virtual_size,
+                "flags": segment.flags.name,
+                "raw_flags": segment.raw_flags,
             }
-            try:
-                segment_dict["flags"] = (
-                    "".join([segment_flags_entries[x].name for x in get_powers(segment.flags.__int__())][::-1]),
-                )
-            except KeyError:
-                pass
             self.segments.append(segment_dict)
 
-        self.strings = binary.strings
+        self.strings = [bytes_to_backslashreplace_utf8_str(s) for s in binary.strings]
 
         self.symbols_version = []
         for sv in binary.symbols_version:
@@ -222,12 +196,16 @@ class AL_ELF:
                 "value": sv.value,
             }
             if sv.has_auxiliary_version:
-                sv_struct["symbol_version_auxiliary"] = sv.symbol_version_auxiliary.name
+                sv_struct["symbol_version_auxiliary"] = bytes_to_backslashreplace_utf8_str(
+                    sv.symbol_version_auxiliary.name
+                )
             self.symbols_version.append(sv_struct)
 
         self.symbols_version_definition = [
             {
-                "auxiliary_symbols": [{"name": aux_s.name} for aux_s in svd.auxiliary_symbols],
+                "auxiliary_symbols": [
+                    {"name": bytes_to_backslashreplace_utf8_str(aux_s.name)} for aux_s in svd.auxiliary_symbols
+                ],
                 "flags": svd.flags,
                 "hash": svd.hash,
                 "version": svd.version,
@@ -237,8 +215,10 @@ class AL_ELF:
 
         self.symbols_version_requirement = [
             {
-                "auxiliary_symbols": [{"name": aux_s.name} for aux_s in svd.get_auxiliary_symbols()],
-                "name": svd.name,
+                "auxiliary_symbols": [
+                    {"name": bytes_to_backslashreplace_utf8_str(aux_s.name)} for aux_s in svd.get_auxiliary_symbols()
+                ],
+                "name": bytes_to_backslashreplace_utf8_str(svd.name),
                 "version": svd.version,
             }
             for svd in binary.symbols_version_requirement

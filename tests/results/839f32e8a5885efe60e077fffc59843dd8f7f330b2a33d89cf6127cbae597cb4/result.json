@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x5070\nMachine: MIPS\nFile Type: DYNAMIC\nIdentity Class: CLASS64\nEndianness: LSB\nVirtual Size: 188416\nNX: False\nPosition Independent: False\nProcessor Flag: 2147483655\nOverlay size: 0",
+        "body": "Entrypoint: 0x5070\nMachine: MIPS\nFile Type: DYN\nIdentity Class: ELF64\nEndianness: LSB\nVirtual Size: 188416\nNX: False\nPosition Independent: False\nProcessor Flag: 2147483655\nProcessor Flags: MIPS_NOREORDER, MIPS_PIC, MIPS_CPIC, MIPS_ARCH_64R2\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -44,7 +44,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ???\nEntropy: 1.176065103715944\nSize: 24\nFlags: ALLOC\nSegments: ???, LOAD",
+        "body": "Type: MIPS_ABIFLAGS\nEntropy: 1.176065103715944\nSize: 24\nFlags: ALLOC\nSegments: MIPS_ABIFLAGS, LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -67,7 +67,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ???\nEntropy: 1.4978944883376943\nSize: 440\nFlags: ???, MASKOS, ALLOC\nSegments: LOAD",
+        "body": "Type: MIPS_OPTIONS\nEntropy: 1.4978944883376943\nSize: 440\nFlags: ALLOC, MIPS_NOSTRIP\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -205,7 +205,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: HIOS\nEntropy: 1.462842267875228\nSize: 400\nFlags: ALLOC\nSegments: LOAD",
+        "body": "Type: GNU_VERSYM\nEntropy: 1.462842267875228\nSize: 400\nFlags: ALLOC\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -527,7 +527,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 2.3906506539464947\nSize: 1032\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+        "body": "Type: PROGBITS\nEntropy: 2.3906506539464947\nSize: 1032\nFlags: WRITE, ALLOC, MIPS_GPREL\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -550,7 +550,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 1.5487949406953985\nSize: 8\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+        "body": "Type: PROGBITS\nEntropy: 1.5487949406953985\nSize: 8\nFlags: WRITE, ALLOC, MIPS_GPREL\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -573,7 +573,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOBITS\nEntropy: 2.75\nSize: 8\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+        "body": "Type: NOBITS\nEntropy: 2.75\nSize: 8\nFlags: WRITE, ALLOC, MIPS_GPREL\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -770,7 +770,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ???\nFlags: ('R',)\nPhysical Size: 24\nVirtual Size: 24\nSections: .MIPS.abiflags",
+        "body": "Type: MIPS_ABIFLAGS\nFlags: R\nPhysical Size: 24\nVirtual Size: 24\nSections: .MIPS.abiflags",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -782,41 +782,18 @@
             "elf": {
               "segments": {
                 "type": [
-                  "???"
+                  "MIPS_ABIFLAGS"
                 ]
               }
             }
           }
         },
-        "title_text": "Segment - ???",
+        "title_text": "Segment - MIPS_ABIFLAGS",
         "zeroize_on_tag_safe": false
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 114508\nVirtual Size: 114508\nSections: .MIPS.abiflags, .MIPS.options, .note.gnu.build-id, .dynamic, .hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .init, .text, .MIPS.stubs, .fini, .rodata, .eh_frame_hdr",
-        "body_config": {},
-        "body_format": "TEXT",
-        "classification": "TLP:C",
-        "depth": 1,
-        "heuristic": null,
-        "promote_to": null,
-        "tags": {
-          "file": {
-            "elf": {
-              "segments": {
-                "type": [
-                  "LOAD"
-                ]
-              }
-            }
-          }
-        },
-        "title_text": "Segment - LOAD",
-        "zeroize_on_tag_safe": false
-      },
-      {
-        "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 4064\nVirtual Size: 6432\nSections: .eh_frame, .init_array, .fini_array, .data.rel.ro, .data, .got, .sdata, .sbss, .bss",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 114508\nVirtual Size: 114508\nSections: .MIPS.abiflags, .MIPS.options, .note.gnu.build-id, .dynamic, .hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .init, .text, .MIPS.stubs, .fini, .rodata, .eh_frame_hdr",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -839,7 +816,30 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: DYNAMIC\nFlags: ('R',)\nPhysical Size: 576\nVirtual Size: 576\nSections: .dynamic",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 4064\nVirtual Size: 6432\nSections: .eh_frame, .init_array, .fini_array, .data.rel.ro, .data, .got, .sdata, .sbss, .bss",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nFlags: R\nPhysical Size: 576\nVirtual Size: 576\nSections: .dynamic",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -862,7 +862,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOTE\nFlags: ('R',)\nPhysical Size: 36\nVirtual Size: 36\nSections: .note.gnu.build-id",
+        "body": "Type: NOTE\nFlags: R\nPhysical Size: 36\nVirtual Size: 36\nSections: .note.gnu.build-id",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -885,7 +885,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_EH_FRAME\nFlags: ('R',)\nPhysical Size: 268\nVirtual Size: 268\nSections: .eh_frame_hdr",
+        "body": "Type: GNU_EH_FRAME\nFlags: R\nPhysical Size: 268\nVirtual Size: 268\nSections: .eh_frame_hdr",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -908,7 +908,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nFlags: ('NONE',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: PT_NULL_\nFlags: NONE\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -920,13 +920,13 @@
             "elf": {
               "segments": {
                 "type": [
-                  "NULL"
+                  "PT_NULL_"
                 ]
               }
             }
           }
         },
-        "title_text": "Segment - NULL",
+        "title_text": "Segment - PT_NULL_",
         "zeroize_on_tag_safe": false
       },
       {
@@ -965,7 +965,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Description: [199, 185, 159, 148, 208, 158, 91, 216, 240, 112, 114, 221, 39, 36, 61, 146, 181, 1, 227, 81]\nType: BUILD_ID",
+        "body": "Description: c7b99f94d09e5bd8f07072dd27243d92b501e351\nType: GNU_BUILD_ID",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -980,7 +980,7 @@
                   "GNU"
                 ],
                 "type": [
-                  "BUILD_ID"
+                  "GNU_BUILD_ID"
                 ]
               }
             }
@@ -1009,7 +1009,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "994af206be060cb423b144da9a3ddd720e5ece1ec8bf74aa7f7ff7869df689a8"
+        "sha256": "800773c969fc5083f8f11c175400659ea6c5d0b9cbe48ec54094c4697665f529"
       }
     ]
   },
@@ -1034,7 +1034,7 @@
         {
           "heur_id": null,
           "signatures": [],
-          "value": "BUILD_ID"
+          "value": "GNU_BUILD_ID"
         }
       ],
       "file.elf.sections.name": [
@@ -1198,11 +1198,6 @@
         {
           "heur_id": null,
           "signatures": [],
-          "value": "???"
-        },
-        {
-          "heur_id": null,
-          "signatures": [],
           "value": "DYNAMIC"
         },
         {
@@ -1223,12 +1218,17 @@
         {
           "heur_id": null,
           "signatures": [],
+          "value": "MIPS_ABIFLAGS"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
           "value": "NOTE"
         },
         {
           "heur_id": null,
           "signatures": [],
-          "value": "NULL"
+          "value": "PT_NULL_"
         }
       ]
     },

@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x4001a0\nMachine: SH\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 118784\nNX: False\nPosition Independent: False\nProcessor Flag: 9\nOverlay size: 0",
+        "body": "Entrypoint: 0x4001a0\nMachine: SH\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 118784\nNX: False\nPosition Independent: False\nProcessor Flag: 9\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -264,7 +264,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 50748\nVirtual Size: 50748\nSections: .init, .text, .fini, .rodata",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 50748\nVirtual Size: 50748\nSections: .init, .text, .fini, .rodata",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -287,7 +287,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 368\nVirtual Size: 1008\nSections: .ctors, .dtors, .data, .bss",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 368\nVirtual Size: 1008\nSections: .ctors, .dtors, .data, .bss",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -310,7 +310,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RWX\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -418,7 +418,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "cff5731cc1ccfa949e019ba83229116ee87e72d1bf34c7123acd8cdba45bc4b8"
+        "sha256": "f6ac04863d8242a4835a8073ecaacbd0748ea58514ff7d610516f83d6796f192"
       }
     ]
   },

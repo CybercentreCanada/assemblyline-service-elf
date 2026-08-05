@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x1b40\nMachine: i386\nFile Type: DYNAMIC\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 57344\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+        "body": "Entrypoint: 0x1b40\nMachine: I386\nFile Type: DYN\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 57344\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -136,7 +136,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: HIOS\nEntropy: 1.1965802363227087\nSize: 184\nFlags: ALLOC\nSegments: LOAD",
+        "body": "Type: GNU_VERSYM\nEntropy: 1.1965802363227087\nSize: 184\nFlags: ALLOC\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -678,7 +678,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 45220\nVirtual Size: 45220\nSections: .hash, .gnu.hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .rel.plt, .init, .plt, .text, .fini, .rodata, .eh_frame_hdr, .eh_frame",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 45220\nVirtual Size: 45220\nSections: .hash, .gnu.hash, .dynsym, .dynstr, .gnu.version, .gnu.version_r, .rel.dyn, .rel.plt, .init, .plt, .text, .fini, .rodata, .eh_frame_hdr, .eh_frame",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -701,7 +701,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 628\nVirtual Size: 788\nSections: .init_array, .fini_array, .jcr, .dynamic, .got, .got.plt, .data, .bss",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 628\nVirtual Size: 788\nSections: .init_array, .fini_array, .jcr, .dynamic, .got, .got.plt, .data, .bss",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -724,7 +724,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: DYNAMIC\nFlags: ('RW',)\nPhysical Size: 264\nVirtual Size: 264\nSections: .dynamic",
+        "body": "Type: DYNAMIC\nFlags: RW\nPhysical Size: 264\nVirtual Size: 264\nSections: .dynamic",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -747,7 +747,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_EH_FRAME\nFlags: ('R',)\nPhysical Size: 260\nVirtual Size: 260\nSections: .eh_frame_hdr",
+        "body": "Type: GNU_EH_FRAME\nFlags: R\nPhysical Size: 260\nVirtual Size: 260\nSections: .eh_frame_hdr",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -770,7 +770,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RW\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -793,7 +793,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_RELRO\nFlags: ('R',)\nPhysical Size: 380\nVirtual Size: 380\nSections: .init_array, .fini_array, .jcr, .dynamic, .got",
+        "body": "Type: GNU_RELRO\nFlags: R\nPhysical Size: 380\nVirtual Size: 380\nSections: .init_array, .fini_array, .jcr, .dynamic, .got",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -816,7 +816,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: ???\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: PAX_FLAGS\nFlags: NONE\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -828,13 +828,13 @@
             "elf": {
               "segments": {
                 "type": [
-                  "???"
+                  "PAX_FLAGS"
                 ]
               }
             }
           }
         },
-        "title_text": "Segment - ???",
+        "title_text": "Segment - PAX_FLAGS",
         "zeroize_on_tag_safe": false
       },
       {
@@ -894,7 +894,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "d5e2e9c6a7905c416437796e2ae7d5d65132218777605542f3812140abcf4194"
+        "sha256": "27908c558852b11d4b4a225b2d7705052d3997431f0dbd47f90fa1674c68f885"
       }
     ]
   },
@@ -1064,11 +1064,6 @@
         {
           "heur_id": null,
           "signatures": [],
-          "value": "???"
-        },
-        {
-          "heur_id": null,
-          "signatures": [],
           "value": "DYNAMIC"
         },
         {
@@ -1095,6 +1090,11 @@
           "heur_id": null,
           "signatures": [],
           "value": "LOAD"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "PAX_FLAGS"
         }
       ]
     },

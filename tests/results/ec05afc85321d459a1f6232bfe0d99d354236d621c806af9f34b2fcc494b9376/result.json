@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x125bc\nMachine: ARM\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 167936\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nARM Flags: EABI_VER4\nOverlay size: 17761",
+        "body": "Entrypoint: 0x125bc\nMachine: ARM\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 167936\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nProcessor Flags: ARM_EABI_VER4\nOverlay size: 17761",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 46891\nVirtual Size: 46891",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 46891\nVirtual Size: 46891",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -54,7 +54,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 0\nVirtual Size: 100432",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 0\nVirtual Size: 100432",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -77,7 +77,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RWX\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -190,7 +190,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "f3419344fbf2093cf231a44d8879c1fadc1e3fe8f86ced39e42834736fcfbad3"
+        "sha256": "a92a6643b1c5801303e1313a2c52bd1af78c2e85c103450a2f1bb63d79f09820"
       }
     ]
   },

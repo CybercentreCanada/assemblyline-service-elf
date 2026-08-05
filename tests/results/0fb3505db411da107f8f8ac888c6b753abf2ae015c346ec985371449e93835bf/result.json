@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x400260\nMachine: MIPS\nFile Type: EXECUTABLE\nIdentity Class: CLASS32\nEndianness: MSB\nVirtual Size: 352256\nNX: False\nPosition Independent: False\nProcessor Flag: 4103\nOverlay size: 0",
+        "body": "Entrypoint: 0x400260\nMachine: MIPS\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: MSB\nVirtual Size: 352256\nNX: False\nPosition Independent: False\nProcessor Flag: 4103\nProcessor Flags: MIPS_NOREORDER, MIPS_PIC, MIPS_CPIC, MIPS_ABI_O32, MIPS_ARCH_1\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NULL\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -228,7 +228,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 3.9304137796121297\nSize: 1092\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+        "body": "Type: PROGBITS\nEntropy: 3.9304137796121297\nSize: 1092\nFlags: WRITE, ALLOC, MIPS_GPREL\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -251,7 +251,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOBITS\nEntropy: 3.267894147619623\nSize: 24\nFlags: HEX_GPREL, WRITE, ALLOC, MASKPROC\nSegments: LOAD",
+        "body": "Type: NOBITS\nEntropy: 3.267894147619623\nSize: 24\nFlags: WRITE, ALLOC, MIPS_GPREL\nSegments: LOAD",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -356,7 +356,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 75552\nVirtual Size: 75552\nSections: .init, .text, .fini, .rodata",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 75552\nVirtual Size: 75552\nSections: .init, .text, .fini, .rodata",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -379,7 +379,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RW',)\nPhysical Size: 3076\nVirtual Size: 12072\nSections: .ctors, .dtors, .data.rel.ro, .data, .got, .sbss, .bss",
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 3076\nVirtual Size: 12072\nSections: .ctors, .dtors, .data.rel.ro, .data, .got, .sbss, .bss",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -402,7 +402,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_STACK\nFlags: ('RWX',)\nPhysical Size: 0\nVirtual Size: 0",
+        "body": "Type: GNU_STACK\nFlags: RWX\nPhysical Size: 0\nVirtual Size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -510,7 +510,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "939547b0f194b16c8a551755da6cce7a3042f8c9d06a1318696bb4ee53b5db47"
+        "sha256": "a7bf08ea21f38aba4ac6e0ff2e11bd7168870cd4ad286f25d89da686f20b3fcb"
       }
     ]
   },

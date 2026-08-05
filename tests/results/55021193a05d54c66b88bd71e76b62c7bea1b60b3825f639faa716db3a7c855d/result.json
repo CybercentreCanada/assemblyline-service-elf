@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x0\nMachine: i386\nFile Type: DYNAMIC\nIdentity Class: CLASS32\nEndianness: LSB\nVirtual Size: 90112\nNX: False\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+        "body": "Entrypoint: 0x0\nMachine: I386\nFile Type: DYN\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 634880\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -31,7 +31,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PHDR\nFlags: ('R',)\nPhysical Size: 224\nVirtual Size: 224",
+        "body": "Type: PHDR\nFlags: R\nPhysical Size: 224\nVirtual Size: 224",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -54,7 +54,7 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: LOAD\nFlags: ('RX',)\nPhysical Size: 86880\nVirtual Size: 86880",
+        "body": "Type: LOAD\nFlags: RX\nPhysical Size: 86880\nVirtual Size: 86880",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -73,6 +73,121 @@
           }
         },
         "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: LOAD\nFlags: RW\nPhysical Size: 537462\nVirtual Size: 537860",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "LOAD"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - LOAD",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: DYNAMIC\nFlags: RW\nPhysical Size: 256\nVirtual Size: 256",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "DYNAMIC"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - DYNAMIC",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_EH_FRAME\nFlags: R\nPhysical Size: 1908\nVirtual Size: 1908",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_EH_FRAME"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_EH_FRAME",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_STACK\nFlags: RW\nPhysical Size: 0\nVirtual Size: 0",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_STACK"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_STACK",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "Type: GNU_RELRO\nFlags: RW\nPhysical Size: 1152\nVirtual Size: 1152",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 1,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {
+          "file": {
+            "elf": {
+              "segments": {
+                "type": [
+                  "GNU_RELRO"
+                ]
+              }
+            }
+          }
+        },
+        "title_text": "Segment - GNU_RELRO",
         "zeroize_on_tag_safe": false
       },
       {
@@ -162,7 +277,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "cbb05ebbe63a1d71e42d8d308e0b08190a87aeb4557f2d4ad4ad712989180b13"
+        "sha256": "e3892b5ddc9a41a31b3b59f7eb46a2a359a270be18b93938b93da574d5894114"
       }
     ]
   },
@@ -191,6 +306,31 @@
     ],
     "tags": {
       "file.elf.segments.type": [
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "DYNAMIC"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_EH_FRAME"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_RELRO"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "GNU_STACK"
+        },
+        {
+          "heur_id": null,
+          "signatures": [],
+          "value": "LOAD"
+        },
         {
           "heur_id": null,
           "signatures": [],
