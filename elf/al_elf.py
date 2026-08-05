@@ -1,4 +1,7 @@
+from io import BytesIO
+
 import lief
+from assemblyline.common.entropy import calculate_partition_entropy
 
 
 def bytes_to_backslashreplace_utf8_str(value):
@@ -215,10 +218,12 @@ class AL_ELF:
         self.sections = []
 
         for section in binary.sections:
+            _, partitioned_entropy = calculate_partition_entropy(BytesIO(bytes(section.content)))
             section_struct = {
                 "alignment": section.alignment,
                 # "content": section.content,
                 "entropy": section.entropy,
+                "partitioned_entropy": [round(x, 5) for x in partitioned_entropy],
                 "entry_size": section.entry_size,
                 "file_offset": section.file_offset,
                 "flags_list": [flag.name for flag in section.flags_list],

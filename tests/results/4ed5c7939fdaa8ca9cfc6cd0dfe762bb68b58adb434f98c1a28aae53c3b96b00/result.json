@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x400078\nMachine: X86_64\nFile Type: EXEC\nIdentity Class: ELF64\nEndianness: LSB\nVirtual Size: 4096\nNX: False\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 0",
+        "body": "Entrypoint: 0x400078\nMachine: X86_64\nFile Type: EXEC\nIdentity Class: ELF64\nEndianness: LSB\nVirtual Size: 4096\nNX: False\nPosition Independent: False\nProcessor Flag: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -137,6 +137,34 @@
         "promote_to": null,
         "tags": {},
         "title_text": "No dynamic entry found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Size",
+                0
+              ],
+              [
+                "Entropy",
+                0
+              ]
+            ],
+            {}
+          ]
+        ],
+        "body_config": {},
+        "body_format": "MULTI",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Overlay",
         "zeroize_on_tag_safe": false
       },
       {

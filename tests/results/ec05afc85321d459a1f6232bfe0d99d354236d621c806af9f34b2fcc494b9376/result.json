@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x125bc\nMachine: ARM\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 167936\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nProcessor Flags: ARM_EABI_VER4\nOverlay size: 17761",
+        "body": "Entrypoint: 0x125bc\nMachine: ARM\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 167936\nNX: False\nPosition Independent: False\nProcessor Flag: 67108866\nProcessor Flags: ARM_EABI_VER4",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -176,6 +176,99 @@
         "promote_to": null,
         "tags": {},
         "title_text": "No dynamic entry found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Size",
+                17761
+              ],
+              [
+                "Entropy",
+                7.990054152043951
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  7.3393,
+                  7.45834,
+                  7.40618,
+                  7.36632,
+                  7.40142,
+                  7.42573,
+                  7.43639,
+                  7.42131,
+                  7.34634,
+                  7.39897,
+                  7.41459,
+                  7.37506,
+                  7.38513,
+                  7.37047,
+                  7.31068,
+                  7.46912,
+                  7.4389,
+                  7.38658,
+                  7.39459,
+                  7.44653,
+                  7.38722,
+                  7.43953,
+                  7.4494,
+                  7.33128,
+                  7.41883,
+                  7.36449,
+                  7.35443,
+                  7.37608,
+                  7.35997,
+                  7.41336,
+                  7.39662,
+                  7.33553,
+                  7.39534,
+                  7.43643,
+                  7.39643,
+                  7.43937,
+                  7.37545,
+                  7.38261,
+                  7.37109,
+                  7.43042,
+                  7.46099,
+                  7.44138,
+                  7.36863,
+                  7.41459,
+                  7.42103,
+                  7.34955,
+                  7.37746,
+                  7.40464,
+                  7.38711,
+                  7.05154
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
+        "body_config": {},
+        "body_format": "MULTI",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Overlay",
         "zeroize_on_tag_safe": false
       },
       {

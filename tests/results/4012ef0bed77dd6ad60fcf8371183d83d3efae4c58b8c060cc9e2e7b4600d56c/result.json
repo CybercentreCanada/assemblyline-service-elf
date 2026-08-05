@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x804e5a8\nMachine: I386\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 90112\nNX: True\nPosition Independent: False\nProcessor Flag: 0\nOverlay size: 240",
+        "body": "Entrypoint: 0x804e5a8\nMachine: I386\nFile Type: EXEC\nIdentity Class: ELF32\nEndianness: LSB\nVirtual Size: 90112\nNX: True\nPosition Independent: False\nProcessor Flag: 0",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -176,6 +176,50 @@
         "promote_to": null,
         "tags": {},
         "title_text": "No dynamic entry found",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Size",
+                240
+              ],
+              [
+                "Entropy",
+                6.279172783071404
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  6.27917
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
+        "body_config": {},
+        "body_format": "MULTI",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Overlay",
         "zeroize_on_tag_safe": false
       },
       {

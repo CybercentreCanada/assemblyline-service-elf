@@ -1,10 +1,20 @@
 import json
 import os
+from io import BytesIO
 
 import lief
+from assemblyline.common.entropy import calculate_partition_entropy
 from assemblyline_v4_service.common.base import ServiceBase
 from assemblyline_v4_service.common.request import ServiceRequest
-from assemblyline_v4_service.common.result import BODY_FORMAT, Heuristic, Result, ResultSection
+from assemblyline_v4_service.common.result import (
+    BODY_FORMAT,
+    GraphSectionBody,
+    Heuristic,
+    OrderedKVSectionBody,
+    Result,
+    ResultMultiSection,
+    ResultSection,
+)
 
 import elf.al_elf
 
@@ -28,20 +38,17 @@ class ELF(ServiceBase):
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
-
-        overlay = bytes.fromhex(self.elf.overlay)
-        res.add_line(f"Overlay size: {len(overlay)}")
-        if len(overlay) > 0:
-            file_name = "overlay"
-            temp_path = os.path.join(self.working_directory, file_name)
-            with open(temp_path, "wb") as myfile:
-                myfile.write(overlay)
-            self.request.add_extracted(
-                temp_path,
-                file_name,
-                f"{file_name} extracted from binary's resources",
-                safelist_interface=self.api_interface,
-            )
+            # The interpreter of standard toolchains lives in /lib*, e.g. /lib64/ld-linux-x86-64.so.2,
+            # /lib/ld-musl-x86_64.so.1, /system/bin/linker64 (Android). Anything else (relative path,
+            # /tmp, a regular library, ...) means execution starts in attacker-chosen code.
+            interpreter = self.elf.interpreter.rstrip("\x00")
+            interpreter_name = interpreter.rsplit("/", 1)[-1]
+            if not (
+                interpreter.startswith(("/lib", "/usr/lib", "/system/bin/", "/apex/"))
+                and ("ld" in interpreter_name or "linker" in interpreter_name)
+            ):
+                anomaly_res = ResultSection("Non-standard program interpreter", parent=res)
+                anomaly_res.add_line(f"Interpreter: {interpreter}")
 
         self.file_res.add_section(res)
 
@@ -51,19 +58,25 @@ class ELF(ServiceBase):
 
         res = ResultSection("Sections")
         for section in self.elf.sections:
-            sub_res = ResultSection(f"Section - {section['name']}")
+            sub_res = ResultMultiSection(f"Section - {section['name']}")
             if section["name"] != "":
                 sub_res.add_tag("file.elf.sections.name", section["name"])
-            sub_res.add_line(f"Type: {section['type']}")
-            sub_res.add_line(f"Entropy: {section['entropy']}")
+            section_kv_body = OrderedKVSectionBody()
+            section_kv_body.add_item("Type", section["type"])
+            section_kv_body.add_item("Entropy", section["entropy"])
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/elf.py#L447
             # Supported by https://github.com/viper-framework/viper-modules/blob/00ee6cd2b2ad4ed278279ca9e383e48bc23a2555/lief.py#L363
             if section["entropy"] > 7.5:
                 sub_res.set_heuristic(2)
-            sub_res.add_line(f"Size: {section['size']}")
-            sub_res.add_line(f"Flags: {', '.join(section['flags_list'])}")
+            section_kv_body.add_item("Size", section["size"])
+            section_kv_body.add_item("Flags", ", ".join(section["flags_list"]))
             if len(section["segments"]):
-                sub_res.add_line(f"Segments: {', '.join(section['segments'])}")
+                section_kv_body.add_item("Segments", ", ".join(section["segments"]))
+            sub_res.add_section_part(section_kv_body)
+            if section["partitioned_entropy"]:
+                section_graph_body = GraphSectionBody()
+                section_graph_body.set_colormap(cmap_min=0, cmap_max=8, values=section["partitioned_entropy"])
+                sub_res.add_section_part(section_graph_body)
             res.add_subsection(sub_res)
         self.file_res.add_section(res)
 
@@ -218,6 +231,41 @@ class ELF(ServiceBase):
             res.set_body(json.dumps(self.elf.exported_functions), BODY_FORMAT.JSON)
             self.file_res.add_section(res)
 
+    def add_overlay(self):
+        overlay = bytes.fromhex(self.elf.overlay)
+        res = ResultMultiSection("Overlay", parent=self.file_res)
+        entropy, partitioned_entropy = calculate_partition_entropy(BytesIO(overlay))
+        overlay_kv_body = OrderedKVSectionBody()
+        overlay_kv_body.add_item("Size", len(overlay))
+        overlay_kv_body.add_item("Entropy", entropy)
+        res.add_section_part(overlay_kv_body)
+        if len(overlay) == 0:
+            return
+
+        overlay_graph_body = GraphSectionBody()
+        overlay_graph_body.set_colormap(cmap_min=0, cmap_max=8, values=[round(x, 5) for x in partitioned_entropy])
+        res.add_section_part(overlay_graph_body)
+
+        file_name = "overlay"
+        temp_path = os.path.join(self.working_directory, file_name)
+        with open(temp_path, "wb") as myfile:
+            myfile.write(overlay)
+        self.request.add_extracted(
+            temp_path,
+            file_name,
+            f"{file_name} extracted from binary",
+            safelist_interface=self.api_interface,
+        )
+
+        # Droppers can append their payload after the last section/segment: check if the overlay itself is an executable
+        nested = lief.ELF.parse(overlay) or lief.PE.parse(overlay)
+        if nested is not None:
+            nested_res = ResultSection(
+                f"The overlay is itself a{'n ELF' if isinstance(nested, lief.ELF.Binary) else ' PE'} binary",
+                parent=res,
+            )
+            nested_res.add_line("The extracted overlay will be analyzed as its own submission.")
+
     def add_lief_logging(self, lief_output_file):
         if not os.path.exists(lief_output_file):
             return
@@ -279,6 +327,7 @@ class ELF(ServiceBase):
         self.add_functions()
         self.check_relocations()
         self.check_dynamic_entries()
+        self.add_overlay()
         self.add_lief_logging(lief_output_file)
 
         temp_path = os.path.join(self.working_directory, "features.json")

@@ -5,7 +5,7 @@
     "sections": [
       {
         "auto_collapse": false,
-        "body": "Entrypoint: 0x53900\nMachine: X86_64\nFile Type: DYN\nIdentity Class: ELF64\nEndianness: LSB\nVirtual Size: 1052672\nNX: True\nPosition Independent: True\nProcessor Flag: 0\nInterpreter: /lib64/ld-linux-x86-64.so.2\nOverlay size: 0",
+        "body": "Entrypoint: 0x53900\nMachine: X86_64\nFile Type: DYN\nIdentity Class: ELF64\nEndianness: LSB\nVirtual Size: 1052672\nNX: True\nPosition Independent: True\nProcessor Flag: 0\nInterpreter: /lib64/ld-linux-x86-64.so.2",
         "body_config": {},
         "body_format": "TEXT",
         "classification": "TLP:C",
@@ -39,9 +39,48 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: SHT_NULL_\nEntropy: 0.0\nSize: 0\nFlags: ",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "SHT_NULL_"
+              ],
+              [
+                "Entropy",
+                0.0
+              ],
+              [
+                "Size",
+                0
+              ],
+              [
+                "Flags",
+                ""
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  0
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -52,9 +91,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 3.940759832540089\nSize: 28\nFlags: ALLOC\nSegments: INTERP, LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                3.940759832540089
+              ],
+              [
+                "Size",
+                28
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "INTERP, LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  3.94076
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -75,9 +157,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOTE\nEntropy: 1.561278124459133\nSize: 32\nFlags: ALLOC\nSegments: LOAD, NOTE",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "NOTE"
+              ],
+              [
+                "Entropy",
+                1.561278124459133
+              ],
+              [
+                "Size",
+                32
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, NOTE"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  1.56128
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -98,9 +223,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOTE\nEntropy: 4.1916116417513765\nSize: 36\nFlags: ALLOC\nSegments: LOAD, NOTE",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "NOTE"
+              ],
+              [
+                "Entropy",
+                4.1916116417513765
+              ],
+              [
+                "Size",
+                36
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, NOTE"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.19161
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -121,9 +289,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_HASH\nEntropy: 6.980625575434023\nSize: 14236\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "GNU_HASH"
+              ],
+              [
+                "Entropy",
+                6.980625575434023
+              ],
+              [
+                "Size",
+                14236
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  5.48723,
+                  5.78891,
+                  5.3416,
+                  5.53969,
+                  5.39366,
+                  5.52013,
+                  5.63903,
+                  3.2248,
+                  2.61042,
+                  2.86604,
+                  2.50077,
+                  2.67489,
+                  2.81965,
+                  2.86772,
+                  2.71819,
+                  2.73681,
+                  2.83989,
+                  2.7935,
+                  2.81734,
+                  2.75371,
+                  2.74567,
+                  4.2853,
+                  7.27284,
+                  7.13096,
+                  7.12679,
+                  7.25007,
+                  7.24442,
+                  7.22014,
+                  7.22637,
+                  7.17046,
+                  7.30184,
+                  7.25109,
+                  7.27672,
+                  7.23798,
+                  7.27284,
+                  7.29218,
+                  7.21173,
+                  7.20692,
+                  7.20919,
+                  7.30714,
+                  7.18391,
+                  7.28481,
+                  7.21221,
+                  7.242,
+                  7.26376,
+                  7.28274,
+                  7.16572,
+                  7.20497,
+                  7.2168,
+                  7.24053
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -144,9 +404,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: DYNSYM\nEntropy: 3.277227474203409\nSize: 53136\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "DYNSYM"
+              ],
+              [
+                "Entropy",
+                3.277227474203409
+              ],
+              [
+                "Size",
+                53136
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  1.10573,
+                  1.10711,
+                  1.11416,
+                  1.11581,
+                  2.15979,
+                  3.25658,
+                  3.22564,
+                  3.31097,
+                  3.2512,
+                  3.25285,
+                  3.23745,
+                  3.31376,
+                  3.27772,
+                  3.26656,
+                  3.29453,
+                  3.2785,
+                  3.23584,
+                  3.26079,
+                  3.26822,
+                  3.21905,
+                  3.2653,
+                  3.29588,
+                  3.25223,
+                  3.18843,
+                  3.29083,
+                  3.22355,
+                  3.2738,
+                  3.21621,
+                  3.28403,
+                  3.2579,
+                  3.22182,
+                  3.28701,
+                  3.23292,
+                  3.28857,
+                  3.2691,
+                  3.34087,
+                  3.30206,
+                  3.29816,
+                  3.3042,
+                  3.28051,
+                  3.19707,
+                  3.28982,
+                  3.28779,
+                  3.28822,
+                  3.27652,
+                  3.2717,
+                  3.20957,
+                  3.26136,
+                  3.31647,
+                  3.25761
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -167,9 +519,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: STRTAB\nEntropy: 4.988733361270163\nSize: 182747\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "STRTAB"
+              ],
+              [
+                "Entropy",
+                4.988733361270163
+              ],
+              [
+                "Size",
+                182747
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.91873,
+                  4.89608,
+                  4.91165,
+                  4.97709,
+                  5.02471,
+                  4.96822,
+                  4.98225,
+                  4.9571,
+                  4.95211,
+                  4.97996,
+                  4.91291,
+                  4.98329,
+                  4.99722,
+                  4.94781,
+                  4.97001,
+                  4.95617,
+                  4.96107,
+                  4.95531,
+                  4.97883,
+                  4.98312,
+                  4.9659,
+                  4.99361,
+                  4.95685,
+                  4.93339,
+                  4.91306,
+                  4.94389,
+                  4.96574,
+                  4.9709,
+                  4.96047,
+                  4.95651,
+                  4.96892,
+                  4.98993,
+                  4.99052,
+                  4.99777,
+                  5.0224,
+                  4.96814,
+                  4.98638,
+                  5.00665,
+                  4.99388,
+                  4.93336,
+                  4.98621,
+                  4.94054,
+                  4.97866,
+                  4.95905,
+                  4.96259,
+                  4.93986,
+                  4.95537,
+                  5.00189,
+                  4.98996,
+                  5.04596
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -190,9 +634,69 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_VERSYM\nEntropy: 1.348926979395998\nSize: 4428\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "GNU_VERSYM"
+              ],
+              [
+                "Entropy",
+                1.348926979395998
+              ],
+              [
+                "Size",
+                4428
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.15345,
+                  2.11745,
+                  1.0,
+                  1.03406,
+                  1.0,
+                  1.03406,
+                  1.06808,
+                  1.03406,
+                  1.09391,
+                  1.03406,
+                  1.03406,
+                  1.05995,
+                  1.03406,
+                  1.0,
+                  1.12783,
+                  1.05995,
+                  1.08271,
+                  1.03406
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -213,9 +717,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: GNU_VERNEED\nEntropy: 3.5591599003675083\nSize: 240\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "GNU_VERNEED"
+              ],
+              [
+                "Entropy",
+                3.5591599003675083
+              ],
+              [
+                "Size",
+                240
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  3.55916
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -236,9 +783,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: RELA\nEntropy: 2.504542526845168\nSize: 39696\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "RELA"
+              ],
+              [
+                "Entropy",
+                2.504542526845168
+              ],
+              [
+                "Size",
+                39696
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.10876,
+                  2.07567,
+                  2.13715,
+                  2.14554,
+                  2.19381,
+                  2.15573,
+                  2.14739,
+                  2.18256,
+                  2.20515,
+                  2.14257,
+                  2.11941,
+                  2.17392,
+                  2.16428,
+                  2.14266,
+                  2.15279,
+                  2.14944,
+                  2.13457,
+                  2.10934,
+                  2.09322,
+                  2.15657,
+                  2.12036,
+                  2.14271,
+                  2.14983,
+                  2.10204,
+                  2.09921,
+                  2.11424,
+                  2.08042,
+                  2.1075,
+                  2.14283,
+                  2.11406,
+                  2.16091,
+                  2.12624,
+                  2.11478,
+                  2.11556,
+                  2.09262,
+                  2.1074,
+                  2.16653,
+                  2.17161,
+                  2.20333,
+                  2.13535,
+                  2.11774,
+                  2.17543,
+                  2.20944,
+                  2.24409,
+                  1.76507,
+                  1.81608,
+                  1.75599,
+                  1.65417,
+                  1.65139,
+                  1.93372
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -259,9 +898,68 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: RELA\nEntropy: 1.80547608005362\nSize: 4128\nFlags: ALLOC, INFO_LINK\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "RELA"
+              ],
+              [
+                "Entropy",
+                1.80547608005362
+              ],
+              [
+                "Size",
+                4128
+              ],
+              [
+                "Flags",
+                "ALLOC, INFO_LINK"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  1.5362,
+                  1.46458,
+                  1.47565,
+                  1.47624,
+                  1.52164,
+                  1.48447,
+                  1.43905,
+                  1.46801,
+                  1.55609,
+                  1.46658,
+                  1.49352,
+                  1.52164,
+                  1.52074,
+                  1.48447,
+                  1.46801,
+                  1.48843,
+                  1.49885
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -282,9 +980,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 4.001822825622231\nSize: 23\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                4.001822825622231
+              ],
+              [
+                "Size",
+                23
+              ],
+              [
+                "Flags",
+                "ALLOC, EXECINSTR"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.00182
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -305,9 +1046,62 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 4.46292942896752\nSize: 2768\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                4.46292942896752
+              ],
+              [
+                "Size",
+                2768
+              ],
+              [
+                "Flags",
+                "ALLOC, EXECINSTR"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  3.76764,
+                  3.95033,
+                  3.90039,
+                  3.92558,
+                  3.90455,
+                  3.95725,
+                  3.91385,
+                  3.92558,
+                  3.92314,
+                  3.98243,
+                  3.9125
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -328,9 +1122,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 3.1014097655573916\nSize: 32\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                3.1014097655573916
+              ],
+              [
+                "Size",
+                32
+              ],
+              [
+                "Flags",
+                "ALLOC, EXECINSTR"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  3.10141
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -351,9 +1188,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 6.239040716109081\nSize: 558161\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                6.239040716109081
+              ],
+              [
+                "Size",
+                558161
+              ],
+              [
+                "Flags",
+                "ALLOC, EXECINSTR"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  5.77323,
+                  5.79941,
+                  5.78602,
+                  5.88376,
+                  6.05964,
+                  5.97979,
+                  5.75735,
+                  6.22066,
+                  6.24083,
+                  6.13433,
+                  6.13566,
+                  6.18847,
+                  5.96393,
+                  6.0589,
+                  6.09341,
+                  6.03205,
+                  6.06687,
+                  6.17055,
+                  6.33203,
+                  6.31544,
+                  5.97143,
+                  6.06286,
+                  6.03896,
+                  6.0932,
+                  6.01495,
+                  6.08141,
+                  6.14818,
+                  6.01793,
+                  6.13346,
+                  6.06271,
+                  6.0509,
+                  6.02059,
+                  5.8562,
+                  5.90456,
+                  6.16458,
+                  6.02429,
+                  6.06354,
+                  6.02198,
+                  6.07928,
+                  6.15037,
+                  5.96442,
+                  6.1773,
+                  6.25222,
+                  6.30001,
+                  6.15675,
+                  5.99835,
+                  5.93726,
+                  6.00443,
+                  6.1168,
+                  6.21266
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -374,9 +1303,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 2.5032583347756456\nSize: 9\nFlags: ALLOC, EXECINSTR\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                2.5032583347756456
+              ],
+              [
+                "Size",
+                9
+              ],
+              [
+                "Flags",
+                "ALLOC, EXECINSTR"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.50326
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -397,9 +1369,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 5.394469576443777\nSize: 38288\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                5.394469576443777
+              ],
+              [
+                "Size",
+                38288
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.80253,
+                  4.5002,
+                  4.75183,
+                  4.29348,
+                  5.02313,
+                  5.42732,
+                  5.14434,
+                  5.37275,
+                  4.62703,
+                  4.63666,
+                  4.70853,
+                  4.66751,
+                  4.65839,
+                  4.56269,
+                  4.80615,
+                  4.95854,
+                  4.85432,
+                  4.51292,
+                  4.62004,
+                  5.22245,
+                  4.60872,
+                  5.19097,
+                  4.98442,
+                  5.32237,
+                  5.00396,
+                  4.82333,
+                  4.56689,
+                  4.72803,
+                  4.50961,
+                  4.82108,
+                  4.6933,
+                  4.75661,
+                  4.51046,
+                  4.14492,
+                  4.57295,
+                  4.63732,
+                  4.59708,
+                  4.49428,
+                  4.4788,
+                  4.95268,
+                  4.51718,
+                  4.93087,
+                  4.71332,
+                  4.35154,
+                  4.91651,
+                  4.52305,
+                  4.60352,
+                  4.88187,
+                  4.38681,
+                  4.52161
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -420,9 +1484,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 5.834751856508527\nSize: 13276\nFlags: ALLOC\nSegments: LOAD, GNU_EH_FRAME",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                5.834751856508527
+              ],
+              [
+                "Size",
+                13276
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, GNU_EH_FRAME"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.94467,
+                  4.74887,
+                  4.77458,
+                  4.9848,
+                  4.97714,
+                  4.90002,
+                  4.64268,
+                  4.1877,
+                  4.32409,
+                  4.46043,
+                  4.52366,
+                  4.40245,
+                  4.38811,
+                  4.59723,
+                  4.45019,
+                  4.38324,
+                  4.48183,
+                  4.60963,
+                  4.34584,
+                  4.49001,
+                  4.30715,
+                  4.37298,
+                  4.54496,
+                  4.46704,
+                  4.59099,
+                  4.30705,
+                  4.6871,
+                  4.55629,
+                  4.56012,
+                  4.29566,
+                  4.61757,
+                  4.40975,
+                  4.94271,
+                  4.30989,
+                  4.10853,
+                  4.55145,
+                  4.78655,
+                  4.55282,
+                  4.80891,
+                  4.78839,
+                  4.84166,
+                  4.8381,
+                  4.44911,
+                  4.77651,
+                  4.88608,
+                  4.69637,
+                  4.90731,
+                  4.86152,
+                  4.52319,
+                  4.31496
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -443,9 +1599,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 5.2477523583235675\nSize: 81192\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                5.2477523583235675
+              ],
+              [
+                "Size",
+                81192
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.11108,
+                  5.07826,
+                  5.00506,
+                  4.76648,
+                  4.96386,
+                  5.14716,
+                  5.00974,
+                  5.08123,
+                  5.06708,
+                  4.99348,
+                  5.04797,
+                  4.87376,
+                  5.13316,
+                  4.64267,
+                  5.0802,
+                  5.08173,
+                  4.86942,
+                  5.04161,
+                  4.9372,
+                  4.8054,
+                  4.77387,
+                  5.05704,
+                  4.91697,
+                  5.09783,
+                  4.92202,
+                  4.99364,
+                  5.15298,
+                  5.17807,
+                  4.97918,
+                  4.78241,
+                  5.0242,
+                  4.89137,
+                  5.0125,
+                  4.97074,
+                  5.12936,
+                  4.76628,
+                  5.02992,
+                  5.15573,
+                  5.08751,
+                  5.11244,
+                  5.06578,
+                  4.46683,
+                  5.01499,
+                  5.08794,
+                  4.99855,
+                  5.04313,
+                  5.0847,
+                  5.19599,
+                  5.117,
+                  4.94791
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -466,9 +1714,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 5.438985627133071\nSize: 23376\nFlags: ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                5.438985627133071
+              ],
+              [
+                "Size",
+                23376
+              ],
+              [
+                "Flags",
+                "ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.32903,
+                  4.84431,
+                  4.83284,
+                  4.66949,
+                  5.0942,
+                  5.06247,
+                  5.54903,
+                  4.88803,
+                  4.8203,
+                  4.83242,
+                  5.30992,
+                  5.05253,
+                  4.7708,
+                  5.12287,
+                  5.45301,
+                  4.66727,
+                  3.90788,
+                  3.96941,
+                  5.19235,
+                  4.84906,
+                  4.69588,
+                  5.71755,
+                  4.73973,
+                  4.72312,
+                  4.37723,
+                  5.39016,
+                  5.09857,
+                  4.44867,
+                  5.43442,
+                  4.74185,
+                  4.0668,
+                  4.9832,
+                  4.91636,
+                  4.39831,
+                  4.87808,
+                  4.90267,
+                  4.76986,
+                  4.76016,
+                  4.95461,
+                  4.61866,
+                  4.8809,
+                  4.61949,
+                  4.21028,
+                  4.71755,
+                  4.79085,
+                  4.79844,
+                  5.05019,
+                  5.21713,
+                  4.82746,
+                  4.62548
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -489,9 +1829,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: INIT_ARRAY\nEntropy: 2.141666359367365\nSize: 112\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "INIT_ARRAY"
+              ],
+              [
+                "Entropy",
+                2.141666359367365
+              ],
+              [
+                "Size",
+                112
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, GNU_RELRO"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.14167
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -512,9 +1895,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: FINI_ARRAY\nEntropy: 1.5487949406953985\nSize: 8\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "FINI_ARRAY"
+              ],
+              [
+                "Entropy",
+                1.5487949406953985
+              ],
+              [
+                "Size",
+                8
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, GNU_RELRO"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  1.54879
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -535,9 +1961,101 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 2.596137743636832\nSize: 16176\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                2.596137743636832
+              ],
+              [
+                "Size",
+                16176
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, GNU_RELRO"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.23992,
+                  2.56887,
+                  1.69495,
+                  1.44249,
+                  1.49264,
+                  2.27748,
+                  2.50794,
+                  2.47761,
+                  2.48259,
+                  2.55726,
+                  2.61853,
+                  2.8135,
+                  2.79479,
+                  2.69994,
+                  2.77812,
+                  2.38461,
+                  1.55732,
+                  1.4601,
+                  1.40517,
+                  1.98366,
+                  2.2341,
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.82323,
+                  1.97379,
+                  1.9816,
+                  1.96485,
+                  2.14637,
+                  2.62807,
+                  1.84275,
+                  1.9141,
+                  1.90499,
+                  2.23488,
+                  2.58468,
+                  2.50043,
+                  2.86887,
+                  2.42396,
+                  2.5426,
+                  2.52039,
+                  1.85079,
+                  2.66328,
+                  1.7549,
+                  2.01675,
+                  1.37117,
+                  1.283,
+                  1.91483,
+                  2.13598,
+                  2.39072,
+                  2.51487
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -558,9 +2076,54 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: DYNAMIC\nEntropy: 1.7234298061354487\nSize: 528\nFlags: WRITE, ALLOC\nSegments: LOAD, DYNAMIC, GNU_RELRO",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "DYNAMIC"
+              ],
+              [
+                "Entropy",
+                1.7234298061354487
+              ],
+              [
+                "Size",
+                528
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, DYNAMIC, GNU_RELRO"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  1.6429,
+                  1.58522,
+                  1.28393
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -581,9 +2144,52 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: -0.0\nSize: 88\nFlags: WRITE, ALLOC\nSegments: LOAD, GNU_RELRO",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                -0.0
+              ],
+              [
+                "Size",
+                88
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD, GNU_RELRO"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  0.0
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -604,9 +2210,57 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 2.4549980065847383\nSize: 1400\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                2.4549980065847383
+              ],
+              [
+                "Size",
+                1400
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.14977,
+                  2.19953,
+                  2.20864,
+                  2.16993,
+                  2.24311,
+                  2.1382
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -627,9 +2281,59 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 2.7405236925481073\nSize: 1800\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                2.7405236925481073
+              ],
+              [
+                "Size",
+                1800
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  2.26333,
+                  2.38036,
+                  2.47226,
+                  2.08329,
+                  2.13405,
+                  2.39385,
+                  2.49625,
+                  2.49961
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -650,9 +2354,59 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: NOBITS\nEntropy: 2.6705816401140576\nSize: 1984\nFlags: WRITE, ALLOC\nSegments: LOAD",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "NOBITS"
+              ],
+              [
+                "Entropy",
+                2.6705816401140576
+              ],
+              [
+                "Size",
+                1984
+              ],
+              [
+                "Flags",
+                "WRITE, ALLOC"
+              ],
+              [
+                "Segments",
+                "LOAD"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.59879,
+                  2.08658,
+                  1.59157,
+                  1.87301,
+                  1.44653,
+                  1.41607,
+                  1.49601,
+                  1.57495
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -673,9 +2427,48 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: PROGBITS\nEntropy: 4.06610893983748\nSize: 28\nFlags: MERGE, STRINGS",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "PROGBITS"
+              ],
+              [
+                "Entropy",
+                4.06610893983748
+              ],
+              [
+                "Size",
+                28
+              ],
+              [
+                "Flags",
+                "MERGE, STRINGS"
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.06611
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -696,9 +2489,49 @@
       },
       {
         "auto_collapse": false,
-        "body": "Type: STRTAB\nEntropy: 4.297934717177186\nSize: 278\nFlags: ",
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Type",
+                "STRTAB"
+              ],
+              [
+                "Entropy",
+                4.297934717177186
+              ],
+              [
+                "Size",
+                278
+              ],
+              [
+                "Flags",
+                ""
+              ]
+            ],
+            {}
+          ],
+          [
+            "GRAPH_DATA",
+            {
+              "data": {
+                "domain": [
+                  0,
+                  8
+                ],
+                "values": [
+                  4.18685,
+                  4.11997
+                ]
+              },
+              "type": "colormap"
+            },
+            {}
+          ]
+        ],
         "body_config": {},
-        "body_format": "TEXT",
+        "body_format": "MULTI",
         "classification": "TLP:C",
         "depth": 1,
         "heuristic": null,
@@ -1097,6 +2930,34 @@
         "tags": {},
         "title_text": "Dynamic Entries",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": [
+          [
+            "ORDERED_KEY_VALUE",
+            [
+              [
+                "Size",
+                0
+              ],
+              [
+                "Entropy",
+                0
+              ]
+            ],
+            {}
+          ]
+        ],
+        "body_config": {},
+        "body_format": "MULTI",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Overlay",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
@@ -1105,7 +2966,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "33bf14f0ac75b5f923c5768160c19f309a3ef00e77b8bfb25236fabc81397965"
+        "sha256": "1410c03cd3091bf0a6a30dc094bf96eb082e1418909641c39956cdd39c4ee3ec"
       }
     ]
   },
