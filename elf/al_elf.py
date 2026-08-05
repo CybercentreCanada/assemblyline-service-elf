@@ -124,13 +124,21 @@ class AL_ELF:
         self.ctor_functions = [extract_fn(fn) for fn in binary.ctor_functions]
         self.dtor_functions = [extract_fn(fn) for fn in binary.dtor_functions]
 
-        self.dynamic_entries = [
-            {
+        self.dynamic_entries = []
+        for entry in binary.dynamic_entries:
+            entry_struct = {
                 "tag": entry.tag.name,
                 "value": entry.value,
             }
-            for entry in binary.dynamic_entries
-        ]
+            if isinstance(entry, lief.ELF.DynamicEntryFlags):
+                entry_struct["flags"] = [flag.name for flag in entry.flags]
+            elif isinstance(entry, (lief.ELF.DynamicEntryLibrary, lief.ELF.DynamicSharedObject)):
+                entry_struct["name"] = bytes_to_backslashreplace_utf8_str(entry.name)
+            elif isinstance(entry, lief.ELF.DynamicEntryRpath):
+                entry_struct["paths"] = [bytes_to_backslashreplace_utf8_str(path) for path in entry.paths]
+            elif isinstance(entry, lief.ELF.DynamicEntryRunPath):
+                entry_struct["paths"] = [bytes_to_backslashreplace_utf8_str(path) for path in entry.paths]
+            self.dynamic_entries.append(entry_struct)
 
         if extract_symbols:
             self.dynamic_symbols = [extract_symbol(symbol) for symbol in binary.dynamic_symbols]
@@ -194,6 +202,9 @@ class AL_ELF:
         }
 
         self.imagebase = binary.imagebase
+        self.is_targeting_android = binary.is_targeting_android
+        self.page_size = binary.page_size
+        self.eof_offset = binary.eof_offset
 
         self.position_independent = binary.is_pie
         self.last_offset_section = binary.last_offset_section

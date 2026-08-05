@@ -1001,6 +1001,19 @@
         "tags": {},
         "title_text": "SYSV Hash",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "SONAME: ../build/libjnidispatch.so\nFLAGS: SYMBOLIC",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Dynamic Entries",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
@@ -1009,7 +1022,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "17c297889f492a7c50e5f1fc0478ce81fb18327048142f9bd42b7f44f882c56f"
+        "sha256": "662aa63d0f21233af5915af701e3fade2f088d0724886d3657eaccef52c4ff20"
       }
     ]
   },

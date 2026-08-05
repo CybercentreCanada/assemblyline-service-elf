@@ -917,6 +917,19 @@
         "tags": {},
         "title_text": "SYSV Hash",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "SONAME: libyaqpro.so\nFLAGS: BIND_NOW\nFLAGS_1: NOW",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Dynamic Entries",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
@@ -925,7 +938,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "5eb40cf39378cdcc5969c67c5b0344a457a278ac8c5d18ee52da0a064f457c35"
+        "sha256": "ff31fc158a0e06ac4d0ba0a03486d9838a1d0578703ed20c8914f4fd8a6b87ef"
       }
     ]
   },

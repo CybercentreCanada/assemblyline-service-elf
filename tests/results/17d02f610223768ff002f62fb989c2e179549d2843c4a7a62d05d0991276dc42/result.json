@@ -1084,6 +1084,19 @@
         "tags": {},
         "title_text": "GNU Hash",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "FLAGS_1: PIE",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Dynamic Entries",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
@@ -1092,7 +1105,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "e4bedc1967522bd37a1dc5659cca2d318aa7bd68c6ffb4701e3eaa7ccbf89e3c"
+        "sha256": "33bf14f0ac75b5f923c5768160c19f309a3ef00e77b8bfb25236fabc81397965"
       }
     ]
   },

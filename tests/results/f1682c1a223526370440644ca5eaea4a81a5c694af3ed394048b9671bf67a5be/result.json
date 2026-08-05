@@ -886,6 +886,19 @@
         "tags": {},
         "title_text": "SYSV Hash",
         "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "SONAME: libJNativeHook.so.1.1",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Dynamic Entries",
+        "zeroize_on_tag_safe": false
       }
     ]
   },
@@ -894,7 +907,7 @@
     "supplementary": [
       {
         "name": "features.json",
-        "sha256": "27908c558852b11d4b4a225b2d7705052d3997431f0dbd47f90fa1674c68f885"
+        "sha256": "eb0d1e0ca6d276f70c89462c680b59b8f232e89bc5befb5b06d451568a213732"
       }
     ]
   },

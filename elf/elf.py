@@ -23,6 +23,8 @@ class ELF(ServiceBase):
         res.add_line(f"Processor Flag: {self.elf.header['processor_flag']}")
         if len(self.elf.header["flags_list"]) > 0:
             res.add_line(f"Processor Flags: {', '.join(self.elf.header['flags_list'])}")
+        if self.elf.is_targeting_android:
+            res.add_line("Targeting Android: True")
         if hasattr(self.elf, "interpreter"):
             res.add_line(f"Interpreter: {self.elf.interpreter}")
             res.add_tag("file.elf.interpreter", self.elf.interpreter)
@@ -182,6 +184,22 @@ class ELF(ServiceBase):
         if not self.elf.dynamic_entries:
             heur = Heuristic(5)
             ResultSection(heur.name, heuristic=heur, parent=self.file_res)
+            return
+
+        res = None
+        for entry in self.elf.dynamic_entries:
+            line = None
+            if "flags" in entry:
+                line = f"{entry['tag']}: {', '.join(entry['flags'])}"
+            elif "paths" in entry:
+                line = f"{entry['tag']}: {':'.join(entry['paths'])}"
+            elif entry["tag"] == "SONAME" and "name" in entry:
+                line = f"{entry['tag']}: {entry['name']}"
+
+            if line is not None:
+                if res is None:
+                    res = ResultSection("Dynamic Entries", parent=self.file_res)
+                res.add_line(line)
 
     def add_symbols_version(self):
         # TODO: Find and example that populates at least one of:
