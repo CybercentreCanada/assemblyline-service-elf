@@ -2190,6 +2190,32 @@
       },
       {
         "auto_collapse": false,
+        "body": "libc.so: LIBC\nlibm.so: LIBC\nlibdl.so: LIBC",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Required Symbol Versions",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
+        "body": "libyaqpro.so",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Defined Symbol Versions",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
         "body": "SONAME: libyaqpro.so\nFLAGS: BIND_NOW\nFLAGS_1: NOW",
         "body_config": {},
         "body_format": "TEXT",

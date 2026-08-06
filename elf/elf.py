@@ -482,10 +482,19 @@ class ELF(ServiceBase):
             for svd in self.binary.symbols_version_requirement
         ]
 
-        # TODO: Find an example that populates at least one of:
-        # symbols_version
-        # symbols_version_definition
-        # symbols_version_requirement
+        # The per-symbol symbols_version table is kept in the features only: it has one entry
+        # per dynamic symbol, and the interesting aggregate (which versions are used) is
+        # already the auxiliary_symbols of the requirement/definition entries.
+        if self.features["symbols_version_requirement"]:
+            res = ResultSection("Required Symbol Versions", parent=self.file_res)
+            for requirement in self.features["symbols_version_requirement"]:
+                versions = ", ".join(sorted(aux["name"] for aux in requirement["auxiliary_symbols"]))
+                res.add_line(f"{requirement['name']}: {versions}")
+
+        if self.features["symbols_version_definition"]:
+            res = ResultSection("Defined Symbol Versions", parent=self.file_res)
+            for definition in self.features["symbols_version_definition"]:
+                res.add_line(", ".join(aux["name"] for aux in definition["auxiliary_symbols"]))
 
     def add_functions(self):
         if not self.request.deep_scan:

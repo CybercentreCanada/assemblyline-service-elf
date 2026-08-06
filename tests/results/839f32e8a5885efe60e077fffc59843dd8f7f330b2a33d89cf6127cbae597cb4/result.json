@@ -2591,6 +2591,19 @@
       },
       {
         "auto_collapse": false,
+        "body": "libc.so.6: GLIBC_2.0, GLIBC_2.2, GLIBC_2.27, GLIBC_2.3.4, GLIBC_2.7",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Required Symbol Versions",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
         "body": "SONAME: ../build/libjnidispatch.so\nFLAGS: SYMBOLIC",
         "body_config": {},
         "body_format": "TEXT",

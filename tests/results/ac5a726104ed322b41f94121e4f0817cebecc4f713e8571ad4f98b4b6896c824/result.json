@@ -3289,6 +3289,19 @@
       },
       {
         "auto_collapse": false,
+        "body": "libutil.so.1: GLIBC_2.2.5\nlibpam_misc.so.0: LIBPAM_MISC_1.0\nlibpam.so.0: LIBPAM_1.0\nlibc.so.6: GLIBC_2.14, GLIBC_2.2.5, GLIBC_2.3, GLIBC_2.3.4, GLIBC_2.4, GLIBC_2.7",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Required Symbol Versions",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
         "body": "FLAGS_1: NOW, PIE",
         "body_config": {},
         "body_format": "TEXT",

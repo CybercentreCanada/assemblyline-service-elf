@@ -2920,6 +2920,19 @@
       },
       {
         "auto_collapse": false,
+        "body": "libgcc_s.so.1: GCC_3.0\nlibc.so.6: GLIBC_2.14, GLIBC_2.2.5, GLIBC_2.4\nlibstdc++.so.6: CXXABI_1.3, CXXABI_1.3.9, GLIBCXX_3.4, GLIBCXX_3.4.11, GLIBCXX_3.4.15, GLIBCXX_3.4.20, GLIBCXX_3.4.21, GLIBCXX_3.4.9",
+        "body_config": {},
+        "body_format": "TEXT",
+        "classification": "TLP:C",
+        "depth": 0,
+        "heuristic": null,
+        "promote_to": null,
+        "tags": {},
+        "title_text": "Required Symbol Versions",
+        "zeroize_on_tag_safe": false
+      },
+      {
+        "auto_collapse": false,
         "body": "FLAGS_1: PIE",
         "body_config": {},
         "body_format": "TEXT",
