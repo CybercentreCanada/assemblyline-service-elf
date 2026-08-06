@@ -515,13 +515,49 @@ class ELF(ServiceBase):
 
     def add_relocations(self):
         if self.request.deep_scan:
-            # TODO: Find one and work on it.
-            self.features["dynamic_relocations"] = [
-                {"purpose": get_lief_enum_name(entry.purpose)} for entry in self.binary.dynamic_relocations
-            ]
-            self.features["object_relocations"] = {}
-            self.features["pltgot_relocations"] = {}
-            self.features["relocations"] = {}
+            # Most relocations are unsymboled bulk (e.g. hundreds of X86_64_RELATIVE for PIE
+            # fixups), so store a type histogram, and the full entry only when it references
+            # a symbol. The symboled PLT/GOT entries are the resolved import list, a useful
+            # complement to imported_functions on stripped binaries.
+            group_counts = 0
+            for feature, relocations in [
+                ("dynamic_relocations", self.binary.dynamic_relocations),
+                ("pltgot_relocations", self.binary.pltgot_relocations),
+                ("object_relocations", self.binary.object_relocations),
+            ]:
+                types = {}
+                symboled = []
+                for relocation in relocations:
+                    relocation_type = get_lief_enum_name(relocation.type)
+                    types[relocation_type] = types.get(relocation_type, 0) + 1
+                    if relocation.has_symbol and relocation.symbol.name:
+                        entry = {
+                            "type": relocation_type,
+                            "address": relocation.address,
+                            "symbol": bytes_to_backslashreplace_utf8_str(relocation.symbol.name),
+                        }
+                        if relocation.is_rela:
+                            entry["addend"] = relocation.addend
+                        symboled.append(entry)
+                self.features[feature] = {"types": types, "symbols": symboled}
+                group_counts += sum(types.values())
+
+            # binary.relocations should be exactly the three groups above: anything more
+            # means relocations with an unknown purpose (e.g. PURPOSE.NONE), worth surfacing
+            ungrouped = len(list(self.binary.relocations)) - group_counts
+            if ungrouped > 0:
+                res = ResultSection("Ungrouped relocations", parent=self.file_res)
+                res.add_line(
+                    f"{ungrouped} relocation{'s' if ungrouped > 1 else ''} not part of the dynamic, "
+                    "PLT/GOT or object relocation tables."
+                )
+                ungrouped_types = {}
+                for relocation in self.binary.relocations:
+                    if relocation.purpose == lief.ELF.Relocation.PURPOSE.NONE:
+                        relocation_type = get_lief_enum_name(relocation.type)
+                        ungrouped_types[relocation_type] = ungrouped_types.get(relocation_type, 0) + 1
+                for relocation_type, count in sorted(ungrouped_types.items()):
+                    res.add_line(f"{relocation_type}: {count}")
 
         if not self.binary.relocations:
             heur = Heuristic(7)
