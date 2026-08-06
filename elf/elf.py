@@ -23,6 +23,13 @@ def bytes_to_backslashreplace_utf8_str(value):
     return value
 
 
+def get_lief_enum_name(enum):
+    try:
+        return enum.name
+    except (AttributeError, ValueError):
+        return str(enum)
+
+
 def extract_fn(fn):
     return {
         "address": fn.address,
@@ -34,12 +41,12 @@ def extract_fn(fn):
 
 def extract_symbol(symbol):
     symbol_struct = {
-        "binding": symbol.binding.name,
+        "binding": get_lief_enum_name(symbol.binding),
         "name": bytes_to_backslashreplace_utf8_str(symbol.name),
-        "type": symbol.type.name,
+        "type": get_lief_enum_name(symbol.type),
         "exported": symbol.exported,
         "imported": symbol.imported,
-        "visibility": symbol.visibility.name,
+        "visibility": get_lief_enum_name(symbol.visibility),
     }
     if symbol.name != symbol.demangled_name:
         symbol_struct["demangled_name"] = bytes_to_backslashreplace_utf8_str(symbol.demangled_name)
@@ -66,7 +73,7 @@ def extract_note(note):
     note_struct = {
         "description": bytes(note.description).hex(),
         "name": "",
-        "type": note.type.name,
+        "type": get_lief_enum_name(note.type),
         "original_type": note.original_type,
     }
 
@@ -78,7 +85,7 @@ def extract_note(note):
     if isinstance(note, lief.ELF.NoteAbi):
         if note.abi is not None and note.version is not None:
             note_struct["details"] = {
-                "abi": note.abi.name,
+                "abi": get_lief_enum_name(note.abi),
                 "version": note.version,
             }
     elif isinstance(note, lief.ELF.NoteGnuProperty):
@@ -132,18 +139,18 @@ class ELF(ServiceBase):
         self.features["header"] = {
             "flags_list": [flag.name for flag in self.binary.header.flags_list],
             "entrypoint": self.binary.header.entrypoint,
-            "file_type": self.binary.header.file_type.name,
+            "file_type": get_lief_enum_name(self.binary.header.file_type),
             "header_size": self.binary.header.header_size,
             "identity": list(self.binary.header.identity),
             "identity_abi_version": self.binary.header.identity_abi_version,
-            "identity_class": self.binary.header.identity_class.name,
-            "identity_data": self.binary.header.identity_data.name,
-            "identity_os_abi": self.binary.header.identity_os_abi.name,
-            "identity_version": self.binary.header.identity_version.name,
-            "machine_type": self.binary.header.machine_type.name,
+            "identity_class": get_lief_enum_name(self.binary.header.identity_class),
+            "identity_data": get_lief_enum_name(self.binary.header.identity_data),
+            "identity_os_abi": get_lief_enum_name(self.binary.header.identity_os_abi),
+            "identity_version": get_lief_enum_name(self.binary.header.identity_version),
+            "machine_type": get_lief_enum_name(self.binary.header.machine_type),
             "numberof_sections": self.binary.header.numberof_sections,
             "numberof_segments": self.binary.header.numberof_segments,
-            "object_file_version": self.binary.header.object_file_version.name,
+            "object_file_version": get_lief_enum_name(self.binary.header.object_file_version),
             "processor_flag": self.binary.header.processor_flag,
             "program_header_offset": self.binary.header.program_header_offset,
             "program_header_size": self.binary.header.program_header_size,
@@ -159,7 +166,7 @@ class ELF(ServiceBase):
         self.features["last_offset_section"] = self.binary.last_offset_section
         self.features["last_offset_segment"] = self.binary.last_offset_segment
         self.features["next_virtual_address"] = self.binary.next_virtual_address
-        self.features["type"] = self.binary.type.name
+        self.features["type"] = get_lief_enum_name(self.binary.type)
         self.features["virtual_size"] = self.binary.virtual_size
 
         res = ResultSection("Headers")
@@ -251,9 +258,9 @@ class ELF(ServiceBase):
                 "name": bytes_to_backslashreplace_utf8_str(section.name),
                 "offset": section.offset,
                 "original_size": section.original_size,
-                "segments": [segment.type.name for segment in section.segments],
+                "segments": [get_lief_enum_name(segment.type) for segment in section.segments],
                 "size": section.size,
-                "type": section.type.name,
+                "type": get_lief_enum_name(section.type),
                 "virtual_address": section.virtual_address,
             }
             self.features["sections"].append(section_struct)
@@ -297,10 +304,10 @@ class ELF(ServiceBase):
                 "physical_address": segment.physical_address,
                 "physical_size": segment.physical_size,
                 "sections": [bytes_to_backslashreplace_utf8_str(section.name) for section in segment.sections],
-                "type": segment.type.name,
+                "type": get_lief_enum_name(segment.type),
                 "virtual_address": segment.virtual_address,
                 "virtual_size": segment.virtual_size,
-                "flags": segment.flags.name,
+                "flags": get_lief_enum_name(segment.flags),
                 "raw_flags": segment.raw_flags,
             }
             self.features["segments"].append(segment_dict)
@@ -501,7 +508,7 @@ class ELF(ServiceBase):
         if self.request.deep_scan:
             # TODO: Find one and work on it.
             self.features["dynamic_relocations"] = [
-                {"purpose": entry.purpose.name} for entry in self.binary.dynamic_relocations
+                {"purpose": get_lief_enum_name(entry.purpose)} for entry in self.binary.dynamic_relocations
             ]
             self.features["object_relocations"] = {}
             self.features["pltgot_relocations"] = {}
@@ -515,7 +522,7 @@ class ELF(ServiceBase):
         self.features["dynamic_entries"] = []
         for entry in self.binary.dynamic_entries:
             entry_struct = {
-                "tag": entry.tag.name,
+                "tag": get_lief_enum_name(entry.tag),
                 "value": entry.value,
             }
             if isinstance(entry, lief.ELF.DynamicEntryFlags):
